@@ -1,0 +1,10 @@
+11:11:35:445:720 Monitoring new COM ports...
+11:11:35:461:361 [COM1] opened.
+11:11:35:466:947 [COM4] opened.
+11:11:40:547:861 [COM5] opened.
+11:11:43:417:824 [COM5] raw: '\x00'
+11:11:49:955:526 [COM5] raw: '\x00'
+11:12:05:511:915 [COM4] no role message. closing.
+11:12:05:511:915 [COM1] no role message. closing.
+11:12:10:610:976 [COM5] no role message. closing.
+11:13:06:960:612 Stopping.

@@ -1,0 +1,17 @@
+12:17:32:847:535 Monitoring new COM ports...
+12:17:32:863:271 [COM1] opened.
+12:17:32:867:785 [COM4] opened.
+12:17:36:933:064 [COM5] opened.
+12:17:39:420:719 [COM5] raw: '\x00'
+12:17:39:543:992 [COM5] raw: '[ROLE=ANCHOR, ID=ANCHOR1, VERSION=4] \r\n\x00\x012\x01\x00\x00\x00\x00\x00\x00\x00'
+12:17:39:543:992 [COM5] identified as ANCHOR1
+12:17:42:865:199 [COM1] no role message. closing.
+12:17:42:928:557 [COM4] no role message. closing.
+12:17:45:101:981 [COM5] read error: ClearCommError failed (OSError(9, '핸들이 잘못되었습니다.', None, 6))
+12:17:45:101:981 [COM5] disconnected. removed.
+12:17:48:154:078 [COM5] opened.
+12:17:48:964:918 [COM5] raw: '\x00'
+12:17:49:088:564 [COM5] raw: '[ROLE=ANCHOR, ID=ANCHOR1, VERSION=4] \r\n\x00\x012\x01\x00\x00\x00\x00\x00\x00\x00'
+12:17:49:088:564 [COM5] identified as ANCHOR1
+12:18:27:222:573 Stopping.
+12:18:27:222:573 [COM5] read error: ClearCommError failed (OSError(9, '핸들이 잘못되었습니다.', None, 6))

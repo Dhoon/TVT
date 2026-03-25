@@ -1,0 +1,8 @@
+12:23:57:011:702 Monitoring new COM ports...
+12:23:57:027:274 [COM1] opened.
+12:23:57:029:290 [COM4] opened.
+12:23:59:534:102 [COM5] open error: could not open port 'COM5': FileNotFoundError(2, '지정된 파일을 찾을 수 없습니다.', None, 2)
+12:24:07:093:143 [COM4] no role message. closing.
+12:24:07:105:976 [COM1] no role message. closing.
+12:24:11:982:815 [COM5] disconnected. removed.
+12:24:38:507:902 Stopping.

@@ -1,0 +1,130 @@
+13:29:37:297:318 Monitoring new COM ports...
+13:29:37:311:700 [COM1] opened.
+13:29:37:317:188 [COM4] opened.
+13:29:40:471:192 [COM5] opened.
+13:29:47:325:165 [COM4] no role message. closing.
+13:29:47:336:863 [COM1] no role message. closing.
+13:29:50:536:711 [COM5] no role message. closing.
+13:30:15:723:699 [COM5] disconnected. removed.
+13:30:17:327:500 [COM5] open error: could not open port 'COM5': FileNotFoundError(2, '지정된 파일을 찾을 수 없습니다.', None, 2)
+13:30:17:654:390 [COM5] opened.
+13:30:18:278:601 [COM5] raw: '\x00'
+13:30:18:589:176 [COM5] raw: '[ROLE=ANCHOR, ID=ANCHOR1, VERSION=4] \r\n\x00\x012\x01\x00\x00\x00\x00\x00\x00\x00'
+13:30:18:589:176 [COM5] identified as ANCHOR1
+13:30:20:566:953 [COM5] read error: ClearCommError failed (OSError(9, '핸들이 잘못되었습니다.', None, 6))
+13:30:20:566:953 [COM5] disconnected. removed.
+13:30:23:099:998 [COM5] opened.
+13:30:33:124:079 [COM5] no role message. closing.
+13:31:22:840:015 [COM5] disconnected. removed.
+13:31:24:733:903 [COM5] open error: could not open port 'COM5': FileNotFoundError(2, '지정된 파일을 찾을 수 없습니다.', None, 2)
+13:31:25:061:308 [COM5] opened.
+13:31:27:427:763 [COM5] raw: '\x00'
+13:31:27:743:512 [COM5] raw: '[ROLE=ANCHOR, ID=ANCHOR1, VERSION=4] \r\n\x00\x012\x01\x00\x00\x00\x00\x00\x00\x00'
+13:31:27:743:512 [COM5] identified as ANCHOR1
+13:32:02:539:066 [COM5] Failed to parse message: ROLE=ANCHOR, ID=ANCHOR1, VERSION=4
+13:32:03:713:870 [COM5] read error: ClearCommError failed (OSError(9, '핸들이 잘못되었습니다.', None, 6))
+13:32:03:713:870 [COM5] disconnected. removed.
+13:32:05:925:345 [COM5] opened.
+13:32:11:605:250 [COM5] disconnected. removed.
+13:32:22:942:421 [COM5] open error: could not open port 'COM5': FileNotFoundError(2, '지정된 파일을 찾을 수 없습니다.', None, 2)
+13:32:23:268:898 [COM5] opened.
+13:32:28:132:611 [COM5] raw: '\x00'
+13:32:30:243:014 [COM5] raw: '[ROLE=ANCHOR, ID=ANCHOR1, VERSION=4] \r\n\x00\x012\x01\x00\x00\x00\x00\x00\x00\x00'
+13:32:30:243:014 [COM5] identified as ANCHOR1
+13:32:35:167:524 [COM5] read error: ClearCommError failed (OSError(9, '핸들이 잘못되었습니다.', None, 6))
+13:32:35:167:524 [COM5] disconnected. removed.
+13:32:37:058:064 [COM5] open error: could not open port 'COM5': FileNotFoundError(2, '지정된 파일을 찾을 수 없습니다.', None, 2)
+13:32:37:374:816 [COM5] opened.
+13:32:46:027:868 [COM5] raw: '\x00'
+13:32:47:399:535 [COM5] no role message. closing.
+13:32:54:514:444 [COM5] disconnected. removed.
+13:32:56:397:237 [COM5] open error: could not open port 'COM5': FileNotFoundError(2, '지정된 파일을 찾을 수 없습니다.', None, 2)
+13:32:56:709:919 [COM5] opened.
+13:32:59:013:618 [COM5] raw: '\x00'
+13:32:59:385:425 [COM5] raw: '[ROLE=ANCHOR, ID=ANCHOR1, VERSION=4] \r\n\x00\x012\x01\x00\x00\x00\x00\x00\x00\x00'
+13:32:59:385:425 [COM5] identified as ANCHOR1
+13:33:01:866:644 [COM5] read error: ClearCommError failed (OSError(9, '핸들이 잘못되었습니다.', None, 6))
+13:33:01:866:644 [COM5] disconnected. removed.
+13:33:43:543:421 [COM5] opened.
+13:33:46:280:672 [COM5] raw: '\x00'
+13:33:46:593:717 [COM5] raw: '[ROLE=ANCHOR, ID=ANCHOR1, VERSION=4] \r\n\x00\x012\x01\x00\x00\x00\x00\x00\x00\x00'
+13:33:46:593:717 [COM5] identified as ANCHOR1
+13:35:32:754:762 [COM5] read error: ClearCommError failed (OSError(9, '핸들이 잘못되었습니다.', None, 6))
+13:35:32:754:762 [COM5] disconnected. removed.
+13:35:35:612:329 [COM5] opened.
+13:35:45:632:145 [COM5] no role message. closing.
+13:36:55:062:891 [COM5] disconnected. removed.
+13:36:57:913:409 [COM5] opened.
+13:37:07:667:375 [COM5] disconnected. removed.
+13:37:09:877:795 [COM5] opened.
+13:37:16:480:750 [COM5] disconnected. removed.
+13:37:19:328:352 [COM5] opened.
+13:37:19:904:662 [COM5] no role message. closing.
+13:37:29:341:531 [COM5] no role message. closing.
+13:37:54:877:204 [COM5] disconnected. removed.
+13:37:56:782:888 [COM5] open error: could not open port 'COM5': FileNotFoundError(2, '지정된 파일을 찾을 수 없습니다.', None, 2)
+13:37:57:109:632 [COM5] opened.
+13:37:59:851:876 [COM5] raw: '\x00'
+13:38:00:162:587 [COM5] raw: '[ROLE=ANCHOR, ID=ANCHOR1, VERSION=4] \r\n\x00\x012\x01\x00\x00\x00\x00\x00\x00\x00'
+13:38:00:162:587 [COM5] identified as ANCHOR1
+13:38:02:595:432 [COM5] Failed to parse message: ROLE=ANCHOR, ID=ANCHOR1, VERSION=4
+13:38:15:555:078 [COM5] Failed to parse message: ROLE=ANCHOR, ID=ANCHOR1, VERSION=4
+13:38:21:791:978 [COM5] read error: ClearCommError failed (OSError(9, '핸들이 잘못되었습니다.', None, 6))
+13:38:21:791:978 [COM5] disconnected. removed.
+13:38:23:070:009 [COM5] open error: could not open port 'COM5': FileNotFoundError(2, '지정된 파일을 찾을 수 없습니다.', None, 2)
+13:38:23:395:325 [COM5] opened.
+13:38:27:876:256 [COM5] raw: '\x00'
+13:38:28:189:539 [COM5] raw: '[ROLE=ANCHOR, ID=ANCHOR1, VERSION=4] \r\n\x00\x012\x01\x00\x00\x00\x00\x00\x00\x00'
+13:38:28:189:539 [COM5] identified as ANCHOR1
+13:38:35:939:460 [COM5] read error: ClearCommError failed (OSError(9, '핸들이 잘못되었습니다.', None, 6))
+13:38:35:939:460 [COM5] disconnected. removed.
+13:38:38:806:631 [COM5] opened.
+13:38:40:182:929 [COM5] raw: '\x00'
+13:38:40:556:992 [COM5] raw: '[ROLE=ANCHOR, ID=ANCHOR1, VERSION=4] \r\n\x00\x012\x01\x00\x00\x00\x00\x00\x00\x00'
+13:38:40:556:992 [COM5] identified as ANCHOR1
+13:38:43:107:759 [COM5] Failed to parse message: ROLE=ANCHOR, ID=ANCHOR1, VERSION=4
+13:38:44:456:912 [COM5] Failed to parse message: ROLE=ANCHOR, ID=ANCHOR1, VERSION=4
+13:38:45:725:202 [COM5] Failed to parse message: ROLE=ANCHOR, ID=ANCHOR1, VERSION=4
+13:38:47:024:660 [COM5] Failed to parse message: ROLE=ANCHOR, ID=ANCHOR1, VERSION=4
+13:38:47:858:953 [COM5] disconnected. removed.
+13:38:47:859:456 [COM5] read error: ClearCommError failed (OSError(9, '핸들이 잘못되었습니다.', None, 6))
+13:38:49:449:596 [COM5] opened.
+13:38:59:474:741 [COM5] no role message. closing.
+13:46:27:886:702 [COM5] disconnected. removed.
+13:46:29:760:364 [COM5] opened.
+13:46:31:376:721 [COM5] raw: '[ROLE=ANCHOR, ID=ANCHOR1, VERSION=4] \r\n\x00\x012\x01\x00\x00\x00\x00\x00\x00\x00'
+13:46:31:376:721 [COM5] identified as ANCHOR1
+13:46:36:230:475 [COM5] read error: ClearCommError failed (OSError(9, '핸들이 잘못되었습니다.', None, 6))
+13:46:36:230:475 [COM5] disconnected. removed.
+13:46:38:730:962 [COM5] open error: could not open port 'COM5': FileNotFoundError(2, '지정된 파일을 찾을 수 없습니다.', None, 2)
+13:46:39:063:875 [COM5] opened.
+13:46:40:553:584 [COM5] raw: '[ROLE=ANCHOR, ID=ANCHOR1, VERSION=4] \r\n\x00\x012\x01\x00\x00\x00\x00\x00\x00\x00'
+13:46:40:553:584 [COM5] identified as ANCHOR1
+13:47:09:089:289 [COM5] Failed to parse message: ROLE=ANCHOR, ID=ANCHOR1, VERSION=4
+13:47:11:650:210 [COM5] read error: ClearCommError failed (OSError(9, '핸들이 잘못되었습니다.', None, 6))
+13:47:11:650:210 [COM5] disconnected. removed.
+13:47:14:792:949 [COM5] opened.
+13:47:24:806:372 [COM5] no role message. closing.
+13:47:35:656:338 [COM5] disconnected. removed.
+13:47:38:537:194 [COM5] open error: could not open port 'COM5': FileNotFoundError(2, '지정된 파일을 찾을 수 없습니다.', None, 2)
+13:47:38:863:234 [COM5] opened.
+13:47:39:301:257 [COM5] raw: '[ROLE=ANCHOR, ID=ANCHOR1, VERSION=4]'
+13:47:39:301:257 [COM5] identified as ANCHOR1
+13:47:44:081:260 [COM5] read error: ClearCommError failed (OSError(9, '핸들이 잘못되었습니다.', None, 6))
+13:47:44:081:260 [COM5] disconnected. removed.
+13:47:45:974:967 [COM5] opened.
+13:47:46:659:397 [COM5] raw: '[ROLE=ANCHOR, ID=ANCHOR1, VERSION=4] \r\n\x00\x012\x01\x00\x00\x00\x00\x00\x00\x00'
+13:47:46:659:397 [COM5] identified as ANCHOR1
+13:47:59:251:935 [COM5] Failed to parse message: ROLE=ANCHOR, ID=ANCHOR1, VERSION=4
+13:48:00:967:774 [COM5] read error: ClearCommError failed (OSError(9, '핸들이 잘못되었습니다.', None, 6))
+13:48:00:967:774 [COM5] disconnected. removed.
+13:48:03:481:234 [COM5] opened.
+13:48:03:544:786 [COM5] raw: '[ROLE=ANCHOR, ID=ANCHOR1, VERSION=4] \r\n\x00\x012\x01\x00\x00\x00\x00\x00\x00\x00'
+13:48:03:544:786 [COM5] identified as ANCHOR1
+13:48:07:712:601 [COM5] read error: ClearCommError failed (OSError(9, '핸들이 잘못되었습니다.', None, 6))
+13:48:07:712:601 [COM5] disconnected. removed.
+13:48:10:220:518 [COM5] opened.
+13:48:10:406:760 [COM5] raw: '[ROLE=ANCHOR, ID=ANCHOR1, VERSION=4] \r\n\x00\x012\x01\x00\x00\x00\x00\x00\x00\x00'
+13:48:10:406:760 [COM5] identified as ANCHOR1
+13:52:59:004:425 Stopping.
+13:52:59:005:442 [COM5] read error: ClearCommError failed (OSError(9, '핸들이 잘못되었습니다.', None, 6))

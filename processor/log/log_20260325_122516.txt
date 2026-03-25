@@ -1,0 +1,20 @@
+12:25:16:582:727 Monitoring new COM ports...
+12:25:16:597:267 [COM1] opened.
+12:25:16:603:370 [COM4] opened.
+12:25:19:826:139 [COM5] open error: could not open port 'COM5': FileNotFoundError(2, '지정된 파일을 찾을 수 없습니다.', None, 2)
+12:25:19:952:492 [COM5] opened.
+12:25:24:987:838 [COM5] raw: '\x00'
+12:25:25:110:937 [COM5] raw: '[ROLE=ANCHOR, ID=ANCHOR1, VERSION=4] \r\n\x00\x012\x01\x00\x00\x00\x00\x00\x00\x00'
+12:25:25:110:937 [COM5] identified as ANCHOR1
+12:25:26:606:951 [COM4] no role message. closing.
+12:25:26:622:689 [COM1] no role message. closing.
+12:25:26:942:295 [COM5] read error: ClearCommError failed (OSError(9, '핸들이 잘못되었습니다.', None, 6))
+12:25:26:942:295 [COM5] disconnected. removed.
+12:25:30:173:910 [COM5] open error: could not open port 'COM5': FileNotFoundError(2, '지정된 파일을 찾을 수 없습니다.', None, 2)
+12:25:30:300:314 [COM5] opened.
+12:25:34:232:601 [COM5] raw: '\x00'
+12:25:34:296:205 [COM5] raw: '[ROLE=ANCHOR, ID=ANCHOR1, VE'
+12:25:34:296:205 [COM5] identified as ANCHOR1
+12:25:36:669:728 [COM5] read error: ClearCommError failed (OSError(9, '핸들이 잘못되었습니다.', None, 6))
+12:25:36:669:728 [COM5] disconnected. removed.
+12:26:15:037:258 Stopping.
