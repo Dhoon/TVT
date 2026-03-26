@@ -64,7 +64,7 @@ def handle_new_port(port):
             threading.Thread(target=read_uart_loop, args=(port, ser), daemon=True).start()
         else:
             ser.close()
-            if port in state.known_ports:
+            if port in state.known_ports and port not in state.serial_connections:
                 log(f"{timestamp()} [{port}] no role message. closing.")
                 state.failed_ports.add(port)
     except Exception as e:

@@ -1,0 +1,20 @@
+16:52:37:092:548 Monitoring new COM ports...
+16:52:37:526:378 [COM1] opened.
+16:52:37:531:416 [COM4] opened.
+16:52:39:112:623 [COM5] opened.
+16:52:39:602:865 [COM5] raw: '\x00'
+16:52:47:542:899 [COM1] no role message. closing.
+16:52:47:591:171 [COM4] no role message. closing.
+16:52:49:176:792 [COM5] no role message. closing.
+16:52:49:936:374 [COM5] disconnected. removed.
+16:52:55:259:767 [COM5] opened.
+16:52:55:762:947 [COM5] raw: '\x00'
+16:53:02:926:024 [COM5] disconnected. removed.
+16:53:07:689:063 [COM5] opened.
+16:53:08:185:526 [COM5] raw: '\x00'
+16:53:17:704:239 [COM5] no role message. closing.
+16:53:27:817:329 [COM5] disconnected. removed.
+16:53:29:097:281 [COM5] opened.
+16:53:29:595:322 [COM5] raw: '\x00'
+16:53:39:130:073 [COM5] no role message. closing.
+16:57:16:254:929 Stopping.

@@ -1,8 +1,0 @@
-12:23:27:037:261 Monitoring new COM ports...
-12:23:27:052:875 [COM1] opened.
-12:23:27:055:176 [COM4] opened.
-12:23:31:664:382 [COM5] disconnected. removed.
-12:23:34:344:089 [COM5] disconnected. removed.
-12:23:37:071:551 [COM1] no role message. closing.
-12:23:37:076:096 [COM4] no role message. closing.
-12:23:37:142:748 Stopping.

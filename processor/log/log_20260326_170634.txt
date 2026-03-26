@@ -1,0 +1,4 @@
+17:06:34:417:098 Monitoring new COM ports...
+17:06:34:498:778 [COM1] opened.
+17:06:34:500:806 [COM4] opened.
+17:06:41:418:746 Stopping.

@@ -1,0 +1,26 @@
+17:22:03:181:433 Monitoring new COM ports...
+17:22:03:262:904 [COM1] opened.
+17:22:03:269:080 [COM4] opened.
+17:22:04:829:584 [COM11] opened.
+17:22:05:512:203 [COM11] raw: '[ROLE=ANCHOR, ID=ANCHOR3, VERSION=4] \r\n\x00\x012\x01\x00\x00\x00\x00\x00\x00\x00'
+17:22:05:512:203 [COM11] identified as ANCHOR3
+17:22:08:375:057 [COM5] opened.
+17:22:09:185:761 [COM5] raw: '[ROLE=ANCHOR, ID=ANCHOR3, VERSION=4] \r\n\x00\x012\x01\x00\x00\x00\x00\x00\x00\x00'
+17:22:09:185:761 [COM5] identified as ANCHOR3
+17:22:13:276:563 [COM4] no role message. closing.
+17:22:13:290:851 [COM1] no role message. closing.
+17:22:36:743:029 [COM9] opened.
+17:22:37:295:002 [COM9] raw: '[ROLE=ANCHOR, ID=ANCHOR3, VERSION=4] \r\n\x00\x012\x01\x00\x00\x00\x00\x00\x00\x00'
+17:22:37:295:002 [COM9] identified as ANCHOR3
+17:22:45:905:135 [COM10] opened.
+17:22:45:907:145 [COM7] opened.
+17:22:46:470:725 [COM7] raw: '[ROLE=ANCHOR, ID=ANCHOR3, VERSION=4] \r\n\x00\x012\x01\x00\x00\x00\x00\x00\x00\x00'
+17:22:46:470:725 [COM7] identified as ANCHOR3
+17:22:46:558:942 [COM8] opened.
+17:22:46:707:007 [COM10] raw: '[ROLE=ANCHOR, ID=ANCHOR3, VERSION=4] \r\n\x00\x012\x01\x00\x00\x00\x00\x00\x00\x00'
+17:22:46:707:007 [COM10] identified as ANCHOR3
+17:22:47:046:585 [COM8] raw: '[ROLE=ANCHOR, ID=ANCHOR3, VERSION=4] \r\n\x00\x012\x01\x00\x00\x00\x00\x00\x00\x00'
+17:22:47:046:585 [COM8] identified as ANCHOR3
+17:23:17:424:277 [COM5] Failed to parse message: ROLE=ANCHOR, ID=ANCHOR1, VERSION=4
+17:23:25:708:053 Stopping.
+17:23:25:708:053 [COM11] read error: ClearCommError failed (OSError(9, '핸들이 잘못되었습니다.', None, 6))

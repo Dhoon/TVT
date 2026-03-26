@@ -1,8 +1,6 @@
 import os
 from datetime import datetime
 
-import state
-
 log_file = None
 
 def timestamp():
@@ -23,4 +21,3 @@ def log(message):
     if log_file:
         log_file.write(message + '\n')
         log_file.flush()
-    state.ui_queue.put({'type': 'log', 'text': message})

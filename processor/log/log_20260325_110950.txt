@@ -1,4 +1,0 @@
-11:09:50:290:015 Monitoring new COM ports...
-11:09:50:304:223 [COM1] opened.
-11:09:50:310:251 [COM4] opened.
-11:09:55:623:209 Stopping.

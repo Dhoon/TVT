@@ -41,9 +41,10 @@ def estimate_tag_position(data):
         anchor_id = msg[1]
         t2, t5, t8, t11 = msg[4:8]
 
-        Rt1 = t5 - t2
-        Rt2 = t8 - t5
-        if any(ts < 0 for ts in (Ra, Da, Rb, Db, D2b, Rt1, Rt2)):
+        UINT32 = 1 << 32
+        Rt1 = (t5 - t2) % UINT32
+        Rt2 = (t8 - t5) % UINT32
+        if any(ts < 0 for ts in (Ra, Da, Rb, Db, D2b)):
             log(f"{timestamp()} [WARNING] Negative timestamp detected, skipping anchor {anchor_id}")
             continue
 

@@ -1,8 +1,0 @@
-11:08:48:025:914 Monitoring new COM ports...
-11:08:48:060:060 [COM1] opened.
-11:08:48:061:081 [COM5] opened.
-11:08:48:066:653 [COM4] opened.
-11:09:18:070:072 [COM5] no role message. closing.
-11:09:18:070:072 [COM1] no role message. closing.
-11:09:18:085:793 [COM4] no role message. closing.
-11:09:48:085:478 Stopping.
