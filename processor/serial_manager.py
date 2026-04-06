@@ -54,7 +54,7 @@ def handle_new_port(port):
     if port in state.serial_connections or port in state.failed_ports:
         return
     try:
-        ser = serial.Serial(port, 115200, timeout=0.3)
+        ser = serial.Serial(port, 115200, timeout=0.3, dsrdtr=False, rtscts=False)
         log(f"{timestamp()} [{port}] opened.")
         role = identify_device(ser, port)
         if role:
@@ -90,7 +90,10 @@ def monitor_ports():
             state.anchor_change_event.wait()
             state.anchor_change_event.clear()
 
-        current_ports = set(p.device for p in serial.tools.list_ports.comports())
+        current_ports = set(
+            p.device for p in serial.tools.list_ports.comports()
+            if p.vid is not None or 'USB' in (p.device or '') or 'ACM' in (p.device or '')
+        )
         new_ports = current_ports - state.known_ports
         removed_ports = state.known_ports - current_ports
         for port in new_ports:
