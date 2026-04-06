@@ -76,9 +76,10 @@ def handle_adv_message(port, values):
             threading.Thread(target=adv_timeout_handler, args=(key,), daemon=True).start()
         state.adv_messages[key].append(values)
         if len(state.adv_messages[key]) >= 6:
-            state.adv_messages.pop(key)
-            root_id = select_root_anchor()
+            msgs = state.adv_messages.pop(key)
+            root_id = select_root_anchor(msgs)
             log(f"{timestamp()} [ROOT SELECTED] Anchor {root_id} for Tag {tag_id} Seq {sequence} (ADV Complete)")
+            state.ui_queue.put({'type': 'root', 'anchor_id': root_id})
             for p, ser in state.serial_connections.items():
                 try:
                     ser.write(f"[{root_id}]\r\n".encode())
@@ -100,6 +101,7 @@ def handle_ds_twr_message(port, values):
         log(f"{timestamp()} [Leaf] Type {msg_type}, Anchor {anchor_id}, Tag {tag_id}, Seq={sequence}, message = {values[4:]}")
 
     key = (tag_id, sequence)
+    data = None
     with state.buffer_lock:
         if key not in state.message_buffer:
             state.message_buffer[key] = []
@@ -107,9 +109,8 @@ def handle_ds_twr_message(port, values):
         state.message_buffer[key].append(values)
         if len(state.message_buffer[key]) >= 6:
             data = state.message_buffer.pop(key, [])
-            if not data:
-                return
-            estimate_tag_position(data)
+    if data:
+        estimate_tag_position(data)
 
 
 def adv_timeout_handler(key):
@@ -118,8 +119,9 @@ def adv_timeout_handler(key):
         messages = state.adv_messages.pop(key, [])
     if messages:
         tag_id, sequence = key
-        root_id = select_root_anchor()
+        root_id = select_root_anchor(messages)
         log(f"{timestamp()} [ROOT SELECTED] Anchor {root_id} for Tag {tag_id} Seq {sequence} (ADV Timeout or Full)")
+        state.ui_queue.put({'type': 'root', 'anchor_id': root_id})
         for p, ser in state.serial_connections.items():
             try:
                 ser.write(f"[{root_id}]\r\n".encode())

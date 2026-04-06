@@ -58,17 +58,20 @@ class App:
             self.canvas.create_line(MARGIN, y, CANVAS_W - MARGIN, y,
                                     fill='#3a3a3a', dash=(2, 4))
 
+        self._anchor_ovals = {}
         for anchor_id, (ax, ay) in ANCHOR_POSITIONS.items():
             cx, cy = self._to_canvas(ax, ay)
             r = 14
-            self.canvas.create_oval(cx - r, cy - r, cx + r, cy + r,
-                                    fill='#4a90d9', outline='#aaccff', width=1)
+            oval = self.canvas.create_oval(cx - r, cy - r, cx + r, cy + r,
+                                           fill='#4a90d9', outline='#aaccff', width=1)
+            self._anchor_ovals[anchor_id] = oval
             self.canvas.create_text(cx, cy, text=str(anchor_id),
                                     fill='white', font=('Consolas', 9, 'bold'))
             self.canvas.create_text(cx, cy + r + 10,
                                     text=f"({ax},{ay})",
                                     fill='#888888', font=('Consolas', 7))
 
+        self._root_anchor_id = None
         self._tag_label = None
         self._tag_oval = None
 
@@ -76,6 +79,13 @@ class App:
         cx = MARGIN + (x - self._x_min) * self._sx
         cy = CANVAS_H - MARGIN - (y - self._y_min) * self._sy
         return cx, cy
+
+    def _update_root(self, root_id):
+        if self._root_anchor_id and self._root_anchor_id in self._anchor_ovals:
+            self.canvas.itemconfig(self._anchor_ovals[self._root_anchor_id], fill='#4a90d9')
+        self._root_anchor_id = root_id
+        if root_id in self._anchor_ovals:
+            self.canvas.itemconfig(self._anchor_ovals[root_id], fill='#f0c040')
 
     def _update_tag(self, x, y):
         if self._tag_oval:
@@ -98,6 +108,8 @@ class App:
                 msg = state.ui_queue.get_nowait()
                 if msg['type'] == 'position':
                     self._update_tag(msg['x'], msg['y'])
+                elif msg['type'] == 'root':
+                    self._update_root(msg['anchor_id'])
         except queue.Empty:
             pass
         count = len(state.serial_connections)
