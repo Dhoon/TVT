@@ -4,9 +4,9 @@ import tkinter as tk
 import state
 from settings import ANCHOR_POSITIONS
 
-CANVAS_W = 550
-CANVAS_H = 500
-MARGIN = 60
+CANVAS_W = 700
+CANVAS_H = 700
+MARGIN = 80
 
 
 class App:
@@ -41,10 +41,10 @@ class App:
         xs = [p[0] for p in positions]
         ys = [p[1] for p in positions]
 
-        self._x_min = min(xs) - 31
-        self._x_max = max(xs) + 31
-        self._y_min = min(ys) - 31
-        self._y_max = max(ys) + 31
+        self._x_min = min(xs) - 10
+        self._x_max = max(xs) + 10
+        self._y_min = min(ys) - 0.5
+        self._y_max = 40
 
         self._sx = (CANVAS_W - 2 * MARGIN) / (self._x_max - self._x_min)
         self._sy = (CANVAS_H - 2 * MARGIN) / (self._y_max - self._y_min)
