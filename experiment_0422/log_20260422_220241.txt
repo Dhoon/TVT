@@ -1,0 +1,23 @@
+22:02:44:707:808 Monitoring new COM ports...
+22:02:44:785:178 [/dev/ttyACM2] opened.
+22:02:44:785:329 [/dev/ttyACM4] opened.
+22:02:44:785:507 [/dev/ttyACM5] opened.
+22:02:44:785:642 [/dev/ttyACM3] opened.
+22:02:44:785:677 [/dev/ttyACM0] opened.
+22:02:44:785:879 [/dev/ttyACM1] opened.
+22:02:44:836:474 [/dev/ttyACM1] raw: ',38,54,49,41,61,9,34,30,78,68,120,64,24,55,17,63,79,98,110,37,311,1880,4824,6057,4262,601,3114,1932,211,755,318,377'
+22:02:46:042:117 [/dev/ttyACM4] raw: '[ROLE=ANCHOR, ID=ANCHOR6, VERSION=4] \r\n\x00\t2\x01\x00\x00\x00\x00\x00\x00\x00'
+22:02:46:042:225 [/dev/ttyACM4] identified as ANCHOR6
+22:02:47:144:937 [/dev/ttyACM5] open error: [Errno 5] Input/output error
+22:02:47:395:914 [/dev/ttyACM1] open error: [Errno 5] Input/output error
+22:02:48:197:057 [/dev/ttyACM4] read error: [Errno 5] Input/output error
+22:02:48:241:079 [/dev/ttyACM4] disconnected. removed.
+22:02:48:241:686 [/dev/ttyACM1] opened.
+22:02:48:793:702 [/dev/ttyACM1] raw: '[ROLE=ANCHOR, ID=ANCHOR5, VERSION=4] \r\n\x00\t2\x01\x00\x00\x00\x00\x00\x00\x00'
+22:02:48:793:879 [/dev/ttyACM1] identified as ANCHOR5
+22:02:48:950:330 [/dev/ttyACM2] open error: [Errno 5] Input/output error
+22:02:50:253:638 [/dev/ttyACM3] open error: [Errno 5] Input/output error
+22:02:50:444:647 [/dev/ttyACM1] read error: [Errno 5] Input/output error
+22:02:50:748:222 [/dev/ttyACM1] disconnected. removed.
+22:02:50:955:748 [/dev/ttyACM0] open error: [Errno 5] Input/output error
+22:02:53:113:014 Stopping.

@@ -1,0 +1,35 @@
+23:13:19:699:139 Monitoring new COM ports...
+23:13:34:390:415 [/dev/ttyACM0] opened.
+23:13:34:892:819 [/dev/ttyACM0] raw: '[ROLE=ANCHOR, ID=ANCHOR4, VERSION=4] \r\n\x00\t2\x01\x00\x00\x00\x00\x00\x00\x00'
+23:13:34:893:418 [/dev/ttyACM0] identified as ANCHOR4
+23:13:43:758:163 [/dev/ttyACM1] opened.
+23:13:48:318:374 [/dev/ttyACM1] raw: '\x00'
+23:13:49:771:585 [/dev/ttyACM1] raw: '[ROLE=ANCHOR, ID=ANCHOR6, VERSION=4] \r\n\x00\t2\x01\x00\x00\x00\x00\x00\x00\x00'
+23:13:49:771:704 [/dev/ttyACM1] identified as ANCHOR6
+23:13:59:252:891 [/dev/ttyACM2] opened.
+23:14:00:155:429 [/dev/ttyACM2] raw: '[ROLE=ANCHOR, ID=ANCHOR2, VERSION=4'
+23:14:00:155:622 [/dev/ttyACM2] identified as ANCHOR2
+23:14:10:934:874 [/dev/ttyACM3] opened.
+23:14:11:272:178 [/dev/ttyACM4] opened.
+23:14:11:667:841 [/dev/ttyACM5] opened.
+23:14:16:132:358 [/dev/ttyACM5] raw: '\x00'
+23:14:17:486:534 [/dev/ttyACM5] raw: '[ROLE=ANCHOR, ID=ANCHOR1, VERSION=4] \r\n\x00\t2\x01\x00\x00\x00\x00\x00\x00\x00'
+23:14:17:486:741 [/dev/ttyACM5] identified as ANCHOR1
+23:14:18:944:222 [/dev/ttyACM4] raw: '\x00'
+23:14:20:348:975 [/dev/ttyACM4] raw: '[ROLE=ANCHOR, ID=ANCHOR3, VERSION=4] \r\n\x00\t2\x01\x00\x00\x00\x00\x00\x00\x00'
+23:14:20:349:174 [/dev/ttyACM4] identified as ANCHOR3
+23:14:21:000:052 [/dev/ttyACM3] no role message. closing.
+23:14:37:642:255 [/dev/ttyACM3] disconnected. removed.
+23:14:38:573:748 [/dev/ttyACM4] read error: [Errno 5] Input/output error
+23:14:38:817:590 [/dev/ttyACM4] disconnected. removed.
+23:14:39:322:347 [/dev/ttyACM5] read error: [Errno 5] Input/output error
+23:14:39:560:254 [/dev/ttyACM5] disconnected. removed.
+23:14:46:793:473 [/dev/ttyACM3] opened.
+23:14:52:159:340 [/dev/ttyACM3] open error: [Errno 5] Input/output error
+23:14:59:019:478 [/dev/ttyACM3] opened.
+23:14:59:069:878 [/dev/ttyACM3] open error: [Errno 5] Input/output error
+23:15:06:245:289 [/dev/ttyACM3] opened.
+23:15:06:438:344 Stopping.
+23:15:06:438:829 [/dev/ttyACM0] read error: [Errno 9] Bad file descriptor
+23:15:06:473:730 [/dev/ttyACM1] read error: [Errno 9] Bad file descriptor
+23:15:06:508:018 [/dev/ttyACM2] read error: [Errno 9] Bad file descriptor

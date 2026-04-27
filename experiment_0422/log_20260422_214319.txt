@@ -1,0 +1,20 @@
+21:43:22:993:747 Monitoring new COM ports...
+21:44:01:556:495 [/dev/ttyACM0] opened.
+21:44:01:872:819 [/dev/ttyACM1] opened.
+21:44:03:738:041 [/dev/ttyACM2] opened.
+21:44:03:838:525 [/dev/ttyACM2] open error: [Errno 5] Input/output error
+21:44:04:082:930 [/dev/ttyACM1] open error: [Errno 5] Input/output error
+21:44:04:317:371 [/dev/ttyACM0] open error: [Errno 5] Input/output error
+21:44:06:217:126 [/dev/ttyACM0] opened.
+21:44:06:719:826 [/dev/ttyACM0] raw: '[ROLE=ANCHOR, ID=ANCHOR2, VERSION=4] \r\n\x00\t2\x01\x00\x00\x00\x00\x00\x00\x00'
+21:44:06:720:677 [/dev/ttyACM0] identified as ANCHOR2
+21:44:13:165:266 [/dev/ttyACM1] opened.
+21:44:13:616:649 [/dev/ttyACM1] raw: '[ROLE=ANCHOR, ID=ANCHOR1, VERSION=4] \r\n\x00\t2\x01\x00\x00\x00\x00\x00\x00\x00'
+21:44:13:616:767 [/dev/ttyACM1] identified as ANCHOR1
+21:44:16:814:371 [/dev/ttyACM2] opened.
+21:44:16:864:538 [/dev/ttyACM2] open error: [Errno 5] Input/output error
+21:44:20:421:087 [/dev/ttyACM2] open error: [Errno 2] could not open port /dev/ttyACM2: [Errno 2] No such file or directory: '/dev/ttyACM2'
+21:44:25:409:703 [/dev/ttyACM0] read error: [Errno 5] Input/output error
+21:44:25:679:404 [/dev/ttyACM0] disconnected. removed.
+21:44:27:579:557 Stopping.
+21:44:27:579:729 [/dev/ttyACM1] read error: [Errno 9] Bad file descriptor

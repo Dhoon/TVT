@@ -1,0 +1,11 @@
+21:50:04:925:824 Monitoring new COM ports...
+21:50:04:992:000 [/dev/ttyACM2] opened.
+21:50:04:992:296 [/dev/ttyACM3] opened.
+21:50:04:992:314 [/dev/ttyACM5] opened.
+21:50:04:992:422 [/dev/ttyACM0] opened.
+21:50:04:992:861 [/dev/ttyACM4] opened.
+21:50:06:147:096 [/dev/ttyACM0] open error: [Errno 5] Input/output error
+21:50:07:704:548 [/dev/ttyACM2] open error: [Errno 5] Input/output error
+21:50:08:709:402 [/dev/ttyACM3] open error: [Errno 5] Input/output error
+21:50:09:211:516 [/dev/ttyACM4] open error: [Errno 5] Input/output error
+21:50:09:965:280 [/dev/ttyACM5] open error: [Errno 5] Input/output error

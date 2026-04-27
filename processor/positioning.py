@@ -41,6 +41,10 @@ def estimate_tag_position(data):
         anchor_id = msg[1]
         t2, t5, t8, t11 = msg[4:8]
 
+        if t2 == 0 or t5 == 0 or t8 == 0:
+            log(f"{timestamp()} [WARNING] Zero timestamp detected, skipping anchor {anchor_id}")
+            continue
+
         UINT32 = 1 << 32
         Rt1 = (t5 - t2) % UINT32
         Rt2 = (t8 - t5) % UINT32
@@ -69,10 +73,17 @@ def estimate_tag_position(data):
             res.append(d_leaf - d_leaf_root - delta_d)
         return res
 
-    result = least_squares(residuals, x0=(0, 0))
-    est_x, est_y = result.x
-    if not result.success:
-        log(f"{timestamp()} [POSITION] Optimization failed: {result.message}")
+    angles = np.linspace(0, 2 * np.pi, 6, endpoint=False)
+    candidates = [
+        least_squares(residuals, x0=(
+            root_pos[0] + root_dist * np.cos(a),
+            root_pos[1] + root_dist * np.sin(a)
+        )) for a in angles
+    ]
+    result = min((r for r in candidates if r.success), key=lambda r: r.cost, default=None)
+    if result is None:
+        log(f"{timestamp()} [POSITION] Optimization failed for all initial guesses")
         return
+    est_x, est_y = result.x
     log(f"{timestamp()} [POSITION] Estimated tag position: ({est_x:.2f}, {est_y:.2f})")
     state.ui_queue.put({'type': 'position', 'x': est_x, 'y': est_y})

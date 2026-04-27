@@ -1,0 +1,23 @@
+22:54:18:509:135 Monitoring new COM ports...
+22:54:21:334:286 [/dev/ttyACM0] opened.
+22:54:21:635:848 [/dev/ttyACM0] raw: '[ROLE=ANCHOR, ID=ANCHOR6, VERSION=4] \r\n\x00\t2\x01\x00\x00\x00\x00\x00\x00\x00'
+22:54:21:636:315 [/dev/ttyACM0] identified as ANCHOR6
+22:54:23:516:982 [/dev/ttyACM1] opened.
+22:54:23:968:513 [/dev/ttyACM1] raw: '[ROLE=ANCHOR, ID=ANCHOR4, VERSION=4] \r\n\x00\t2\x01\x00\x00\x00\x00\x00\x00\x00'
+22:54:23:968:648 [/dev/ttyACM1] identified as ANCHOR4
+22:54:30:421:876 [/dev/ttyACM2] opened.
+22:54:30:522:225 [/dev/ttyACM2] open error: [Errno 5] Input/output error
+22:54:41:039:297 [/dev/ttyACM2] open error: [Errno 2] could not open port /dev/ttyACM2: [Errno 2] No such file or directory: '/dev/ttyACM2'
+22:54:46:312:846 [/dev/ttyACM2] opened.
+22:54:46:814:578 [/dev/ttyACM2] raw: '[ROLE=ANCHOR, ID=ANCHOR5, VERSION=4] \r\n\x00\t2\x01\x00\x00\x00\x00\x00\x00\x00'
+22:54:46:814:691 [/dev/ttyACM2] identified as ANCHOR5
+22:54:58:223:479 [/dev/ttyACM3] open error: [Errno 2] could not open port /dev/ttyACM3: [Errno 2] No such file or directory: '/dev/ttyACM3'
+22:55:14:839:214 [/dev/ttyACM2] read error: [Errno 5] Input/output error
+22:55:14:989:669 [/dev/ttyACM3] open error: [Errno 2] could not open port /dev/ttyACM3: [Errno 2] No such file or directory: '/dev/ttyACM3'
+22:55:14:989:705 [/dev/ttyACM2] disconnected. removed.
+22:55:15:313:453 [/dev/ttyACM3] disconnected. removed.
+22:55:15:594:546 [/dev/ttyACM0] read error: [Errno 5] Input/output error
+22:55:15:633:160 [/dev/ttyACM0] disconnected. removed.
+22:55:15:710:401 [/dev/ttyACM1] read error: [Errno 5] Input/output error
+22:55:15:937:832 [/dev/ttyACM1] disconnected. removed.
+22:55:17:787:840 Stopping.

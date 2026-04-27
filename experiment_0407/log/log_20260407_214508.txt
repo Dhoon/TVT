@@ -1,0 +1,11 @@
+21:45:10:945:980 Monitoring new COM ports...
+21:45:17:204:528 [/dev/ttyACM0] open error: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+21:45:17:509:719 [/dev/ttyACM0] open error: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+21:45:17:814:886 [/dev/ttyACM0] open error: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+21:45:22:390:789 [/dev/ttyACM0] disconnected. removed.
+21:45:23:610:821 [/dev/ttyACM0] open error: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+21:45:23:915:901 [/dev/ttyACM0] open error: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+21:45:24:221:117 [/dev/ttyACM0] open error: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+21:45:24:526:175 [/dev/ttyACM0] open error: [Errno 13] could not open port /dev/ttyACM0: [Errno 13] Permission denied: '/dev/ttyACM0'
+21:45:26:966:125 [/dev/ttyACM0] disconnected. removed.
+21:45:30:296:974 Stopping.

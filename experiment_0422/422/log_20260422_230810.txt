@@ -1,0 +1,49 @@
+23:08:18:020:700 Monitoring new COM ports...
+23:08:18:086:299 [/dev/ttyACM2] opened.
+23:08:18:086:497 [/dev/ttyACM4] opened.
+23:08:18:086:610 [/dev/ttyACM3] opened.
+23:08:18:086:680 [/dev/ttyACM0] opened.
+23:08:18:086:758 [/dev/ttyACM1] opened.
+23:08:19:343:078 [/dev/ttyACM0] raw: '[ROLE=ANCHOR, ID=ANCHOR1, VERSION=4] \r\n\x00\t2\x01\x00\x00\x00\x00\x00\x00\x00'
+23:08:19:343:551 [/dev/ttyACM0] identified as ANCHOR1
+23:08:19:343:636 [/dev/ttyACM4] raw: '[ROLE=ANCHOR, ID=ANCHOR2, VERSION=4] \r\n\x00\t2\x01\x00\x00\x00\x00\x00\x00\x00'
+23:08:19:343:960 [/dev/ttyACM4] identified as ANCHOR2
+23:08:20:395:823 [/dev/ttyACM1] open error: [Errno 5] Input/output error
+23:08:20:512:064 [/dev/ttyACM4] read error: [Errno 5] Input/output error
+23:08:20:605:065 [/dev/ttyACM4] disconnected. removed.
+23:08:21:148:198 [/dev/ttyACM3] open error: [Errno 5] Input/output error
+23:08:21:698:876 [/dev/ttyACM2] open error: [Errno 5] Input/output error
+23:08:21:931:345 [/dev/ttyACM0] read error: [Errno 5] Input/output error
+23:08:22:166:481 [/dev/ttyACM0] disconnected. removed.
+23:08:24:300:480 [/dev/ttyACM0] opened.
+23:08:24:602:338 [/dev/ttyACM0] raw: '[ROLE=ANCHOR, ID=ANCHOR2, VERSION=4] \r\n\x00\t2\x01\x00\x00\x00\x00\x00\x00\x00'
+23:08:24:602:441 [/dev/ttyACM0] identified as ANCHOR2
+23:08:26:484:002 [/dev/ttyACM1] opened.
+23:08:26:985:765 [/dev/ttyACM1] raw: '[ROLE=ANCHOR, ID=ANCHOR4, VERSION=4] \r\n\x00\t2\x01\x00\x00\x00\x00\x00\x00\x00'
+23:08:26:985:893 [/dev/ttyACM1] identified as ANCHOR4
+23:08:30:086:624 [/dev/ttyACM2] opened.
+23:08:30:136:899 [/dev/ttyACM2] open error: [Errno 5] Input/output error
+23:08:35:655:423 [/dev/ttyACM2] opened.
+23:08:35:755:728 [/dev/ttyACM2] open error: [Errno 5] Input/output error
+23:08:41:962:231 [/dev/ttyACM2] opened.
+23:08:42:213:160 [/dev/ttyACM2] raw: '[ROLE=ANCHOR, ID=ANCHOR3, VERSION=4] \r\n\x00\t2\x01\x00\x00\x00\x00\x00\x00\x00'
+23:08:42:213:234 [/dev/ttyACM2] identified as ANCHOR3
+23:08:42:656:774 [/dev/ttyACM2] read error: [Errno 5] Input/output error
+23:08:42:989:306 [/dev/ttyACM2] disconnected. removed.
+23:08:43:637:615 [/dev/ttyACM2] opened.
+23:08:44:189:675 [/dev/ttyACM2] raw: '[ROLE=ANCHOR, ID=ANCHOR3, VERSION=4] \r\n\x00\t2\x01\x00\x00\x00\x00\x00\x00\x00'
+23:08:44:189:769 [/dev/ttyACM2] identified as ANCHOR3
+23:08:45:345:709 [/dev/ttyACM3] opened.
+23:08:45:897:214 [/dev/ttyACM3] raw: '[ROLE=ANCHOR, ID=ANCHOR6, VERSION=4] \r\n\x00\t2\x01\x00\x00\x00\x00\x00\x00\x00'
+23:08:45:897:344 [/dev/ttyACM3] identified as ANCHOR6
+23:08:47:220:818 [/dev/ttyACM4] opened.
+23:08:47:622:542 [/dev/ttyACM4] raw: '[ROLE=ANCHOR, ID=ANCHOR1, VERSION=4] \r\n\x00\t2\x01\x00\x00\x00\x00\x00\x00\x00'
+23:08:47:622:833 [/dev/ttyACM4] identified as ANCHOR1
+23:10:21:730:764 [/dev/ttyACM0] read error: [Errno 5] Input/output error
+23:10:21:996:785 [/dev/ttyACM0] disconnected. removed.
+23:10:27:361:372 [/dev/ttyACM4] read error: [Errno 5] Input/output error
+23:10:27:481:226 [/dev/ttyACM4] disconnected. removed.
+23:10:30:766:108 Stopping.
+23:10:30:766:411 [/dev/ttyACM1] read error: [Errno 9] Bad file descriptor
+23:10:30:801:887 [/dev/ttyACM2] read error: [Errno 9] Bad file descriptor
+23:10:30:836:175 [/dev/ttyACM3] read error: [Errno 9] Bad file descriptor

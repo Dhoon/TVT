@@ -1,0 +1,38 @@
+16:36:20:130:078 Monitoring new COM ports...
+16:36:22:641:913 [/dev/ttyACM0] opened.
+16:36:23:193:871 [/dev/ttyACM0] raw: '[ROLE=ANCHOR, ID=ANCHOR5, VERSION=4] \r\n\x00\t2\x01\x00\x00\x00\x00\x00\x00\x00'
+16:36:23:194:286 [/dev/ttyACM0] identified as ANCHOR5
+16:36:30:167:628 [/dev/ttyACM1] opened.
+16:36:30:719:349 [/dev/ttyACM1] raw: '[ROLE=ANCHOR, ID=ANCHOR4, VE'
+16:36:30:719:479 [/dev/ttyACM1] identified as ANCHOR4
+16:36:41:805:495 [/dev/ttyACM2] opened.
+16:36:50:155:944 [/dev/ttyACM3] opened.
+16:36:50:509:439 [/dev/ttyACM4] opened.
+16:36:51:870:296 [/dev/ttyACM2] no role message. closing.
+16:36:56:210:034 [/dev/ttyACM5] opened.
+16:36:56:611:370 [/dev/ttyACM5] raw: '[ROLE=ANCHOR, ID=ANCHOR1, '
+16:36:56:611:456 [/dev/ttyACM5] identified as ANCHOR1
+16:37:00:221:525 [/dev/ttyACM3] no role message. closing.
+16:37:00:573:110 [/dev/ttyACM4] no role message. closing.
+16:37:27:508:689 [/dev/ttyACM4] disconnected. removed.
+16:37:35:320:521 [/dev/ttyACM3] disconnected. removed.
+16:37:35:321:097 [/dev/ttyACM4] opened.
+16:37:37:098:653 [/dev/ttyACM3] opened.
+16:37:37:701:110 [/dev/ttyACM3] raw: '[ROLE=ANCHOR, ID=ANCHOR3, VERSION=4] \r\n\x00\t2\x01\x00\x00\x00\x00\x00\x00\x00'
+16:37:37:701:245 [/dev/ttyACM3] identified as ANCHOR3
+16:37:40:285:737 [/dev/ttyACM4] open error: [Errno 5] Input/output error
+16:37:42:854:721 [/dev/ttyACM4] opened.
+16:37:43:257:424 [/dev/ttyACM4] raw: '[ROLE=ANCHOR, ID=ANCHOR2, VERSION=4] \r\n\x00\t2\x01\x00\x00\x00\x00\x00\x00\x00'
+16:37:43:257:552 [/dev/ttyACM4] identified as ANCHOR2
+16:37:47:664:649 [/dev/ttyACM0] read error: [Errno 5] Input/output error
+16:37:47:799:455 [/dev/ttyACM5] read error: [Errno 5] Input/output error
+16:37:47:849:791 [/dev/ttyACM0] disconnected. removed.
+16:37:47:934:352 [/dev/ttyACM1] read error: [Errno 5] Input/output error
+16:37:48:231:788 [/dev/ttyACM1] disconnected. removed.
+16:37:48:231:884 [/dev/ttyACM5] disconnected. removed.
+16:37:48:790:667 [/dev/ttyACM3] read error: [Errno 5] Input/output error
+16:37:48:872:469 [/dev/ttyACM2] disconnected. removed.
+16:37:48:872:563 [/dev/ttyACM3] disconnected. removed.
+16:37:48:905:887 [/dev/ttyACM4] read error: [Errno 5] Input/output error
+16:37:49:177:996 [/dev/ttyACM4] disconnected. removed.
+16:37:50:091:092 Stopping.

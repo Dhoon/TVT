@@ -1,0 +1,27 @@
+23:12:37:485:494 Monitoring new COM ports...
+23:12:37:553:292 [/dev/ttyACM3] opened.
+23:12:37:553:329 [/dev/ttyACM0] opened.
+23:12:37:553:383 [/dev/ttyACM4] opened.
+23:12:37:553:436 [/dev/ttyACM1] opened.
+23:12:37:553:573 [/dev/ttyACM2] opened.
+23:12:42:127:214 [/dev/ttyACM0] open error: [Errno 5] Input/output error
+23:12:42:629:187 [/dev/ttyACM1] open error: [Errno 5] Input/output error
+23:12:43:633:250 [/dev/ttyACM2] open error: [Errno 5] Input/output error
+23:12:43:783:307 [/dev/ttyACM3] open error: [Errno 5] Input/output error
+23:12:44:134:899 [/dev/ttyACM4] open error: [Errno 5] Input/output error
+23:12:46:125:289 [/dev/ttyACM0] opened.
+23:12:46:627:614 [/dev/ttyACM0] raw: '[ROLE=ANCHOR, ID=ANCHOR4, VERSION=4] \r\n\x00\t2\x01\x00\x00\x00\x00\x00\x00\x00'
+23:12:46:627:951 [/dev/ttyACM0] identified as ANCHOR4
+23:12:56:087:785 [/dev/ttyACM1] opened.
+23:13:04:510:639 [/dev/ttyACM2] opened.
+23:13:05:113:440 [/dev/ttyACM2] raw: '[ROLE=ANCHOR, ID=ANCHOR6, VERSION=4] \r\n\x00\t2\x01\x00\x00\x00\x00\x00\x00\x00'
+23:13:05:113:558 [/dev/ttyACM2] identified as ANCHOR6
+23:13:06:151:605 [/dev/ttyACM1] no role message. closing.
+23:13:09:745:222 [/dev/ttyACM0] read error: [Errno 5] Input/output error
+23:13:09:792:132 [/dev/ttyACM0] disconnected. removed.
+23:13:09:878:171 [/dev/ttyACM2] read error: [Errno 5] Input/output error
+23:13:10:098:672 [/dev/ttyACM2] disconnected. removed.
+23:13:10:404:553 [/dev/ttyACM1] disconnected. removed.
+23:13:14:065:792 [/dev/ttyACM0] opened.
+23:13:14:116:093 [/dev/ttyACM0] open error: [Errno 5] Input/output error
+23:13:16:807:142 Stopping.

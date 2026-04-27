@@ -1,0 +1,12 @@
+16:35:43:188:063 Monitoring new COM ports...
+16:35:54:528:731 [/dev/ttyACM0] opened.
+16:35:55:031:255 [/dev/ttyACM0] raw: '[ROLE=ANCHOR, ID=ANCHOR5, VERSION=4] \r\n\x00\t2\x01\x00\x00\x00\x00\x00\x00\x00'
+16:35:55:031:587 [/dev/ttyACM0] identified as ANCHOR5
+16:36:05:729:479 [/dev/ttyACM1] opened.
+16:36:06:180:854 [/dev/ttyACM1] raw: '[ROLE=ANCHOR, ID=ANCHOR6, VERSION=4] \r\n\x00\t2\x01\x00\x00\x00\x00\x00\x00\x00'
+16:36:06:180:969 [/dev/ttyACM1] identified as ANCHOR6
+16:36:07:673:164 [/dev/ttyACM2] opened.
+16:36:09:340:239 [/dev/ttyACM1] read error: [Errno 5] Input/output error
+16:36:09:345:959 [/dev/ttyACM0] read error: [Errno 5] Input/output error
+16:36:09:478:985 [/dev/ttyACM2] open error: [Errno 5] Input/output error
+16:36:16:051:648 Stopping.

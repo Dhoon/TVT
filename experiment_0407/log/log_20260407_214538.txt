@@ -1,0 +1,16 @@
+21:45:42:281:682 Monitoring new COM ports...
+21:45:45:100:890 [/dev/ttyACM0] opened.
+21:45:45:653:173 [/dev/ttyACM0] raw: '[ROLE=ANCHOR, ID=ANCHOR6, VERSION=4] \r\n\x00\t2\x01\x00\x00\x00\x00\x00\x00\x00'
+21:45:45:653:455 [/dev/ttyACM0] identified as ANCHOR6
+21:45:55:063:646 [/dev/ttyACM1] opened.
+21:45:55:715:772 [/dev/ttyACM1] raw: '[ROLE=ANCHOR, ID=ANCHOR2, VERSION=4] \r\n\x00\t2\x01\x00\x00\x00\x00\x00\x00\x00'
+21:45:55:715:880 [/dev/ttyACM1] identified as ANCHOR2
+21:45:58:295:902 [/dev/ttyACM2] opened.
+21:45:58:847:807 [/dev/ttyACM2] raw: '[ROLE=ANCHOR, ID=ANCHOR5, VERSION=4] \r\n\x00\t2\x01\x00\x00\x00\x00\x00\x00\x00'
+21:45:58:847:888 [/dev/ttyACM2] identified as ANCHOR5
+21:46:06:941:267 [/dev/ttyACM3] opened.
+21:46:17:009:307 [/dev/ttyACM3] no role message. closing.
+21:46:23:636:866 [/dev/ttyACM4] opened.
+21:46:23:688:060 [/dev/ttyACM4] raw: '\x00'
+21:46:27:049:947 [/dev/ttyACM4] open error: [Errno 5] Input/output error
+21:46:31:882:507 [/dev/ttyACM4] open error: [Errno 2] could not open port /dev/ttyACM4: [Errno 2] No such file or directory: '/dev/ttyACM4'

@@ -1,0 +1,14 @@
+21:46:48:297:630 Monitoring new COM ports...
+21:46:50:802:439 [/dev/ttyACM3] opened.
+21:46:51:305:034 [/dev/ttyACM3] raw: '[ROLE=ANCHOR, ID=ANCHOR6, VERSION=4] \r\n\x00\t2\x01\x00\x00\x00\x00\x00\x00\x00'
+21:46:51:305:314 [/dev/ttyACM3] identified as ANCHOR6
+21:46:55:503:343 [/dev/ttyACM4] opened.
+21:46:55:704:048 [/dev/ttyACM4] open error: [Errno 5] Input/output error
+21:46:57:399:399 [/dev/ttyACM4] opened.
+21:46:57:449:690 [/dev/ttyACM4] raw: '\x00'
+21:46:59:004:105 [/dev/ttyACM4] open error: [Errno 5] Input/output error
+21:47:09:545:525 [/dev/ttyACM4] opened.
+21:47:09:595:847 [/dev/ttyACM4] raw: '\x00'
+21:47:12:352:710 [/dev/ttyACM4] open error: [Errno 5] Input/output error
+21:47:19:266:443 Stopping.
+21:47:19:266:590 [/dev/ttyACM3] read error: [Errno 9] Bad file descriptor

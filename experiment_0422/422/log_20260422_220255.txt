@@ -1,0 +1,630 @@
+22:02:56:544:287 Monitoring new COM ports...
+22:03:00:028:684 [/dev/ttyACM0] opened.
+22:03:00:682:501 [/dev/ttyACM0] raw: '[ROLE=ANCHOR, ID=ANCHOR2, VERSION=4] \r\n\x00\t2\x01\x00\x00\x00\x00\x00\x00\x00'
+22:03:00:683:134 [/dev/ttyACM0] identified as ANCHOR2
+22:03:06:572:102 [/dev/ttyACM1] open error: [Errno 2] could not open port /dev/ttyACM1: [Errno 2] No such file or directory: '/dev/ttyACM1'
+22:03:14:665:254 [/dev/ttyACM1] opened.
+22:03:18:575:055 [/dev/ttyACM1] raw: '\x00'
+22:03:19:928:421 [/dev/ttyACM1] raw: '[ROLE=ANCHOR, ID=ANCHOR4, VERSION=4] \r\n\x00\t2\x01\x00\x00\x00\x00\x00\x00\x00'
+22:03:19:928:534 [/dev/ttyACM1] identified as ANCHOR4
+22:03:29:526:949 [/dev/ttyACM2] opened.
+22:03:32:184:948 [/dev/ttyACM2] open error: [Errno 5] Input/output error
+22:03:33:529:048 [/dev/ttyACM2] opened.
+22:03:34:081:421 [/dev/ttyACM2] raw: '[ROLE=ANCHOR, ID=ANCHOR3, VERSION=4] \r\n\x00\t2\x01\x00\x00\x00\x00\x00\x00\x00'
+22:03:34:081:506 [/dev/ttyACM2] identified as ANCHOR3
+22:03:43:159:390 [/dev/ttyACM3] opened.
+22:03:43:210:623 [/dev/ttyACM3] open error: [Errno 5] Input/output error
+22:03:48:465:956 [/dev/ttyACM3] opened.
+22:03:48:917:733 [/dev/ttyACM3] raw: '[ROLE=ANCHOR, ID=ANCHOR6, VERSION=4] \r\n\x00\t2\x01\x00\x00\x00\x00\x00\x00\x00'
+22:03:48:917:842 [/dev/ttyACM3] identified as ANCHOR6
+22:03:56:299:771 [/dev/ttyACM4] opened.
+22:03:56:801:652 [/dev/ttyACM4] raw: '[ROLE=ANCHOR, ID=ANCHOR1, VERSION=4] \r\n\x00\t2\x01\x00\x00\x00\x00\x00\x00\x00'
+22:03:56:801:764 [/dev/ttyACM4] identified as ANCHOR1
+22:03:58:280:543 [/dev/ttyACM4] read error: [Errno 5] Input/output error
+22:03:58:622:055 [/dev/ttyACM4] disconnected. removed.
+22:03:59:834:905 [/dev/ttyACM4] opened.
+22:04:00:136:245 [/dev/ttyACM4] raw: '[ROLE=ANCHOR, ID=ANCHOR1, VERSION=4] \r\n\x00\t2\x01\x00\x00\x00\x00\x00\x00\x00'
+22:04:00:136:319 [/dev/ttyACM4] identified as ANCHOR1
+22:04:07:281:641 [/dev/ttyACM5] opened.
+22:04:07:532:653 [/dev/ttyACM5] open error: [Errno 5] Input/output error
+22:04:09:101:701 [/dev/ttyACM5] opened.
+22:04:09:405:560 [/dev/ttyACM5] raw: '[ROLE=ANCHOR, ID=ANCHO'
+22:04:09:405:884 [/dev/ttyACM5] identified as ANCHO
+22:04:32:829:085 [ADV] From Anchor 3, Tag 257, Seq=0, Power=11, CIR=[34, 69, 70, 79, 150, 77, 40, 48, 84, 19, 6, 8, 27, 29, 36, 33, 68, 32, 28, 183, 723, 2162, 3257, 2397, 293, 1131, 629, 383, 552, 107, 249, 261]
+22:04:32:829:633 [ADV] From Anchor 2, Tag 257, Seq=0, Power=11, CIR=[26, 22, 63, 138, 57, 38, 40, 24, 25, 40, 90, 48, 61, 19, 38, 84, 77, 30, 55, 117, 567, 1811, 3001, 2843, 1377, 274, 298, 481, 342, 665, 520, 342]
+22:04:32:829:743 [ADV] From Anchor 1, Tag 257, Seq=0, Power=13, CIR=[70, 107, 100, 72, 9, 101, 110, 20, 65, 26, 65, 73, 79, 56, 77, 83, 92, 97, 45, 187, 901, 2470, 3473, 2460, 164, 1512, 971, 128, 137, 231, 243, 292]
+22:04:32:930:087 [ROOT SELECTED] Anchor 1 for Tag 257 Seq 0 (ADV Timeout or Full)
+22:04:32:930:934 [TX] Sent root ID 1 to /dev/ttyACM0
+22:04:32:931:459 [TX] Sent root ID 1 to /dev/ttyACM1
+22:04:32:931:951 [TX] Sent root ID 1 to /dev/ttyACM2
+22:04:32:932:527 [TX] Sent root ID 1 to /dev/ttyACM3
+22:04:32:932:838 [TX] Sent root ID 1 to /dev/ttyACM4
+22:04:32:933:366 [TX] Sent root ID 1 to /dev/ttyACM5
+22:04:32:957:715 [ERROR] [/dev/ttyACM4] Anchor 1 timeout, Tag 257, Seq=0, State=13. Clearing buffers.
+22:04:32:959:047 [TX] Sent reset [0] to /dev/ttyACM0
+22:04:32:959:669 [TX] Sent reset [0] to /dev/ttyACM1
+22:04:32:960:448 [TX] Sent reset [0] to /dev/ttyACM2
+22:04:32:961:403 [TX] Sent reset [0] to /dev/ttyACM3
+22:04:32:961:712 [TX] Sent reset [0] to /dev/ttyACM4
+22:04:32:962:577 [TX] Sent reset [0] to /dev/ttyACM5
+22:06:16:448:141 [ADV] From Anchor 4, Tag 257, Seq=0, Power=7, CIR=[57, 26, 54, 27, 23, 76, 105, 125, 67, 51, 31, 73, 73, 39, 31, 20, 3, 10, 98, 105, 591, 1608, 2484, 2227, 1311, 798, 520, 303, 80, 112, 176, 52]
+22:06:16:448:536 [ADV] From Anchor 3, Tag 257, Seq=0, Power=9, CIR=[69, 55, 61, 32, 43, 77, 73, 83, 31, 69, 39, 104, 57, 61, 29, 75, 48, 39, 12, 253, 1142, 2394, 2799, 1597, 1020, 1062, 318, 486, 411, 91, 148, 161]
+22:06:16:449:345 [ADV] From Anchor 1, Tag 257, Seq=0, Power=15, CIR=[9, 115, 75, 76, 31, 31, 120, 108, 73, 50, 80, 25, 48, 19, 15, 36, 64, 25, 47, 222, 1129, 2817, 3743, 2392, 346, 1346, 596, 283, 340, 69, 409, 506]
+22:06:16:548:559 [ROOT SELECTED] Anchor 2 for Tag 257 Seq 0 (ADV Timeout or Full)
+22:06:16:549:455 [TX] Sent root ID 2 to /dev/ttyACM0
+22:06:16:550:008 [TX] Sent root ID 2 to /dev/ttyACM1
+22:06:16:550:525 [TX] Sent root ID 2 to /dev/ttyACM2
+22:06:16:550:836 [TX] Sent root ID 2 to /dev/ttyACM3
+22:06:16:551:742 [TX] Sent root ID 2 to /dev/ttyACM4
+22:06:16:551:953 [TX] Sent root ID 2 to /dev/ttyACM5
+22:06:17:727:161 [ADV] From Anchor 4, Tag 257, Seq=1, Power=25, CIR=[96, 72, 45, 59, 74, 74, 17, 31, 102, 54, 65, 9, 16, 16, 6, 87, 50, 32, 47, 402, 1728, 3778, 4637, 3280, 948, 1044, 1016, 459, 269, 294, 333, 125]
+22:06:17:727:601 [ADV] From Anchor 3, Tag 257, Seq=1, Power=20, CIR=[24, 45, 38, 55, 48, 42, 36, 18, 5, 30, 35, 14, 32, 89, 87, 68, 60, 24, 67, 678, 2204, 3761, 3627, 2350, 1819, 1058, 513, 521, 252, 333, 274, 180]
+22:06:17:728:325 [ADV] From Anchor 1, Tag 257, Seq=1, Power=35, CIR=[74, 77, 33, 93, 80, 51, 79, 112, 24, 32, 18, 44, 26, 52, 81, 137, 68, 35, 40, 464, 2082, 4613, 5291, 2822, 1223, 2593, 1074, 588, 628, 411, 467, 186]
+22:06:17:827:764 [ROOT SELECTED] Anchor 3 for Tag 257 Seq 1 (ADV Timeout or Full)
+22:06:17:829:100 [TX] Sent root ID 3 to /dev/ttyACM0
+22:06:17:829:730 [TX] Sent root ID 3 to /dev/ttyACM1
+22:06:17:830:223 [TX] Sent root ID 3 to /dev/ttyACM2
+22:06:17:830:811 [TX] Sent root ID 3 to /dev/ttyACM3
+22:06:17:831:309 [TX] Sent root ID 3 to /dev/ttyACM4
+22:06:17:831:468 [TX] Sent root ID 3 to /dev/ttyACM5
+22:06:17:857:564 [Leaf] Type 24, Anchor 5, Tag 257, Seq=1, message = [4267751428, 0, 84643769, 0]
+22:06:17:857:909 [Leaf] Type 24, Anchor 6, Tag 257, Seq=1, message = [2217513807, 0, 2329373451, 0]
+22:06:17:859:904 [Leaf] Type 24, Anchor 4, Tag 257, Seq=1, message = [2401629334, 2453100444, 2514216006, 2575338218]
+22:06:17:860:079 [Leaf] Type 24, Anchor 1, Tag 257, Seq=1, message = [1042714943, 1093854526, 1154574553, 1215298659]
+22:06:17:865:849 [DS-TWR] Type 23, Anchor 3, Tag 257, Seq=1, lat = 0, lon = 0, message = [51140291, 60719421, 60724656, 51134679, 60719184]
+22:06:17:958:294 [TOF] Root TOF: 2719.83 DTU, Distance: 12.76 m
+22:06:17:969:620 [POSITION] Estimated tag position: (-0.57, -0.30)
+22:06:18:168:561 [ADV] From Anchor 3, Tag 257, Seq=2, Power=21, CIR=[25, 4, 36, 28, 59, 43, 6, 32, 89, 22, 57, 63, 17, 68, 77, 50, 44, 56, 47, 450, 1767, 3716, 4324, 2614, 42, 1031, 423, 338, 418, 116, 319, 447]
+22:06:18:168:779 [ADV] From Anchor 4, Tag 257, Seq=2, Power=21, CIR=[66, 36, 4, 32, 41, 48, 26, 81, 68, 45, 10, 40, 57, 27, 68, 15, 99, 106, 80, 340, 1391, 3138, 4106, 3536, 1969, 737, 520, 559, 191, 297, 352, 223]
+22:06:18:169:811 [ADV] From Anchor 1, Tag 257, Seq=2, Power=58, CIR=[59, 18, 76, 11, 55, 78, 73, 107, 73, 68, 29, 65, 82, 53, 41, 41, 55, 63, 34, 447, 2294, 5477, 6475, 5304, 1428, 2905, 1947, 277, 1013, 780, 472, 161]
+22:06:18:269:435 [ROOT SELECTED] Anchor 4 for Tag 257 Seq 2 (ADV Timeout or Full)
+22:06:18:270:117 [TX] Sent root ID 4 to /dev/ttyACM0
+22:06:18:270:563 [TX] Sent root ID 4 to /dev/ttyACM1
+22:06:18:271:043 [TX] Sent root ID 4 to /dev/ttyACM2
+22:06:18:271:463 [TX] Sent root ID 4 to /dev/ttyACM3
+22:06:18:272:070 [TX] Sent root ID 4 to /dev/ttyACM4
+22:06:18:272:465 [TX] Sent root ID 4 to /dev/ttyACM5
+22:06:18:294:342 [ERROR] [/dev/ttyACM1] Anchor 4 timeout, Tag 257, Seq=2, State=13. Clearing buffers.
+22:06:18:294:892 [TX] Sent reset [0] to /dev/ttyACM0
+22:06:18:296:038 [TX] Sent reset [0] to /dev/ttyACM1
+22:06:18:296:566 [TX] Sent reset [0] to /dev/ttyACM2
+22:06:18:296:817 [TX] Sent reset [0] to /dev/ttyACM3
+22:06:18:297:485 [TX] Sent reset [0] to /dev/ttyACM4
+22:06:18:298:056 [TX] Sent reset [0] to /dev/ttyACM5
+22:06:18:310:666 [ADV] From Anchor 1, Tag 257, Seq=2, Power=58, CIR=[2, 0, 685, 0, 1, 65535, 0, 256, 2, 0, 685, 0, 1, 65535, 0, 256, 2, 0, 685, 0, 1, 65535, 0, 256, 2, 0, 685, 0, 1, 65535, 0, 256]
+22:06:18:411:325 [ROOT SELECTED] Anchor 5 for Tag 257 Seq 2 (ADV Timeout or Full)
+22:06:18:412:098 [TX] Sent root ID 5 to /dev/ttyACM0
+22:06:18:412:418 [TX] Sent root ID 5 to /dev/ttyACM1
+22:06:18:413:069 [TX] Sent root ID 5 to /dev/ttyACM2
+22:06:18:413:606 [TX] Sent root ID 5 to /dev/ttyACM3
+22:06:18:413:881 [TX] Sent root ID 5 to /dev/ttyACM4
+22:06:18:414:323 [TX] Sent root ID 5 to /dev/ttyACM5
+22:06:18:438:199 [ERROR] [/dev/ttyACM5] Anchor 5 timeout, Tag 257, Seq=1, State=13. Clearing buffers.
+22:06:18:438:958 [TX] Sent reset [0] to /dev/ttyACM0
+22:06:18:439:820 [TX] Sent reset [0] to /dev/ttyACM1
+22:06:18:440:352 [TX] Sent reset [0] to /dev/ttyACM2
+22:06:18:441:137 [TX] Sent reset [0] to /dev/ttyACM3
+22:06:18:442:180 [TX] Sent reset [0] to /dev/ttyACM4
+22:06:18:442:564 [TX] Sent reset [0] to /dev/ttyACM5
+22:06:18:455:771 [ADV] From Anchor 1, Tag 257, Seq=2, Power=58, CIR=[2, 0, 685, 0, 1, 65535, 0, 256, 2, 0, 685, 0, 1, 65535, 0, 256, 2, 0, 685, 0, 1, 65535, 0, 256, 2, 0, 685, 0, 1, 65535, 0, 256]
+22:06:18:556:458 [ROOT SELECTED] Anchor 6 for Tag 257 Seq 2 (ADV Timeout or Full)
+22:06:18:557:171 [TX] Sent root ID 6 to /dev/ttyACM0
+22:06:18:557:600 [TX] Sent root ID 6 to /dev/ttyACM1
+22:06:18:558:516 [TX] Sent root ID 6 to /dev/ttyACM2
+22:06:18:559:027 [TX] Sent root ID 6 to /dev/ttyACM3
+22:06:18:559:375 [TX] Sent root ID 6 to /dev/ttyACM4
+22:06:18:559:871 [TX] Sent root ID 6 to /dev/ttyACM5
+22:06:18:585:579 [ERROR] [/dev/ttyACM3] Anchor 6 timeout, Tag 257, Seq=1, State=13. Clearing buffers.
+22:06:18:586:544 [TX] Sent reset [0] to /dev/ttyACM0
+22:06:18:587:458 [TX] Sent reset [0] to /dev/ttyACM1
+22:06:18:588:368 [TX] Sent reset [0] to /dev/ttyACM2
+22:06:18:588:908 [TX] Sent reset [0] to /dev/ttyACM3
+22:06:18:591:396 [TX] Sent reset [0] to /dev/ttyACM4
+22:06:18:592:017 [TX] Sent reset [0] to /dev/ttyACM5
+22:06:19:887:795 [ADV] From Anchor 1, Tag 257, Seq=4, Power=44, CIR=[90, 59, 58, 19, 76, 70, 24, 37, 45, 92, 43, 24, 29, 79, 65, 172, 181, 61, 69, 211, 1155, 3730, 6128, 5640, 1781, 2078, 2413, 510, 820, 585, 130, 271]
+22:06:19:988:658 [ROOT SELECTED] Anchor 1 for Tag 257 Seq 4 (ADV Timeout or Full)
+22:06:19:989:361 [TX] Sent root ID 1 to /dev/ttyACM0
+22:06:19:989:738 [TX] Sent root ID 1 to /dev/ttyACM1
+22:06:19:990:152 [TX] Sent root ID 1 to /dev/ttyACM2
+22:06:19:990:591 [TX] Sent root ID 1 to /dev/ttyACM3
+22:06:19:990:865 [TX] Sent root ID 1 to /dev/ttyACM4
+22:06:19:991:144 [TX] Sent root ID 1 to /dev/ttyACM5
+22:06:20:019:683 [Leaf] Type 24, Anchor 6, Tag 257, Seq=4, message = [2866929558, 0, 2978788288, 0]
+22:06:20:020:771 [Leaf] Type 24, Anchor 4, Tag 257, Seq=4, message = [3306309126, 3357766118, 3418869938, 3479981725]
+22:06:20:027:056 [DS-TWR] Type 23, Anchor 1, Tag 257, Seq=4, lat = 0, lon = 0, message = [51139351, 60719337, 60723938, 51134468, 60719390]
+22:06:20:120:659 [TOF] Root TOF: 2377.04 DTU, Distance: 11.15 m
+22:06:20:127:025 [POSITION] Estimated tag position: (0.57, -0.30)
+22:06:20:329:688 [ADV] From Anchor 4, Tag 257, Seq=5, Power=28, CIR=[21, 8, 87, 74, 43, 10, 33, 61, 52, 83, 84, 53, 28, 22, 58, 121, 65, 74, 88, 382, 1650, 3848, 4920, 3702, 903, 1052, 780, 189, 277, 107, 290, 201]
+22:06:20:330:811 [ADV] From Anchor 1, Tag 257, Seq=5, Power=59, CIR=[56, 13, 20, 40, 33, 65, 128, 118, 69, 107, 67, 54, 51, 40, 101, 60, 10, 31, 52, 423, 2283, 5586, 6387, 4743, 1060, 3845, 2252, 266, 882, 370, 731, 715]
+22:06:20:430:800 [ROOT SELECTED] Anchor 2 for Tag 257 Seq 5 (ADV Timeout or Full)
+22:06:20:431:491 [TX] Sent root ID 2 to /dev/ttyACM0
+22:06:20:432:013 [TX] Sent root ID 2 to /dev/ttyACM1
+22:06:20:432:738 [TX] Sent root ID 2 to /dev/ttyACM2
+22:06:20:433:425 [TX] Sent root ID 2 to /dev/ttyACM3
+22:06:20:434:122 [TX] Sent root ID 2 to /dev/ttyACM4
+22:06:20:435:064 [TX] Sent root ID 2 to /dev/ttyACM5
+22:06:21:608:964 [ADV] From Anchor 4, Tag 257, Seq=6, Power=14, CIR=[34, 30, 24, 63, 158, 67, 30, 75, 111, 27, 56, 74, 19, 75, 93, 62, 42, 26, 125, 527, 1697, 3221, 3624, 2149, 216, 658, 436, 333, 122, 200, 283, 148]
+22:06:21:609:307 [ADV] From Anchor 1, Tag 257, Seq=6, Power=57, CIR=[67, 55, 54, 36, 30, 59, 44, 110, 88, 51, 10, 31, 55, 55, 19, 36, 36, 97, 86, 289, 1855, 5097, 6567, 5298, 983, 3410, 2568, 129, 935, 446, 618, 605]
+22:06:21:709:524 [ROOT SELECTED] Anchor 3 for Tag 257 Seq 6 (ADV Timeout or Full)
+22:06:21:710:194 [TX] Sent root ID 3 to /dev/ttyACM0
+22:06:21:710:574 [TX] Sent root ID 3 to /dev/ttyACM1
+22:06:21:712:092 [TX] Sent root ID 3 to /dev/ttyACM2
+22:06:21:712:461 [TX] Sent root ID 3 to /dev/ttyACM3
+22:06:21:712:885 [TX] Sent root ID 3 to /dev/ttyACM4
+22:06:21:713:202 [TX] Sent root ID 3 to /dev/ttyACM5
+22:06:22:887:546 [ADV] From Anchor 4, Tag 257, Seq=7, Power=11, CIR=[53, 121, 123, 73, 62, 10, 40, 29, 44, 24, 22, 41, 36, 49, 32, 56, 36, 71, 21, 228, 1200, 2679, 3346, 2277, 424, 726, 548, 219, 182, 197, 384, 335]
+22:06:22:888:395 [ADV] From Anchor 1, Tag 257, Seq=7, Power=53, CIR=[117, 34, 48, 66, 52, 50, 41, 5, 42, 95, 58, 35, 84, 113, 83, 86, 114, 74, 27, 241, 1364, 4336, 6494, 6009, 1977, 2389, 2907, 763, 738, 444, 413, 591]
+22:06:22:988:358 [ROOT SELECTED] Anchor 4 for Tag 257 Seq 7 (ADV Timeout or Full)
+22:06:22:989:229 [TX] Sent root ID 4 to /dev/ttyACM0
+22:06:22:990:005 [TX] Sent root ID 4 to /dev/ttyACM1
+22:06:22:990:415 [TX] Sent root ID 4 to /dev/ttyACM2
+22:06:22:990:895 [TX] Sent root ID 4 to /dev/ttyACM3
+22:06:22:991:193 [TX] Sent root ID 4 to /dev/ttyACM4
+22:06:22:991:597 [TX] Sent root ID 4 to /dev/ttyACM5
+22:06:23:013:553 [ERROR] [/dev/ttyACM1] Anchor 4 timeout, Tag 257, Seq=7, State=13. Clearing buffers.
+22:06:23:013:980 [TX] Sent reset [0] to /dev/ttyACM0
+22:06:23:014:452 [TX] Sent reset [0] to /dev/ttyACM1
+22:06:23:014:987 [TX] Sent reset [0] to /dev/ttyACM2
+22:06:23:015:512 [TX] Sent reset [0] to /dev/ttyACM3
+22:06:23:016:196 [TX] Sent reset [0] to /dev/ttyACM4
+22:06:23:016:888 [TX] Sent reset [0] to /dev/ttyACM5
+22:06:24:166:287 [ADV] From Anchor 4, Tag 257, Seq=8, Power=15, CIR=[32, 54, 49, 22, 65, 95, 37, 35, 20, 33, 43, 28, 14, 20, 114, 60, 30, 46, 60, 185, 998, 2504, 3714, 3122, 1074, 749, 792, 344, 362, 77, 310, 276]
+22:06:24:266:901 [ROOT SELECTED] Anchor 5 for Tag 257 Seq 8 (ADV Timeout or Full)
+22:06:24:267:921 [TX] Sent root ID 5 to /dev/ttyACM0
+22:06:24:268:688 [TX] Sent root ID 5 to /dev/ttyACM1
+22:06:24:269:323 [TX] Sent root ID 5 to /dev/ttyACM2
+22:06:24:269:853 [TX] Sent root ID 5 to /dev/ttyACM3
+22:06:24:270:131 [TX] Sent root ID 5 to /dev/ttyACM4
+22:06:24:270:478 [TX] Sent root ID 5 to /dev/ttyACM5
+22:06:24:294:455 [ERROR] [/dev/ttyACM5] Anchor 5 timeout, Tag 257, Seq=1, State=13. Clearing buffers.
+22:06:24:294:761 [TX] Sent reset [0] to /dev/ttyACM0
+22:06:24:295:286 [TX] Sent reset [0] to /dev/ttyACM1
+22:06:24:295:660 [TX] Sent reset [0] to /dev/ttyACM2
+22:06:24:296:643 [TX] Sent reset [0] to /dev/ttyACM3
+22:06:24:297:428 [TX] Sent reset [0] to /dev/ttyACM4
+22:06:24:297:802 [TX] Sent reset [0] to /dev/ttyACM5
+22:06:24:608:518 [ADV] From Anchor 4, Tag 257, Seq=9, Power=19, CIR=[85, 68, 22, 96, 133, 117, 15, 9, 84, 89, 139, 165, 33, 46, 32, 58, 94, 82, 65, 329, 1374, 3150, 4046, 2982, 885, 1134, 1075, 403, 125, 159, 151, 74]
+22:06:24:709:346 [ROOT SELECTED] Anchor 6 for Tag 257 Seq 9 (ADV Timeout or Full)
+22:06:24:709:703 [TX] Sent root ID 6 to /dev/ttyACM0
+22:06:24:710:213 [TX] Sent root ID 6 to /dev/ttyACM1
+22:06:24:711:044 [TX] Sent root ID 6 to /dev/ttyACM2
+22:06:24:711:612 [TX] Sent root ID 6 to /dev/ttyACM3
+22:06:24:712:289 [TX] Sent root ID 6 to /dev/ttyACM4
+22:06:24:712:705 [TX] Sent root ID 6 to /dev/ttyACM5
+22:06:24:735:695 [ERROR] [/dev/ttyACM3] Anchor 6 timeout, Tag 257, Seq=1, State=13. Clearing buffers.
+22:06:24:736:240 [TX] Sent reset [0] to /dev/ttyACM0
+22:06:24:736:657 [TX] Sent reset [0] to /dev/ttyACM1
+22:06:24:737:075 [TX] Sent reset [0] to /dev/ttyACM2
+22:06:24:737:569 [TX] Sent reset [0] to /dev/ttyACM3
+22:06:24:737:850 [TX] Sent reset [0] to /dev/ttyACM4
+22:06:24:738:373 [TX] Sent reset [0] to /dev/ttyACM5
+22:06:25:887:414 [ADV] From Anchor 4, Tag 257, Seq=10, Power=22, CIR=[91, 79, 61, 54, 63, 27, 74, 155, 66, 92, 44, 53, 132, 72, 56, 60, 97, 59, 50, 527, 1823, 3705, 4459, 2994, 946, 1166, 953, 525, 235, 229, 280, 128]
+22:06:25:988:213 [ROOT SELECTED] Anchor 1 for Tag 257 Seq 10 (ADV Timeout or Full)
+22:06:25:988:985 [TX] Sent root ID 1 to /dev/ttyACM0
+22:06:25:989:413 [TX] Sent root ID 1 to /dev/ttyACM1
+22:06:25:989:755 [TX] Sent root ID 1 to /dev/ttyACM2
+22:06:25:990:111 [TX] Sent root ID 1 to /dev/ttyACM3
+22:06:25:990:346 [TX] Sent root ID 1 to /dev/ttyACM4
+22:06:25:991:131 [TX] Sent root ID 1 to /dev/ttyACM5
+22:06:27:166:751 [ADV] From Anchor 4, Tag 257, Seq=11, Power=25, CIR=[99, 88, 95, 111, 59, 50, 70, 43, 33, 136, 106, 97, 58, 30, 31, 114, 45, 55, 69, 216, 1023, 2818, 4463, 4169, 1837, 848, 1218, 661, 161, 199, 337, 241]
+22:06:27:267:377 [ROOT SELECTED] Anchor 2 for Tag 257 Seq 11 (ADV Timeout or Full)
+22:06:27:267:904 [TX] Sent root ID 2 to /dev/ttyACM0
+22:06:27:268:279 [TX] Sent root ID 2 to /dev/ttyACM1
+22:06:27:268:768 [TX] Sent root ID 2 to /dev/ttyACM2
+22:06:27:269:106 [TX] Sent root ID 2 to /dev/ttyACM3
+22:06:27:269:734 [TX] Sent root ID 2 to /dev/ttyACM4
+22:06:27:270:135 [TX] Sent root ID 2 to /dev/ttyACM5
+22:06:28:445:153 [ADV] From Anchor 4, Tag 257, Seq=12, Power=26, CIR=[16, 39, 53, 12, 104, 15, 67, 40, 53, 34, 28, 55, 52, 48, 76, 111, 73, 104, 26, 190, 840, 2627, 4492, 4474, 2060, 667, 1384, 854, 460, 323, 301, 241]
+22:06:28:545:794 [ROOT SELECTED] Anchor 3 for Tag 257 Seq 12 (ADV Timeout or Full)
+22:06:28:546:547 [TX] Sent root ID 3 to /dev/ttyACM0
+22:06:28:547:031 [TX] Sent root ID 3 to /dev/ttyACM1
+22:06:28:547:683 [TX] Sent root ID 3 to /dev/ttyACM2
+22:06:28:547:902 [TX] Sent root ID 3 to /dev/ttyACM3
+22:06:28:548:222 [TX] Sent root ID 3 to /dev/ttyACM4
+22:06:28:548:506 [TX] Sent root ID 3 to /dev/ttyACM5
+22:06:29:723:779 [ADV] From Anchor 4, Tag 257, Seq=13, Power=27, CIR=[23, 59, 48, 76, 27, 33, 24, 48, 60, 15, 6, 59, 49, 35, 40, 19, 18, 82, 55, 206, 957, 2828, 4669, 4561, 2065, 677, 1093, 613, 512, 243, 209, 300]
+22:06:29:824:489 [ROOT SELECTED] Anchor 4 for Tag 257 Seq 13 (ADV Timeout or Full)
+22:06:29:825:385 [TX] Sent root ID 4 to /dev/ttyACM0
+22:06:29:826:071 [TX] Sent root ID 4 to /dev/ttyACM1
+22:06:29:826:961 [TX] Sent root ID 4 to /dev/ttyACM2
+22:06:29:827:285 [TX] Sent root ID 4 to /dev/ttyACM3
+22:06:29:828:112 [TX] Sent root ID 4 to /dev/ttyACM4
+22:06:29:828:255 [TX] Sent root ID 4 to /dev/ttyACM5
+22:06:29:849:573 [ERROR] [/dev/ttyACM1] Anchor 4 timeout, Tag 257, Seq=13, State=13. Clearing buffers.
+22:06:29:850:034 [TX] Sent reset [0] to /dev/ttyACM0
+22:06:29:850:695 [TX] Sent reset [0] to /dev/ttyACM1
+22:06:29:850:936 [TX] Sent reset [0] to /dev/ttyACM2
+22:06:29:851:444 [TX] Sent reset [0] to /dev/ttyACM3
+22:06:29:852:014 [TX] Sent reset [0] to /dev/ttyACM4
+22:06:29:852:548 [TX] Sent reset [0] to /dev/ttyACM5
+22:06:31:003:133 [ADV] From Anchor 4, Tag 257, Seq=14, Power=22, CIR=[34, 91, 80, 43, 7, 99, 53, 36, 14, 40, 38, 87, 46, 69, 41, 51, 51, 3, 143, 701, 2151, 3959, 4373, 2627, 509, 1040, 755, 455, 223, 275, 418, 228]
+22:06:31:103:955 [ROOT SELECTED] Anchor 5 for Tag 257 Seq 14 (ADV Timeout or Full)
+22:06:31:104:470 [TX] Sent root ID 5 to /dev/ttyACM0
+22:06:31:105:869 [TX] Sent root ID 5 to /dev/ttyACM1
+22:06:31:106:340 [TX] Sent root ID 5 to /dev/ttyACM2
+22:06:31:107:069 [TX] Sent root ID 5 to /dev/ttyACM3
+22:06:31:107:852 [TX] Sent root ID 5 to /dev/ttyACM4
+22:06:31:108:358 [TX] Sent root ID 5 to /dev/ttyACM5
+22:06:31:132:524 [ERROR] [/dev/ttyACM5] Anchor 5 timeout, Tag 257, Seq=1, State=13. Clearing buffers.
+22:06:31:132:904 [TX] Sent reset [0] to /dev/ttyACM0
+22:06:31:134:090 [TX] Sent reset [0] to /dev/ttyACM1
+22:06:31:134:337 [TX] Sent reset [0] to /dev/ttyACM2
+22:06:31:135:001 [TX] Sent reset [0] to /dev/ttyACM3
+22:06:31:135:557 [TX] Sent reset [0] to /dev/ttyACM4
+22:06:31:136:071 [TX] Sent reset [0] to /dev/ttyACM5
+22:06:31:446:434 [ADV] From Anchor 4, Tag 257, Seq=15, Power=22, CIR=[66, 59, 23, 45, 79, 51, 64, 45, 28, 34, 70, 81, 47, 36, 32, 65, 108, 60, 48, 185, 852, 2464, 4170, 4277, 2261, 551, 1162, 750, 405, 185, 218, 256]
+22:06:31:547:692 [ROOT SELECTED] Anchor 6 for Tag 257 Seq 15 (ADV Timeout or Full)
+22:06:31:548:365 [TX] Sent root ID 6 to /dev/ttyACM0
+22:06:31:549:227 [TX] Sent root ID 6 to /dev/ttyACM1
+22:06:31:549:932 [TX] Sent root ID 6 to /dev/ttyACM2
+22:06:31:550:780 [TX] Sent root ID 6 to /dev/ttyACM3
+22:06:31:551:156 [TX] Sent root ID 6 to /dev/ttyACM4
+22:06:31:551:855 [TX] Sent root ID 6 to /dev/ttyACM5
+22:06:31:574:977 [ERROR] [/dev/ttyACM3] Anchor 6 timeout, Tag 257, Seq=1, State=13. Clearing buffers.
+22:06:31:575:773 [TX] Sent reset [0] to /dev/ttyACM0
+22:06:31:576:149 [TX] Sent reset [0] to /dev/ttyACM1
+22:06:31:576:683 [TX] Sent reset [0] to /dev/ttyACM2
+22:06:31:577:618 [TX] Sent reset [0] to /dev/ttyACM3
+22:06:31:578:016 [TX] Sent reset [0] to /dev/ttyACM4
+22:06:31:578:328 [TX] Sent reset [0] to /dev/ttyACM5
+22:06:31:889:126 [ADV] From Anchor 4, Tag 257, Seq=16, Power=23, CIR=[81, 63, 10, 38, 34, 16, 48, 38, 52, 54, 25, 39, 64, 84, 123, 65, 80, 82, 81, 583, 1948, 3921, 4703, 3124, 705, 1197, 958, 477, 371, 93, 229, 161]
+22:06:31:990:232 [ROOT SELECTED] Anchor 1 for Tag 257 Seq 16 (ADV Timeout or Full)
+22:06:31:991:040 [TX] Sent root ID 1 to /dev/ttyACM0
+22:06:31:991:575 [TX] Sent root ID 1 to /dev/ttyACM1
+22:06:31:991:968 [TX] Sent root ID 1 to /dev/ttyACM2
+22:06:31:993:179 [TX] Sent root ID 1 to /dev/ttyACM3
+22:06:31:993:523 [TX] Sent root ID 1 to /dev/ttyACM4
+22:06:31:993:881 [TX] Sent root ID 1 to /dev/ttyACM5
+22:06:33:168:330 [ADV] From Anchor 4, Tag 257, Seq=17, Power=23, CIR=[58, 78, 42, 34, 35, 22, 37, 37, 76, 88, 109, 62, 47, 71, 63, 102, 46, 57, 91, 118, 956, 2717, 4333, 4050, 1879, 649, 1008, 588, 539, 279, 251, 365]
+22:06:33:269:473 [ROOT SELECTED] Anchor 2 for Tag 257 Seq 17 (ADV Timeout or Full)
+22:06:33:270:030 [TX] Sent root ID 2 to /dev/ttyACM0
+22:06:33:270:476 [TX] Sent root ID 2 to /dev/ttyACM1
+22:06:33:271:095 [TX] Sent root ID 2 to /dev/ttyACM2
+22:06:33:272:139 [TX] Sent root ID 2 to /dev/ttyACM3
+22:06:33:273:313 [TX] Sent root ID 2 to /dev/ttyACM4
+22:06:33:273:988 [TX] Sent root ID 2 to /dev/ttyACM5
+22:06:34:447:814 [ADV] From Anchor 4, Tag 257, Seq=18, Power=24, CIR=[79, 54, 65, 75, 66, 44, 80, 33, 35, 57, 34, 40, 56, 43, 85, 34, 33, 65, 191, 977, 2688, 4435, 4294, 2014, 551, 1058, 656, 402, 301, 297, 302, 139]
+22:06:34:549:143 [ROOT SELECTED] Anchor 3 for Tag 257 Seq 18 (ADV Timeout or Full)
+22:06:34:549:617 [TX] Sent root ID 3 to /dev/ttyACM0
+22:06:34:550:016 [TX] Sent root ID 3 to /dev/ttyACM1
+22:06:34:550:417 [TX] Sent root ID 3 to /dev/ttyACM2
+22:06:34:551:147 [TX] Sent root ID 3 to /dev/ttyACM3
+22:06:34:551:529 [TX] Sent root ID 3 to /dev/ttyACM4
+22:06:34:551:923 [TX] Sent root ID 3 to /dev/ttyACM5
+22:06:35:726:672 [ADV] From Anchor 4, Tag 257, Seq=19, Power=24, CIR=[64, 74, 26, 27, 40, 84, 71, 74, 56, 84, 92, 116, 67, 74, 13, 47, 66, 51, 129, 455, 1530, 3476, 4627, 3580, 1061, 958, 845, 409, 426, 242, 314, 212]
+22:06:35:827:475 [ROOT SELECTED] Anchor 4 for Tag 257 Seq 19 (ADV Timeout or Full)
+22:06:35:828:060 [TX] Sent root ID 4 to /dev/ttyACM0
+22:06:35:828:613 [TX] Sent root ID 4 to /dev/ttyACM1
+22:06:35:829:173 [TX] Sent root ID 4 to /dev/ttyACM2
+22:06:35:830:118 [TX] Sent root ID 4 to /dev/ttyACM3
+22:06:35:830:814 [TX] Sent root ID 4 to /dev/ttyACM4
+22:06:35:831:721 [TX] Sent root ID 4 to /dev/ttyACM5
+22:06:35:852:486 [ERROR] [/dev/ttyACM1] Anchor 4 timeout, Tag 257, Seq=19, State=13. Clearing buffers.
+22:06:35:852:926 [TX] Sent reset [0] to /dev/ttyACM0
+22:06:35:853:674 [TX] Sent reset [0] to /dev/ttyACM1
+22:06:35:853:828 [TX] Sent reset [0] to /dev/ttyACM2
+22:06:35:854:149 [TX] Sent reset [0] to /dev/ttyACM3
+22:06:35:854:454 [TX] Sent reset [0] to /dev/ttyACM4
+22:06:35:854:921 [TX] Sent reset [0] to /dev/ttyACM5
+22:06:37:005:957 [ADV] From Anchor 4, Tag 257, Seq=20, Power=21, CIR=[11, 13, 18, 29, 21, 59, 49, 27, 40, 48, 50, 80, 30, 90, 73, 42, 95, 114, 71, 302, 1260, 3139, 4433, 3705, 1260, 818, 1019, 552, 372, 189, 295, 266]
+22:06:37:106:977 [ROOT SELECTED] Anchor 5 for Tag 257 Seq 20 (ADV Timeout or Full)
+22:06:37:107:754 [TX] Sent root ID 5 to /dev/ttyACM0
+22:06:37:108:346 [TX] Sent root ID 5 to /dev/ttyACM1
+22:06:37:109:150 [TX] Sent root ID 5 to /dev/ttyACM2
+22:06:37:109:905 [TX] Sent root ID 5 to /dev/ttyACM3
+22:06:37:110:395 [TX] Sent root ID 5 to /dev/ttyACM4
+22:06:37:110:677 [TX] Sent root ID 5 to /dev/ttyACM5
+22:06:37:134:530 [ERROR] [/dev/ttyACM5] Anchor 5 timeout, Tag 257, Seq=1, State=13. Clearing buffers.
+22:06:37:134:934 [TX] Sent reset [0] to /dev/ttyACM0
+22:06:37:135:354 [TX] Sent reset [0] to /dev/ttyACM1
+22:06:37:135:752 [TX] Sent reset [0] to /dev/ttyACM2
+22:06:37:136:164 [TX] Sent reset [0] to /dev/ttyACM3
+22:06:37:136:503 [TX] Sent reset [0] to /dev/ttyACM4
+22:06:37:137:265 [TX] Sent reset [0] to /dev/ttyACM5
+22:06:38:284:475 [ADV] From Anchor 4, Tag 257, Seq=21, Power=26, CIR=[38, 23, 75, 98, 32, 75, 113, 55, 34, 28, 70, 26, 83, 41, 28, 51, 57, 13, 49, 420, 1701, 3713, 4746, 3513, 906, 910, 1141, 481, 266, 259, 257, 193]
+22:06:38:385:008 [ROOT SELECTED] Anchor 6 for Tag 257 Seq 21 (ADV Timeout or Full)
+22:06:38:385:328 [TX] Sent root ID 6 to /dev/ttyACM0
+22:06:38:385:646 [TX] Sent root ID 6 to /dev/ttyACM1
+22:06:38:386:126 [TX] Sent root ID 6 to /dev/ttyACM2
+22:06:38:386:465 [TX] Sent root ID 6 to /dev/ttyACM3
+22:06:38:386:962 [TX] Sent root ID 6 to /dev/ttyACM4
+22:06:38:387:585 [TX] Sent root ID 6 to /dev/ttyACM5
+22:06:38:410:408 [ERROR] [/dev/ttyACM3] Anchor 6 timeout, Tag 257, Seq=1, State=13. Clearing buffers.
+22:06:38:411:328 [TX] Sent reset [0] to /dev/ttyACM0
+22:06:38:412:071 [TX] Sent reset [0] to /dev/ttyACM1
+22:06:38:412:497 [TX] Sent reset [0] to /dev/ttyACM2
+22:06:38:412:831 [TX] Sent reset [0] to /dev/ttyACM3
+22:06:38:413:192 [TX] Sent reset [0] to /dev/ttyACM4
+22:06:38:413:514 [TX] Sent reset [0] to /dev/ttyACM5
+22:06:38:724:695 [ADV] From Anchor 4, Tag 257, Seq=22, Power=26, CIR=[25, 119, 131, 97, 25, 62, 55, 43, 52, 29, 21, 6, 16, 31, 30, 40, 90, 128, 133, 824, 2404, 4234, 4492, 2535, 769, 1232, 696, 585, 345, 275, 431, 216]
+22:06:38:825:736 [ROOT SELECTED] Anchor 1 for Tag 257 Seq 22 (ADV Timeout or Full)
+22:06:38:826:486 [TX] Sent root ID 1 to /dev/ttyACM0
+22:06:38:827:297 [TX] Sent root ID 1 to /dev/ttyACM1
+22:06:38:827:924 [TX] Sent root ID 1 to /dev/ttyACM2
+22:06:38:828:827 [TX] Sent root ID 1 to /dev/ttyACM3
+22:06:38:829:280 [TX] Sent root ID 1 to /dev/ttyACM4
+22:06:38:829:636 [TX] Sent root ID 1 to /dev/ttyACM5
+22:06:40:003:726 [ADV] From Anchor 4, Tag 257, Seq=23, Power=24, CIR=[66, 55, 53, 7, 78, 90, 48, 28, 60, 14, 55, 109, 73, 77, 32, 64, 18, 31, 283, 961, 2585, 4329, 4233, 2001, 629, 1193, 681, 414, 250, 275, 416, 228]
+22:06:40:104:646 [ROOT SELECTED] Anchor 2 for Tag 257 Seq 23 (ADV Timeout or Full)
+22:06:40:105:061 [TX] Sent root ID 2 to /dev/ttyACM0
+22:06:40:105:370 [TX] Sent root ID 2 to /dev/ttyACM1
+22:06:40:105:714 [TX] Sent root ID 2 to /dev/ttyACM2
+22:06:40:106:511 [TX] Sent root ID 2 to /dev/ttyACM3
+22:06:40:106:987 [TX] Sent root ID 2 to /dev/ttyACM4
+22:06:40:107:459 [TX] Sent root ID 2 to /dev/ttyACM5
+22:06:41:282:463 [ADV] From Anchor 4, Tag 257, Seq=24, Power=24, CIR=[74, 53, 57, 35, 98, 81, 23, 52, 36, 51, 77, 79, 48, 68, 83, 39, 73, 72, 52, 265, 1431, 3516, 4702, 3624, 1140, 937, 880, 327, 226, 254, 316, 277]
+22:06:41:383:206 [ROOT SELECTED] Anchor 3 for Tag 257 Seq 24 (ADV Timeout or Full)
+22:06:41:383:932 [TX] Sent root ID 3 to /dev/ttyACM0
+22:06:41:384:717 [TX] Sent root ID 3 to /dev/ttyACM1
+22:06:41:386:049 [TX] Sent root ID 3 to /dev/ttyACM2
+22:06:41:386:690 [TX] Sent root ID 3 to /dev/ttyACM3
+22:06:41:387:211 [TX] Sent root ID 3 to /dev/ttyACM4
+22:06:41:387:506 [TX] Sent root ID 3 to /dev/ttyACM5
+22:06:42:561:552 [ADV] From Anchor 4, Tag 257, Seq=25, Power=24, CIR=[65, 26, 56, 27, 21, 32, 31, 18, 57, 70, 106, 99, 53, 35, 77, 87, 63, 37, 43, 166, 1121, 3074, 4682, 4187, 1696, 690, 964, 580, 432, 219, 272, 249]
+22:06:42:662:128 [ROOT SELECTED] Anchor 4 for Tag 257 Seq 25 (ADV Timeout or Full)
+22:06:42:662:656 [TX] Sent root ID 4 to /dev/ttyACM0
+22:06:42:663:041 [TX] Sent root ID 4 to /dev/ttyACM1
+22:06:42:663:460 [TX] Sent root ID 4 to /dev/ttyACM2
+22:06:42:663:976 [TX] Sent root ID 4 to /dev/ttyACM3
+22:06:42:664:525 [TX] Sent root ID 4 to /dev/ttyACM4
+22:06:42:665:165 [TX] Sent root ID 4 to /dev/ttyACM5
+22:06:42:686:673 [ERROR] [/dev/ttyACM1] Anchor 4 timeout, Tag 257, Seq=25, State=13. Clearing buffers.
+22:06:42:687:227 [TX] Sent reset [0] to /dev/ttyACM0
+22:06:42:687:830 [TX] Sent reset [0] to /dev/ttyACM1
+22:06:42:688:437 [TX] Sent reset [0] to /dev/ttyACM2
+22:06:42:688:901 [TX] Sent reset [0] to /dev/ttyACM3
+22:06:42:689:645 [TX] Sent reset [0] to /dev/ttyACM4
+22:06:42:689:988 [TX] Sent reset [0] to /dev/ttyACM5
+22:06:43:840:817 [ADV] From Anchor 4, Tag 257, Seq=26, Power=21, CIR=[80, 27, 69, 60, 66, 31, 32, 68, 32, 51, 17, 57, 16, 24, 14, 48, 24, 26, 66, 288, 1227, 3071, 4412, 3739, 1321, 792, 1109, 699, 148, 166, 193, 123]
+22:06:43:941:559 [ROOT SELECTED] Anchor 5 for Tag 257 Seq 26 (ADV Timeout or Full)
+22:06:43:942:150 [TX] Sent root ID 5 to /dev/ttyACM0
+22:06:43:942:725 [TX] Sent root ID 5 to /dev/ttyACM1
+22:06:43:943:690 [TX] Sent root ID 5 to /dev/ttyACM2
+22:06:43:944:227 [TX] Sent root ID 5 to /dev/ttyACM3
+22:06:43:944:735 [TX] Sent root ID 5 to /dev/ttyACM4
+22:06:43:945:027 [TX] Sent root ID 5 to /dev/ttyACM5
+22:06:43:968:918 [ERROR] [/dev/ttyACM5] Anchor 5 timeout, Tag 257, Seq=1, State=13. Clearing buffers.
+22:06:43:969:624 [TX] Sent reset [0] to /dev/ttyACM0
+22:06:43:970:068 [TX] Sent reset [0] to /dev/ttyACM1
+22:06:43:970:316 [TX] Sent reset [0] to /dev/ttyACM2
+22:06:43:970:728 [TX] Sent reset [0] to /dev/ttyACM3
+22:06:43:971:207 [TX] Sent reset [0] to /dev/ttyACM4
+22:06:43:972:047 [TX] Sent reset [0] to /dev/ttyACM5
+22:06:44:283:610 [ADV] From Anchor 4, Tag 257, Seq=27, Power=22, CIR=[46, 36, 69, 129, 107, 56, 58, 62, 49, 63, 54, 102, 102, 47, 42, 50, 61, 22, 39, 284, 1363, 3247, 4423, 3495, 1029, 1182, 1254, 380, 265, 260, 149, 264]
+22:06:44:384:378 [ROOT SELECTED] Anchor 6 for Tag 257 Seq 27 (ADV Timeout or Full)
+22:06:44:384:883 [TX] Sent root ID 6 to /dev/ttyACM0
+22:06:44:385:607 [TX] Sent root ID 6 to /dev/ttyACM1
+22:06:44:386:022 [TX] Sent root ID 6 to /dev/ttyACM2
+22:06:44:386:513 [TX] Sent root ID 6 to /dev/ttyACM3
+22:06:44:386:946 [TX] Sent root ID 6 to /dev/ttyACM4
+22:06:44:387:533 [TX] Sent root ID 6 to /dev/ttyACM5
+22:06:44:410:484 [ERROR] [/dev/ttyACM3] Anchor 6 timeout, Tag 257, Seq=1, State=13. Clearing buffers.
+22:06:44:411:422 [TX] Sent reset [0] to /dev/ttyACM0
+22:06:44:411:675 [TX] Sent reset [0] to /dev/ttyACM1
+22:06:44:412:202 [TX] Sent reset [0] to /dev/ttyACM2
+22:06:44:412:508 [TX] Sent reset [0] to /dev/ttyACM3
+22:06:44:412:786 [TX] Sent reset [0] to /dev/ttyACM4
+22:06:44:413:178 [TX] Sent reset [0] to /dev/ttyACM5
+22:06:44:724:650 [ADV] From Anchor 4, Tag 257, Seq=28, Power=24, CIR=[45, 10, 74, 54, 86, 46, 37, 27, 52, 28, 70, 117, 112, 63, 64, 75, 61, 26, 38, 383, 1666, 3585, 4554, 3317, 855, 925, 689, 600, 486, 35, 261, 89]
+22:06:44:825:268 [ROOT SELECTED] Anchor 1 for Tag 257 Seq 28 (ADV Timeout or Full)
+22:06:44:825:977 [TX] Sent root ID 1 to /dev/ttyACM0
+22:06:44:826:579 [TX] Sent root ID 1 to /dev/ttyACM1
+22:06:44:826:982 [TX] Sent root ID 1 to /dev/ttyACM2
+22:06:44:827:449 [TX] Sent root ID 1 to /dev/ttyACM3
+22:06:44:828:502 [TX] Sent root ID 1 to /dev/ttyACM4
+22:06:44:828:968 [TX] Sent root ID 1 to /dev/ttyACM5
+22:06:46:004:014 [ADV] From Anchor 4, Tag 257, Seq=29, Power=23, CIR=[112, 105, 46, 31, 37, 19, 85, 74, 62, 55, 57, 61, 60, 50, 29, 61, 70, 37, 118, 656, 2136, 3998, 4454, 2680, 782, 1244, 686, 462, 428, 211, 330, 156]
+22:06:46:104:515 [ROOT SELECTED] Anchor 2 for Tag 257 Seq 29 (ADV Timeout or Full)
+22:06:46:104:775 [TX] Sent root ID 2 to /dev/ttyACM0
+22:06:46:105:274 [TX] Sent root ID 2 to /dev/ttyACM1
+22:06:46:106:336 [TX] Sent root ID 2 to /dev/ttyACM2
+22:06:46:106:756 [TX] Sent root ID 2 to /dev/ttyACM3
+22:06:46:107:181 [TX] Sent root ID 2 to /dev/ttyACM4
+22:06:46:107:842 [TX] Sent root ID 2 to /dev/ttyACM5
+22:06:47:283:163 [ADV] From Anchor 4, Tag 257, Seq=30, Power=25, CIR=[101, 30, 5, 38, 14, 88, 65, 58, 75, 76, 43, 30, 19, 85, 67, 98, 51, 39, 69, 279, 1486, 3497, 4761, 3778, 1238, 903, 965, 555, 390, 161, 299, 203]
+22:06:47:383:909 [ROOT SELECTED] Anchor 3 for Tag 257 Seq 30 (ADV Timeout or Full)
+22:06:47:384:444 [TX] Sent root ID 3 to /dev/ttyACM0
+22:06:47:385:007 [TX] Sent root ID 3 to /dev/ttyACM1
+22:06:47:385:400 [TX] Sent root ID 3 to /dev/ttyACM2
+22:06:47:386:033 [TX] Sent root ID 3 to /dev/ttyACM3
+22:06:47:386:560 [TX] Sent root ID 3 to /dev/ttyACM4
+22:06:47:386:865 [TX] Sent root ID 3 to /dev/ttyACM5
+22:06:48:561:714 [ADV] From Anchor 4, Tag 257, Seq=31, Power=23, CIR=[67, 74, 62, 33, 30, 15, 10, 85, 24, 59, 77, 60, 51, 44, 39, 48, 68, 96, 72, 297, 1147, 2991, 4458, 4084, 1715, 755, 1158, 688, 370, 252, 259, 256]
+22:06:48:662:723 [ROOT SELECTED] Anchor 4 for Tag 257 Seq 31 (ADV Timeout or Full)
+22:06:48:663:215 [TX] Sent root ID 4 to /dev/ttyACM0
+22:06:48:663:798 [TX] Sent root ID 4 to /dev/ttyACM1
+22:06:48:664:216 [TX] Sent root ID 4 to /dev/ttyACM2
+22:06:48:664:395 [TX] Sent root ID 4 to /dev/ttyACM3
+22:06:48:664:610 [TX] Sent root ID 4 to /dev/ttyACM4
+22:06:48:665:045 [TX] Sent root ID 4 to /dev/ttyACM5
+22:06:48:687:021 [ERROR] [/dev/ttyACM1] Anchor 4 timeout, Tag 257, Seq=31, State=13. Clearing buffers.
+22:06:48:687:766 [TX] Sent reset [0] to /dev/ttyACM0
+22:06:48:688:353 [TX] Sent reset [0] to /dev/ttyACM1
+22:06:48:688:830 [TX] Sent reset [0] to /dev/ttyACM2
+22:06:48:689:079 [TX] Sent reset [0] to /dev/ttyACM3
+22:06:48:689:354 [TX] Sent reset [0] to /dev/ttyACM4
+22:06:48:689:562 [TX] Sent reset [0] to /dev/ttyACM5
+22:06:49:840:609 [ADV] From Anchor 4, Tag 257, Seq=32, Power=23, CIR=[63, 87, 22, 50, 114, 48, 6, 29, 41, 45, 81, 116, 61, 40, 21, 3, 45, 57, 33, 224, 1216, 3084, 4453, 3848, 1387, 829, 1036, 515, 318, 158, 278, 150]
+22:06:49:941:172 [ROOT SELECTED] Anchor 5 for Tag 257 Seq 32 (ADV Timeout or Full)
+22:06:49:941:815 [TX] Sent root ID 5 to /dev/ttyACM0
+22:06:49:942:321 [TX] Sent root ID 5 to /dev/ttyACM1
+22:06:49:942:620 [TX] Sent root ID 5 to /dev/ttyACM2
+22:06:49:943:108 [TX] Sent root ID 5 to /dev/ttyACM3
+22:06:49:943:426 [TX] Sent root ID 5 to /dev/ttyACM4
+22:06:49:943:776 [TX] Sent root ID 5 to /dev/ttyACM5
+22:06:49:968:162 [ERROR] [/dev/ttyACM5] Anchor 5 timeout, Tag 257, Seq=1, State=13. Clearing buffers.
+22:06:49:968:870 [TX] Sent reset [0] to /dev/ttyACM0
+22:06:49:969:332 [TX] Sent reset [0] to /dev/ttyACM1
+22:06:49:970:019 [TX] Sent reset [0] to /dev/ttyACM2
+22:06:49:970:275 [TX] Sent reset [0] to /dev/ttyACM3
+22:06:49:970:598 [TX] Sent reset [0] to /dev/ttyACM4
+22:06:49:970:881 [TX] Sent reset [0] to /dev/ttyACM5
+22:06:50:282:577 [ADV] From Anchor 4, Tag 257, Seq=33, Power=23, CIR=[89, 134, 61, 18, 21, 37, 31, 43, 29, 42, 25, 21, 111, 111, 35, 89, 150, 101, 3, 203, 1033, 2858, 4380, 3938, 1554, 743, 1050, 546, 423, 196, 229, 273]
+22:06:50:383:112 [ROOT SELECTED] Anchor 6 for Tag 257 Seq 33 (ADV Timeout or Full)
+22:06:50:383:586 [TX] Sent root ID 6 to /dev/ttyACM0
+22:06:50:384:054 [TX] Sent root ID 6 to /dev/ttyACM1
+22:06:50:384:510 [TX] Sent root ID 6 to /dev/ttyACM2
+22:06:50:384:954 [TX] Sent root ID 6 to /dev/ttyACM3
+22:06:50:385:675 [TX] Sent root ID 6 to /dev/ttyACM4
+22:06:50:386:431 [TX] Sent root ID 6 to /dev/ttyACM5
+22:06:50:409:542 [ERROR] [/dev/ttyACM3] Anchor 6 timeout, Tag 257, Seq=1, State=13. Clearing buffers.
+22:06:50:410:252 [TX] Sent reset [0] to /dev/ttyACM0
+22:06:50:410:764 [TX] Sent reset [0] to /dev/ttyACM1
+22:06:50:411:350 [TX] Sent reset [0] to /dev/ttyACM2
+22:06:50:411:661 [TX] Sent reset [0] to /dev/ttyACM3
+22:06:50:412:111 [TX] Sent reset [0] to /dev/ttyACM4
+22:06:50:412:277 [TX] Sent reset [0] to /dev/ttyACM5
+22:06:50:722:968 [ADV] From Anchor 4, Tag 257, Seq=34, Power=24, CIR=[43, 8, 22, 39, 47, 141, 55, 44, 49, 54, 42, 58, 38, 66, 68, 118, 24, 5, 68, 559, 1945, 3852, 4530, 3061, 713, 1121, 794, 345, 316, 290, 275, 129]
+22:06:50:823:451 [ROOT SELECTED] Anchor 1 for Tag 257 Seq 34 (ADV Timeout or Full)
+22:06:50:823:980 [TX] Sent root ID 1 to /dev/ttyACM0
+22:06:50:824:252 [TX] Sent root ID 1 to /dev/ttyACM1
+22:06:50:824:542 [TX] Sent root ID 1 to /dev/ttyACM2
+22:06:50:825:006 [TX] Sent root ID 1 to /dev/ttyACM3
+22:06:50:825:502 [TX] Sent root ID 1 to /dev/ttyACM4
+22:06:50:826:038 [TX] Sent root ID 1 to /dev/ttyACM5
+22:06:52:002:626 [ADV] From Anchor 4, Tag 257, Seq=35, Power=22, CIR=[39, 42, 59, 24, 31, 35, 61, 34, 69, 50, 45, 3, 20, 76, 55, 128, 106, 107, 37, 364, 1460, 3332, 4470, 3538, 1066, 971, 940, 495, 309, 250, 382, 251]
+22:06:52:103:240 [ROOT SELECTED] Anchor 2 for Tag 257 Seq 35 (ADV Timeout or Full)
+22:06:52:103:798 [TX] Sent root ID 2 to /dev/ttyACM0
+22:06:52:104:068 [TX] Sent root ID 2 to /dev/ttyACM1
+22:06:52:104:728 [TX] Sent root ID 2 to /dev/ttyACM2
+22:06:52:105:481 [TX] Sent root ID 2 to /dev/ttyACM3
+22:06:52:106:249 [TX] Sent root ID 2 to /dev/ttyACM4
+22:06:52:106:899 [TX] Sent root ID 2 to /dev/ttyACM5
+22:06:53:281:189 [ADV] From Anchor 4, Tag 257, Seq=36, Power=23, CIR=[52, 47, 62, 46, 27, 49, 51, 14, 32, 19, 16, 19, 81, 30, 52, 62, 64, 29, 90, 371, 1500, 3381, 4514, 3483, 1035, 979, 982, 528, 418, 178, 222, 170]
+22:06:53:381:741 [ROOT SELECTED] Anchor 3 for Tag 257 Seq 36 (ADV Timeout or Full)
+22:06:53:382:283 [TX] Sent root ID 3 to /dev/ttyACM0
+22:06:53:382:669 [TX] Sent root ID 3 to /dev/ttyACM1
+22:06:53:383:060 [TX] Sent root ID 3 to /dev/ttyACM2
+22:06:53:383:669 [TX] Sent root ID 3 to /dev/ttyACM3
+22:06:53:384:096 [TX] Sent root ID 3 to /dev/ttyACM4
+22:06:53:384:824 [TX] Sent root ID 3 to /dev/ttyACM5
+22:06:54:560:502 [ADV] From Anchor 4, Tag 257, Seq=37, Power=26, CIR=[47, 29, 7, 51, 38, 49, 64, 24, 82, 50, 49, 115, 52, 65, 62, 36, 71, 78, 67, 324, 1456, 3447, 4740, 3863, 1391, 910, 1040, 555, 513, 191, 192, 155]
+22:06:54:661:614 [ROOT SELECTED] Anchor 4 for Tag 257 Seq 37 (ADV Timeout or Full)
+22:06:54:662:123 [TX] Sent root ID 4 to /dev/ttyACM0
+22:06:54:662:463 [TX] Sent root ID 4 to /dev/ttyACM1
+22:06:54:663:120 [TX] Sent root ID 4 to /dev/ttyACM2
+22:06:54:663:506 [TX] Sent root ID 4 to /dev/ttyACM3
+22:06:54:664:137 [TX] Sent root ID 4 to /dev/ttyACM4
+22:06:54:664:963 [TX] Sent root ID 4 to /dev/ttyACM5
+22:06:54:686:482 [ERROR] [/dev/ttyACM1] Anchor 4 timeout, Tag 257, Seq=37, State=13. Clearing buffers.
+22:06:54:687:167 [TX] Sent reset [0] to /dev/ttyACM0
+22:06:54:687:616 [TX] Sent reset [0] to /dev/ttyACM1
+22:06:54:688:794 [TX] Sent reset [0] to /dev/ttyACM2
+22:06:54:689:113 [TX] Sent reset [0] to /dev/ttyACM3
+22:06:54:689:438 [TX] Sent reset [0] to /dev/ttyACM4
+22:06:54:689:613 [TX] Sent reset [0] to /dev/ttyACM5
+22:06:55:839:579 [ADV] From Anchor 4, Tag 257, Seq=38, Power=21, CIR=[43, 15, 49, 112, 16, 58, 70, 103, 90, 53, 65, 18, 59, 35, 60, 13, 46, 21, 89, 300, 1422, 3406, 4494, 3504, 987, 871, 851, 561, 546, 171, 227, 241]
+22:06:55:940:765 [ROOT SELECTED] Anchor 5 for Tag 257 Seq 38 (ADV Timeout or Full)
+22:06:55:941:321 [TX] Sent root ID 5 to /dev/ttyACM0
+22:06:55:941:648 [TX] Sent root ID 5 to /dev/ttyACM1
+22:06:55:942:279 [TX] Sent root ID 5 to /dev/ttyACM2
+22:06:55:942:835 [TX] Sent root ID 5 to /dev/ttyACM3
+22:06:55:943:217 [TX] Sent root ID 5 to /dev/ttyACM4
+22:06:55:943:648 [TX] Sent root ID 5 to /dev/ttyACM5
+22:06:55:967:373 [ERROR] [/dev/ttyACM5] Anchor 5 timeout, Tag 257, Seq=1, State=13. Clearing buffers.
+22:06:55:968:177 [TX] Sent reset [0] to /dev/ttyACM0
+22:06:55:968:592 [TX] Sent reset [0] to /dev/ttyACM1
+22:06:55:969:534 [TX] Sent reset [0] to /dev/ttyACM2
+22:06:55:969:973 [TX] Sent reset [0] to /dev/ttyACM3
+22:06:55:970:450 [TX] Sent reset [0] to /dev/ttyACM4
+22:06:55:970:780 [TX] Sent reset [0] to /dev/ttyACM5
+22:06:56:281:511 [ADV] From Anchor 4, Tag 257, Seq=39, Power=24, CIR=[79, 75, 67, 39, 22, 65, 12, 38, 36, 44, 52, 51, 23, 62, 108, 87, 47, 39, 21, 208, 1058, 2844, 4441, 3984, 1604, 786, 1132, 599, 435, 181, 223, 281]
+22:06:56:382:065 [ROOT SELECTED] Anchor 6 for Tag 257 Seq 39 (ADV Timeout or Full)
+22:06:56:382:959 [TX] Sent root ID 6 to /dev/ttyACM0
+22:06:56:383:327 [TX] Sent root ID 6 to /dev/ttyACM1
+22:06:56:383:787 [TX] Sent root ID 6 to /dev/ttyACM2
+22:06:56:384:181 [TX] Sent root ID 6 to /dev/ttyACM3
+22:06:56:384:533 [TX] Sent root ID 6 to /dev/ttyACM4
+22:06:56:385:352 [TX] Sent root ID 6 to /dev/ttyACM5
+22:06:56:408:810 [ERROR] [/dev/ttyACM3] Anchor 6 timeout, Tag 257, Seq=1, State=13. Clearing buffers.
+22:06:56:409:425 [TX] Sent reset [0] to /dev/ttyACM0
+22:06:56:410:087 [TX] Sent reset [0] to /dev/ttyACM1
+22:06:56:410:542 [TX] Sent reset [0] to /dev/ttyACM2
+22:06:56:410:948 [TX] Sent reset [0] to /dev/ttyACM3
+22:06:56:411:373 [TX] Sent reset [0] to /dev/ttyACM4
+22:06:56:411:897 [TX] Sent reset [0] to /dev/ttyACM5
+22:06:56:722:429 [ADV] From Anchor 4, Tag 257, Seq=40, Power=26, CIR=[123, 103, 90, 68, 28, 72, 97, 26, 34, 23, 34, 61, 84, 88, 104, 66, 24, 39, 28, 302, 1576, 3591, 4740, 3663, 1137, 1037, 951, 445, 515, 236, 299, 325]
+22:06:56:822:966 [ROOT SELECTED] Anchor 1 for Tag 257 Seq 40 (ADV Timeout or Full)
+22:06:56:823:435 [TX] Sent root ID 1 to /dev/ttyACM0
+22:06:56:823:776 [TX] Sent root ID 1 to /dev/ttyACM1
+22:06:56:824:455 [TX] Sent root ID 1 to /dev/ttyACM2
+22:06:56:825:173 [TX] Sent root ID 1 to /dev/ttyACM3
+22:06:56:825:795 [TX] Sent root ID 1 to /dev/ttyACM4
+22:06:56:826:626 [TX] Sent root ID 1 to /dev/ttyACM5
+22:06:58:001:512 [ADV] From Anchor 4, Tag 257, Seq=41, Power=22, CIR=[46, 25, 51, 34, 19, 24, 59, 57, 58, 102, 152, 89, 75, 18, 125, 78, 45, 14, 114, 437, 1554, 3447, 4648, 3540, 961, 1022, 937, 525, 450, 148, 213, 136]
+22:06:58:101:969 [ROOT SELECTED] Anchor 2 for Tag 257 Seq 41 (ADV Timeout or Full)
+22:06:58:102:567 [TX] Sent root ID 2 to /dev/ttyACM0
+22:06:58:103:171 [TX] Sent root ID 2 to /dev/ttyACM1
+22:06:58:103:457 [TX] Sent root ID 2 to /dev/ttyACM2
+22:06:58:104:078 [TX] Sent root ID 2 to /dev/ttyACM3
+22:06:58:104:484 [TX] Sent root ID 2 to /dev/ttyACM4
+22:06:58:105:164 [TX] Sent root ID 2 to /dev/ttyACM5
+22:06:59:280:517 [ADV] From Anchor 4, Tag 257, Seq=42, Power=21, CIR=[11, 32, 61, 46, 44, 59, 24, 80, 91, 82, 56, 50, 37, 55, 41, 58, 12, 55, 64, 646, 2101, 3951, 4398, 2757, 699, 1047, 791, 456, 227, 224, 301, 122]
+22:06:59:381:071 [ROOT SELECTED] Anchor 3 for Tag 257 Seq 42 (ADV Timeout or Full)
+22:06:59:381:596 [TX] Sent root ID 3 to /dev/ttyACM0
+22:06:59:381:947 [TX] Sent root ID 3 to /dev/ttyACM1
+22:06:59:382:393 [TX] Sent root ID 3 to /dev/ttyACM2
+22:06:59:382:708 [TX] Sent root ID 3 to /dev/ttyACM3
+22:06:59:383:121 [TX] Sent root ID 3 to /dev/ttyACM4
+22:06:59:383:457 [TX] Sent root ID 3 to /dev/ttyACM5
+22:07:00:559:181 [ADV] From Anchor 4, Tag 257, Seq=43, Power=33, CIR=[64, 72, 68, 52, 77, 45, 111, 96, 50, 57, 60, 71, 45, 41, 57, 93, 97, 30, 13, 367, 1477, 3722, 5278, 4486, 1542, 1012, 1054, 537, 413, 226, 283, 248]
+22:07:00:659:919 [ROOT SELECTED] Anchor 4 for Tag 257 Seq 43 (ADV Timeout or Full)
+22:07:00:660:344 [TX] Sent root ID 4 to /dev/ttyACM0
+22:07:00:660:858 [TX] Sent root ID 4 to /dev/ttyACM1
+22:07:00:661:462 [TX] Sent root ID 4 to /dev/ttyACM2
+22:07:00:661:930 [TX] Sent root ID 4 to /dev/ttyACM3
+22:07:00:662:651 [TX] Sent root ID 4 to /dev/ttyACM4
+22:07:00:663:000 [TX] Sent root ID 4 to /dev/ttyACM5
+22:07:00:684:396 [ERROR] [/dev/ttyACM1] Anchor 4 timeout, Tag 257, Seq=43, State=13. Clearing buffers.
+22:07:00:684:640 [TX] Sent reset [0] to /dev/ttyACM0
+22:07:00:685:395 [TX] Sent reset [0] to /dev/ttyACM1
+22:07:00:685:697 [TX] Sent reset [0] to /dev/ttyACM2
+22:07:00:686:137 [TX] Sent reset [0] to /dev/ttyACM3
+22:07:00:686:548 [TX] Sent reset [0] to /dev/ttyACM4
+22:07:00:687:096 [TX] Sent reset [0] to /dev/ttyACM5
+22:07:02:088:397 [ADV] From Anchor 4, Tag 257, Seq=45, Power=6, CIR=[74, 65, 55, 45, 80, 84, 29, 27, 42, 74, 76, 79, 27, 79, 10, 61, 36, 61, 42, 177, 674, 1647, 2279, 1844, 787, 646, 501, 343, 375, 117, 170, 200]
+22:07:02:189:359 [ROOT SELECTED] Anchor 5 for Tag 257 Seq 45 (ADV Timeout or Full)
+22:07:02:190:057 [TX] Sent root ID 5 to /dev/ttyACM0
+22:07:02:190:533 [TX] Sent root ID 5 to /dev/ttyACM1
+22:07:02:191:063 [TX] Sent root ID 5 to /dev/ttyACM2
+22:07:02:191:796 [TX] Sent root ID 5 to /dev/ttyACM3
+22:07:02:192:484 [TX] Sent root ID 5 to /dev/ttyACM4
+22:07:02:192:829 [TX] Sent root ID 5 to /dev/ttyACM5
+22:07:02:217:228 [ERROR] [/dev/ttyACM5] Anchor 5 timeout, Tag 257, Seq=1, State=13. Clearing buffers.
+22:07:02:217:996 [TX] Sent reset [0] to /dev/ttyACM0
+22:07:02:218:777 [TX] Sent reset [0] to /dev/ttyACM1
+22:07:02:219:129 [TX] Sent reset [0] to /dev/ttyACM2
+22:07:02:219:783 [TX] Sent reset [0] to /dev/ttyACM3
+22:07:02:220:248 [TX] Sent reset [0] to /dev/ttyACM4
+22:07:02:220:597 [TX] Sent reset [0] to /dev/ttyACM5
+22:07:02:340:914 [ADV] From Anchor 4, Tag 257, Seq=46, Power=10, CIR=[57, 87, 97, 10, 83, 126, 98, 62, 87, 104, 124, 108, 66, 53, 34, 55, 55, 76, 112, 508, 1642, 2868, 2903, 1528, 516, 616, 500, 555, 374, 235, 296, 148]
+22:07:02:441:774 [ROOT SELECTED] Anchor 6 for Tag 257 Seq 46 (ADV Timeout or Full)
+22:07:02:442:916 [TX] Sent root ID 6 to /dev/ttyACM0
+22:07:02:443:325 [TX] Sent root ID 6 to /dev/ttyACM1
+22:07:02:443:877 [TX] Sent root ID 6 to /dev/ttyACM2
+22:07:02:444:265 [TX] Sent root ID 6 to /dev/ttyACM3
+22:07:02:444:868 [TX] Sent root ID 6 to /dev/ttyACM4
+22:07:02:445:501 [TX] Sent root ID 6 to /dev/ttyACM5
+22:07:02:470:146 [ERROR] [/dev/ttyACM3] Anchor 6 timeout, Tag 257, Seq=1, State=13. Clearing buffers.
+22:07:02:472:003 [TX] Sent reset [0] to /dev/ttyACM0
+22:07:02:472:463 [TX] Sent reset [0] to /dev/ttyACM1
+22:07:02:473:180 [TX] Sent reset [0] to /dev/ttyACM2
+22:07:02:474:454 [TX] Sent reset [0] to /dev/ttyACM3
+22:07:02:475:970 [TX] Sent reset [0] to /dev/ttyACM4
+22:07:02:476:759 [TX] Sent reset [0] to /dev/ttyACM5
+22:07:04:898:066 [ADV] From Anchor 4, Tag 257, Seq=48, Power=4, CIR=[75, 38, 43, 21, 74, 70, 30, 62, 54, 21, 34, 87, 56, 33, 54, 70, 37, 26, 63, 100, 560, 1423, 2186, 1806, 618, 367, 437, 236, 222, 231, 333, 198]
+22:07:04:998:791 [ROOT SELECTED] Anchor 1 for Tag 257 Seq 48 (ADV Timeout or Full)
+22:07:04:999:143 [TX] Sent root ID 1 to /dev/ttyACM0
+22:07:05:000:046 [TX] Sent root ID 1 to /dev/ttyACM1
+22:07:05:000:979 [TX] Sent root ID 1 to /dev/ttyACM2
+22:07:05:001:492 [TX] Sent root ID 1 to /dev/ttyACM3
+22:07:05:001:995 [TX] Sent root ID 1 to /dev/ttyACM4
+22:07:05:002:234 [TX] Sent root ID 1 to /dev/ttyACM5
+22:07:06:987:299 [ADV] From Anchor 4, Tag 257, Seq=0, Power=5, CIR=[22, 46, 54, 18, 47, 125, 99, 49, 27, 40, 58, 53, 80, 49, 36, 104, 124, 32, 65, 442, 1198, 2029, 1945, 901, 373, 468, 191, 105, 55, 121, 154, 253]
+22:07:07:087:811 [ROOT SELECTED] Anchor 2 for Tag 257 Seq 0 (ADV Timeout or Full)
+22:07:07:088:290 [TX] Sent root ID 2 to /dev/ttyACM0
+22:07:07:089:106 [TX] Sent root ID 2 to /dev/ttyACM1
+22:07:07:089:884 [TX] Sent root ID 2 to /dev/ttyACM2
+22:07:07:090:244 [TX] Sent root ID 2 to /dev/ttyACM3
+22:07:07:090:591 [TX] Sent root ID 2 to /dev/ttyACM4
+22:07:07:090:919 [TX] Sent root ID 2 to /dev/ttyACM5
