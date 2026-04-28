@@ -8,7 +8,7 @@ import torch.nn as nn
 import torch.optim as optim
 
 from env import CustomEnv
-from model import DQN, ReplayMemory, Transition
+from model import DQN, DQN_CNN, ReplayMemory, Transition
 from settings import (BATCH_SIZE, EPS_DECAY, EPS_END, EPS_START,
                       EPISODES, GAMMA, LR, MAX_STEP, TAU)
 
@@ -20,8 +20,8 @@ n_actions = env.action_space.n
 state, info = env.reset()
 n_observations = len(state)
 
-policy_net = DQN(n_observations, n_actions).to(device)
-target_net = DQN(n_observations, n_actions).to(device)
+policy_net = DQN_CNN(n_observations,n_actions).to(device)
+target_net = DQN_CNN(n_observations, n_actions).to(device)
 target_net.load_state_dict(policy_net.state_dict())
 
 optimizer = optim.AdamW(policy_net.parameters(), lr=LR, amsgrad=True)
@@ -60,7 +60,11 @@ def optimize_model():
 
     next_state_values = torch.zeros(BATCH_SIZE, device=device)
     with torch.no_grad():
-        next_state_values[non_final_mask] = target_net(non_final_next_states).max(1).values
+        next_actions = policy_net(non_final_next_states).argmax(1, keepdim=True)
+
+        next_state_values[non_final_mask] = target_net(non_final_next_states) \
+            .gather(1, next_actions) \
+            .squeeze(1)
     expected_state_action_values = (next_state_values * GAMMA) + reward_batch
 
     criterion = nn.SmoothL1Loss()

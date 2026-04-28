@@ -39,19 +39,40 @@ class CustomEnv(gym.Env):
             return None
         return random.choice(valid)
 
-    def _build_state(self, record, primary):
+    def _build_state(self, record, prev_primary):
         messages = record.get('messages', {})
 
-        leaf_ids = [i for i in range(1, 7) if i != primary]
+        overhearing_anchor_ids = [i for i in range(1, 7) if i != prev_primary]
+
+        UINT32 = 1 << 32
 
         otj = []
-        for lid in leaf_ids:
-            msg = messages.get(str(lid), [0, 0, 0, 0])
+        for anchor_id in overhearing_anchor_ids:
+            msg = messages.get(str(anchor_id), [0, 0, 0, 0])
+
             if len(msg) < 4:
                 msg = msg + [0] * (4 - len(msg))
-            otj.extend([float(v) for v in msg[:4]])
 
-        state = [float(self.prev_azimuth), float(primary)] + otj
+            msg = [float(v) for v in msg[:4]]
+
+            # 전부 미수신
+            if all(v == 0 for v in msg):
+                otj.extend([-1.0, -1.0, -1.0, -1.0])
+                continue
+
+            nonzero_ts = [v for v in msg if v != 0]
+            base_ts = nonzero_ts[0]
+
+            for v in msg:
+                if v == 0:
+                    otj.append(-1.0)
+                else:
+                    rel = (int(v) - int(base_ts)) % UINT32
+
+                    # 0 → 1로 shift
+                    otj.append((rel / 1000.0) + 1.0)
+
+        state = [float(self.prev_azimuth), float(prev_primary)] + otj
         return np.array(state, dtype=np.float32)
 
     def reset(self, seed=None, options=None):

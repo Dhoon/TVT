@@ -24,11 +24,15 @@ class DQN(nn.Module):
 
 
 class DQN_CNN(nn.Module):
-    def __init__(self, n_actions):
+    def __init__(self, n_observations, n_actions):
         super(DQN_CNN, self).__init__()
 
+        self.n_scalar = 2
+        self.n_channel = 4  # t2, t5, t8, t11
+        self.n_leaf = (n_observations - self.n_scalar) // self.n_channel  # 5
+
         self.cnn = nn.Sequential(
-            nn.Conv1d(4, 32, kernel_size=3, padding=1),
+            nn.Conv1d(self.n_channel, 32, kernel_size=3, padding=1),
             nn.BatchNorm1d(32),
             nn.ReLU(),
             nn.Conv1d(32, 64, kernel_size=3, padding=1),
@@ -37,37 +41,55 @@ class DQN_CNN(nn.Module):
             nn.Conv1d(64, 128, kernel_size=3, padding=1),
             nn.BatchNorm1d(128),
             nn.ReLU(),
-        )  # output: (128, 5) → flatten → 640
+        )
 
         self.scalar_fc = nn.Sequential(
-            nn.Linear(2, 32),
+            nn.Linear(self.n_scalar, 32),
             nn.ReLU(),
             nn.Linear(32, 64),
             nn.ReLU(),
         )
 
-        self.fc = nn.Sequential(
-            nn.Linear(640 + 64, 512),
+        feature_dim = 128 * self.n_leaf + 64
+
+        self.feature_fc = nn.Sequential(
+            nn.Linear(feature_dim, 512),
             nn.ReLU(),
-            nn.Dropout(0.2),
             nn.Linear(512, 256),
             nn.ReLU(),
-            nn.Dropout(0.2),
+        )
+
+        # V(s)
+        self.value_stream = nn.Sequential(
+            nn.Linear(256, 128),
+            nn.ReLU(),
+            nn.Linear(128, 1)
+        )
+
+        # A(s, a)
+        self.advantage_stream = nn.Sequential(
             nn.Linear(256, 128),
             nn.ReLU(),
             nn.Linear(128, n_actions)
         )
 
     def forward(self, x):
-        scalar = x[:, :2]
-        otj = x[:, 2:].reshape(-1, 4, 5)
+        scalar = x[:, :self.n_scalar]
+
+        otj = x[:, self.n_scalar:].reshape(-1, self.n_leaf, self.n_channel)
+        otj = otj.permute(0, 2, 1)
 
         cnn_out = self.cnn(otj).flatten(1)
         scalar_out = self.scalar_fc(scalar)
 
         combined = torch.cat([cnn_out, scalar_out], dim=1)
-        return self.fc(combined)
+        feature = self.feature_fc(combined)
 
+        value = self.value_stream(feature)
+        advantage = self.advantage_stream(feature)
+
+        q = value + advantage - advantage.mean(dim=1, keepdim=True)
+        return q
 
 class ReplayMemory:
     def __init__(self, capacity):
