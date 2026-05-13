@@ -1,0 +1,46 @@
+% Requires: \usepackage{booktabs}, \usepackage{multirow}, \usepackage{makecell}, \usepackage{graphicx}
+
+\begin{table}[t]
+\centering
+\caption{Primary Anchor Selection Distribution (\%) Across Scenarios}
+\label{tab:anchor_dist}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{llcccccc}
+\toprule
+\textbf{Scenario} & \textbf{Method} & \textbf{A1} & \textbf{A2} & \textbf{A3} & \textbf{A4} & \textbf{A5} & \textbf{A6} \\
+\midrule
+\multirow{3}{*}{Static 12.64\,m}
+ & Round-Robin & 16.7 & 16.7 & 16.7 & 16.7 & 16.7 & 16.7 \\
+ & PedLoc      & \textbf{83.9} & 12.9 &  3.1 &  0.0 &  0.0 &  0.0 \\
+ & DA-VPL      & --   & --   & --   & --   & --   & --   \\
+\midrule
+\multirow{3}{*}{Static 22.64\,m}
+ & Round-Robin & 16.7 & 16.7 & 16.7 & 16.7 & 16.7 & 16.7 \\
+ & PedLoc      & \textbf{96.8} &  2.8 &  0.4 &  0.0 &  0.0 &  0.0 \\
+ & DA-VPL      & --   & --   & --   & --   & --   & --   \\
+\midrule
+\multirow{3}{*}{Static 32.64\,m}
+ & Round-Robin & 16.7 & 16.7 & 16.4 & 16.7 & 16.7 & 16.7 \\
+ & PedLoc      & \textbf{76.3} &  0.0 &  1.1 & 22.5 &  0.0 &  0.0 \\
+ & DA-VPL      & --   & --   & --   & --   & --   & --   \\
+\midrule
+\addlinespace[4pt]
+\multirow{3}{*}{\makecell[l]{Moving\\(22.64\,m$\to$2.64\,m)}}
+ & Round-Robin & 16.7 & 16.7 & 16.7 & 16.7 & 16.7 & 16.7 \\
+ & PedLoc      & \textbf{48.4} & 43.8 &  4.7 &  3.1 &  0.0 &  0.0 \\
+ & DA-VPL      & --   & --   & --   & --   & --   & --   \\
+\midrule
+\multirow{3}{*}{\makecell[l]{Moving\\(2.64\,m$\to$22.64\,m)}}
+ & Round-Robin & 16.7 & 16.7 & 16.7 & 16.7 & 16.7 & 16.7 \\
+ & PedLoc      & 36.0 & \textbf{54.0} &  6.0 &  4.0 &  0.0 &  0.0 \\
+ & DA-VPL      & --   & --   & --   & --   & --   & --   \\
+\midrule
+\addlinespace[4pt]
+\multirow{3}{*}{NLoS}
+ & Round-Robin & 16.5 & 16.5 & 16.8 & 16.8 & 16.8 & 16.7 \\
+ & PedLoc      &  0.3 &  9.0 &  0.2 & \textbf{90.5} &  0.0 &  0.0 \\
+ & DA-VPL      & --   & --   & --   & --   & --   & --   \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}

@@ -121,26 +121,27 @@ if __name__ == "__main__":
         total_reward = 0.0
 
         ep_cases = {}
-        ep_sums = {'Rprimary': 0.0, 'Rangle': 0.0, 'Rbest': 0.0, 'rdop': 0.0}
-        ep_n_success = 0
+        ep_sum_primary = 0.0
         ep_n_all = 0
 
         for t in range(MAX_STEP):
             action = select_action(state)
             observation, reward, terminated, truncated, info = env.step(action.item())
+
             total_reward += reward
             reward = torch.tensor([reward], device=device)
-            next_state = torch.tensor(observation, dtype=torch.float32, device=device).unsqueeze(0)
+
+            next_state = torch.tensor(
+                observation,
+                dtype=torch.float32,
+                device=device
+            ).unsqueeze(0)
 
             if 'case' in info:
                 case = info['case']
                 ep_cases[case] = ep_cases.get(case, 0) + 1
-                ep_sums['Rprimary'] += info['Rprimary']
+                ep_sum_primary += info.get('Rprimary', 0.0)
                 ep_n_all += 1
-                if case == 'success':
-                    for k in ('Rangle', 'Rbest', 'rdop'):
-                        ep_sums[k] += info[k]
-                    ep_n_success += 1
 
             memory.push(state, action, next_state, reward)
             state = next_state
@@ -149,30 +150,35 @@ if __name__ == "__main__":
 
             target_net_state_dict = target_net.state_dict()
             policy_net_state_dict = policy_net.state_dict()
+
             for key in policy_net_state_dict:
-                target_net_state_dict[key] = policy_net_state_dict[key] * TAU + target_net_state_dict[key] * (1 - TAU)
+                target_net_state_dict[key] = (
+                    policy_net_state_dict[key] * TAU
+                    + target_net_state_dict[key] * (1 - TAU)
+                )
+
             target_net.load_state_dict(target_net_state_dict)
 
         episode_rewards.append(total_reward)
 
         na = ep_n_all if ep_n_all > 0 else 1
-        ns = ep_n_success if ep_n_success > 0 else 1
         case_str = '  '.join(f"{k}={v}" for k, v in sorted(ep_cases.items()))
-        avg_str  = (f"Rprimary={ep_sums['Rprimary']/na:+.3f}(all)"
-                    f"  Rangle={ep_sums['Rangle']/ns:+.3f}"
-                    f"  Rbest={ep_sums['Rbest']/ns:+.3f}"
-                    f"  rdop={ep_sums['rdop']/ns:+.3f}")
-        tot_str  = '  '.join(f"{k}={ep_sums[k]:+.1f}" for k in ('Rprimary', 'Rangle', 'Rbest', 'rdop'))
-        log(f"Ep {i_episode+1:4d}/{EPISODES} | reward={total_reward:+7.2f} | success={ep_n_success}/{ep_n_all}")
+        avg_primary = ep_sum_primary / na
+
+        log(
+            f"Ep {i_episode+1:4d}/{EPISODES} | "
+            f"reward={total_reward:+7.2f} | "
+            f"avg_Rprimary={avg_primary:+.3f}"
+        )
         log(f"  cases : {case_str}")
-        log(f"  avg   : {avg_str}")
-        log(f"  total : {tot_str}")
+        log(f"  total : Rprimary={ep_sum_primary:+.1f}")
+
         plot_progress()
 
     log('Complete')
     log_file.close()
-    torch.save(policy_net.state_dict(), 'policy_net.pth')
-    print('Model saved to policy_net.pth')
+    torch.save(policy_net.state_dict(), 'policy_net_w-o.pth')
+    print('Model saved to policy_net_w-o.pth')
     plt.ioff()
     plt.show()
     env.close()

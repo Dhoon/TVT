@@ -1,0 +1,4 @@
+Ep    1/1000 | reward= +20.08 | success=46/50
+  cases : leaf_fail=1  primary_fail=3  success=46
+  avg   : Rprimary=+0.819(all)  Rangle=+0.155  Rbest=-0.188  rdop=-0.378
+  total : Rprimary=+41.0  Rangle=+7.1  Rbest=-8.6  rdop=-17.4

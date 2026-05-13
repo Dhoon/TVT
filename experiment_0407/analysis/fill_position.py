@@ -34,4 +34,4 @@ def fill_position(base_filename):
 
         print(f"[{i}/7] {json_filename} → position {pos} 적용 ({len(records)}개 레코드)")
 
-fill_position("log_20260407_231508")
+fill_position("log_20260422_221958_mode1")

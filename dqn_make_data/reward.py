@@ -5,17 +5,27 @@ import numpy as np
 
 from settings import ANCHOR_POSITIONS
 from utils import calc_azimuth, estimate_position_for_action
+
 BETA = 5.0
 GAMMA_DOP = 0.6
 
 SUCCESS_RATES = {
     1: {1: 0.455, 2: 0.876, 3: 0.906, 4: 1.000, 5: 0.819, 6: 0.992},
-    2: {1: 0.988, 2: 0.831, 3: 0.516, 4: 1.000, 5: 0.795, 6: 0.989},
-    3: {1: 0.998, 2: 0.982, 3: 0.996, 4: 0.996, 5: 0.157, 6: 0.948},
+    2: {1: 0.988, 2: 0.831, 3: 0.116, 4: 1.000, 5: 0.795, 6: 0.989},
+    3: {1: 0.998, 2: 0.982, 3: 0.996, 4: 0.996, 5: 0.057, 6: 0.948},
     4: {1: 0.997, 2: 0.987, 3: 1.000, 4: 1.000, 5: 0.827, 6: 0.000},
     5: {1: 0.998, 2: 0.996, 3: 1.000, 4: 1.000, 5: 0.973, 6: 0.135},
-    6: {1: 0.993, 2: 0.973, 3: 1.000, 4: 0.592, 5: 0.973, 6: 0.743},
-    7: {1: 0.992, 2: 0.444, 3: 1.000, 4: 0.992, 5: 0.992, 6: 1.000},
+    6: {1: 0.993, 2: 0.973, 3: 1.000, 4: 0.992, 5: 0.973, 6: 0.743},
+    7: {1: 0.992, 2: 0.054, 3: 1.000, 4: 0.992, 5: 0.992, 6: 1.000},
+}
+
+GROUND_TRUTH = {
+    1: (0, 12.64),
+    2: (0, 22.64),
+    3: (0, 32.64),
+    4: (0, 12.64),
+    5: (0, 12.64),
+    6: (-2.4, 20),
 }
 
 
@@ -51,7 +61,7 @@ def calc_azimuth_error(est_pos, true_pos):
 
 def get_reward(record, action, location):
     primary, leaf1, leaf2 = action[0], action[1], action[2]
-    true_pos = record.get('position')
+    true_pos = GROUND_TRUTH.get(location)
     Rprimary = SUCCESS_RATES.get(location, {}).get(primary, 0.0)
 
     if true_pos is None:

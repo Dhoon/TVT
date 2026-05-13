@@ -1,0 +1,32 @@
+6개하면 잘 안되는 거 보여주고
+
+
+
+뭐할거냐면
+
+1. Root anchor success rate 비교
+Environment	Round-robin	Power-based	our
+10 m LoS	xx%	xx%	+x%
+20 m LoS	xx%	xx%	+x%
+30 m LoS	xx%	xx%	+x%
+Mixed LoS/NLoS	xx%	xx%	+x%
+
+2. Anchor별 root 선택 분포
+
+이건 꼭 필요함.
+
+Method	A1	A2	A3	A4	A5	A6
+Round-robin	16.7	16.7	16.7	16.7	16.7	16.7
+Power-based	xx	xx	xx	xx	xx	xx
+
+3. leaf 앵커 선택 포
+
+
+
+
+root anchor selection -  round-robin/ped/our
+leaf anchor selection - good geometry/ped/our
+
+
+어블레이션 스터디 위해
+앵커만 뽑는거 ㄱ
