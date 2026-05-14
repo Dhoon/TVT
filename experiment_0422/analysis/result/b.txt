@@ -12,34 +12,34 @@
 \multirow{3}{*}{Static 12.64\,m}
  & Round-Robin & 16.7 & 16.7 & 16.7 & 16.7 & 16.7 & 16.7 \\
  & PedLoc      & \textbf{83.9} & 12.9 &  3.1 &  0.0 &  0.0 &  0.0 \\
- & DA-VPL      & --   & --   & --   & --   & --   & --   \\
+ & DA-VPL      & \textbf{46.4} & 32.1 &  10.3 & 10.2 &  0.0 &  0.0 \\
 \midrule
 \multirow{3}{*}{Static 22.64\,m}
  & Round-Robin & 16.7 & 16.7 & 16.7 & 16.7 & 16.7 & 16.7 \\
  & PedLoc      & \textbf{96.8} &  2.8 &  0.4 &  0.0 &  0.0 &  0.0 \\
- & DA-VPL      & --   & --   & --   & --   & --   & --   \\
+ & DA-VPL      &  34.3  & \textbf{37.3} &  18.3 & 10.1 &  0.0 &  0.0 \\
 \midrule
 \multirow{3}{*}{Static 32.64\,m}
  & Round-Robin & 16.7 & 16.7 & 16.4 & 16.7 & 16.7 & 16.7 \\
  & PedLoc      & \textbf{76.3} &  0.0 &  1.1 & 22.5 &  0.0 &  0.0 \\
- & DA-VPL      & --   & --   & --   & --   & --   & --   \\
+ & DA-VPL      & \textbf{36.1} & 33.9 & 15.3 & 13.9 &  0.7 &  0.1 \\
 \midrule
 \addlinespace[4pt]
 \multirow{3}{*}{\makecell[l]{Moving\\(22.64\,m$\to$2.64\,m)}}
  & Round-Robin & 16.7 & 16.7 & 16.7 & 16.7 & 16.7 & 16.7 \\
  & PedLoc      & \textbf{48.4} & 43.8 &  4.7 &  3.1 &  0.0 &  0.0 \\
- & DA-VPL      & --   & --   & --   & --   & --   & --   \\
+ & DA-VPL      & \textbf{40.6} & 32.8 &  10.0 & 16.6 &  0.0 &  0.0 \\
 \midrule
 \multirow{3}{*}{\makecell[l]{Moving\\(2.64\,m$\to$22.64\,m)}}
  & Round-Robin & 16.7 & 16.7 & 16.7 & 16.7 & 16.7 & 16.7 \\
  & PedLoc      & 36.0 & \textbf{54.0} &  6.0 &  4.0 &  0.0 &  0.0 \\
- & DA-VPL      & --   & --   & --   & --   & --   & --   \\
+ & DA-VPL      & \textbf{38.0} & 30.0 &  12.0 & 20.0 &  0.0 &  0.0 \\
 \midrule
 \addlinespace[4pt]
 \multirow{3}{*}{NLoS}
  & Round-Robin & 16.5 & 16.5 & 16.8 & 16.8 & 16.8 & 16.7 \\
  & PedLoc      &  0.3 &  9.0 &  0.2 & \textbf{90.5} &  0.0 &  0.0 \\
- & DA-VPL      & --   & --   & --   & --   & --   & --   \\
+ & DA-VPL      &  0.4 &  0.9 &  0.3 & \textbf{98.1} &  0.0 &  0.2 \\
 \bottomrule
 \end{tabular}%
 }

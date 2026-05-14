@@ -6,7 +6,7 @@ from datetime import datetime
 import torch
 
 from env import CustomEnv, record_fail_count
-from model import DQN_CNN
+from model import DQN_CNN,DQN_Attention
 from reward import GROUND_TRUTH
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -19,8 +19,10 @@ n_actions = env.action_space.n
 state, info = env.reset()
 n_observations = len(state)
 
-policy_net = DQN_CNN(n_observations, n_actions).to(device)
-policy_net.load_state_dict(torch.load('policy_net.pth', map_location=device))
+# policy_net = DQN_CNN(n_observations, n_actions).to(device)
+# policy_net.load_state_dict(torch.load('policy_net_CNN.pth', map_location=device))
+policy_net = DQN_Attention(n_observations, n_actions).to(device)
+policy_net.load_state_dict(torch.load('policy_net_Attention.pth', map_location=device))
 policy_net.eval()
 
 
@@ -95,12 +97,14 @@ if __name__ == "__main__":
                     primary_success_count[primary] += 1
 
             # JSON 레코드 구성
+            leaf = action_arr[-2:]
             if info.get('fail'):
                 json_record = {
                     "seq": seq % 256,
                     "tag": 257,
                     "timestamp": None,
                     "root_anchor": primary,
+                    "leaf": leaf,
                     "distance_m": None,
                     "estimated_position": None,
                     "position": list(true_pos),
@@ -111,6 +115,7 @@ if __name__ == "__main__":
                 record = info['record']
                 json_record = copy.deepcopy(record)
                 json_record['seq'] = seq % 256
+                json_record['leaf'] = leaf
                 json_record['position'] = list(true_pos) if true_pos is not None else None
                 json_record['estimated_position'] = info.get('estimated_position')
 

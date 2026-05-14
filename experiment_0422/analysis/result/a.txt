@@ -8,14 +8,15 @@
 \toprule
 \textbf{Scenario} & \textbf{Round-Robin} & \textbf{PedLoc} & \textbf{DA-VPL} \\
 \midrule
-Static 12.64\,m                        & 80.0 & \textbf{99.9} & -- \\
-Static 22.64\,m                        & 80.0 & \textbf{100.0} & -- \\
-Static 32.64\,m                        & 32.3 & \textbf{99.9} & -- \\
-Moving (22.64\,m $\rightarrow$ 2.64\,m) & 77.1 & \textbf{98.4} & -- \\
-Moving (2.64\,m $\rightarrow$ 22.64\,m) & 80.0 & \textbf{100.0} & -- \\
-NLoS                                   & 34.3 & \textbf{99.7} & -- \\
+Static 12.64\,m                          & 70.1 & 99.9          & \textbf{100.0} \\
+Static 22.64\,m                          & 66.7 & \textbf{100.0} & \textbf{100.0} \\
+Static 32.64\,m                          & 26.9 & \textbf{99.9} & 83.4          \\
+Moving (22.64\,m $\rightarrow$ 2.64\,m)  & 85.7 & 98.4          & \textbf{100.0} \\
+Moving (2.64\,m $\rightarrow$ 22.64\,m)  & 77.1 & \textbf{100.0} & \textbf{100.0} \\
+NLoS                                     & 28.6 & \textbf{99.7} & 98.5          \\
 \midrule
-\textbf{Average}                       & 63.9 & \textbf{99.6} & -- \\
+\textbf{Average}                         & 59.1 & 99.6          & \textbf{97.0} \\
 \bottomrule
 \end{tabular}
 \end{table}
+ 

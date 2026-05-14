@@ -22,7 +22,7 @@ def check_primary_success(json_path):
         if root is None:
             continue
 
-        messages = r.get('messages', {})
+        messages = r.get('messages') or {}
         root_msg = messages.get(str(root))
 
         total += 1
@@ -60,36 +60,42 @@ if __name__ == "__main__":
     # -------------------------------------------------------
     # mode1 = Round-Robin
     # mode2 = PedLoc
+    # location_X = DA-VPL
     # 거리 표기: 차량 중앙 기준 + 2.64m 오프셋 적용
     #   10m -> 12.64m, 20m -> 22.64m, 30m -> 32.64m
     #   Moving 20->0: 22.64m->2.64m
     #   Moving 0->20: 2.64m->22.64m
-    # DA-VPL 추후 추가
     # -------------------------------------------------------
     scenarios = {
         "Static 12.64m": {
             "Round-Robin": os.path.join(script_dir, "log_20260422_221958_mode1_10.json"),
             "PedLoc":      os.path.join(script_dir, "log_20260422_224621_mode2_10.json"),
+            "DA-VPL":      os.path.join(script_dir, "location_1_Static_12.64m.json"),
         },
         "Static 22.64m": {
             "Round-Robin": os.path.join(script_dir, "log_20260422_221958_mode1_20.json"),
             "PedLoc":      os.path.join(script_dir, "log_20260422_224621_mode2_20.json"),
+            "DA-VPL":      os.path.join(script_dir, "location_2_Static_22.64m.json"),
         },
         "Static 32.64m": {
             "Round-Robin": os.path.join(script_dir, "log_20260422_221958_mode1_30.json"),
             "PedLoc":      os.path.join(script_dir, "log_20260422_224621_mode2_30.json"),
+            "DA-VPL":      os.path.join(script_dir, "location_3_Static_32.64m.json"),
         },
         "Moving (22.64m->2.64m)": {
             "Round-Robin": os.path.join(script_dir, "log_20260422_221958_mode1_20-0.json"),
             "PedLoc":      os.path.join(script_dir, "log_20260422_224621_mode2_20-0.json"),
+            "DA-VPL":      os.path.join(script_dir, "location_4_Moving_(22.64m-to2.64m).json"),
         },
         "Moving (2.64m->22.64m)": {
             "Round-Robin": os.path.join(script_dir, "log_20260422_221958_mode1_0-20.json"),
             "PedLoc":      os.path.join(script_dir, "log_20260422_224621_mode2_0-20.json"),
+            "DA-VPL":      os.path.join(script_dir, "location_5_Moving_(2.64m-to22.64m).json"),
         },
         "NLoS": {
             "Round-Robin": os.path.join(script_dir, "log_20260422_233919_mode1_nlos_1.json"),
             "PedLoc":      os.path.join(script_dir, "log_20260422_234741_mode2_nlos_1.json"),
+            "DA-VPL":      os.path.join(script_dir, "location_6_NLoS.json"),
         },
     }
 
@@ -100,7 +106,7 @@ if __name__ == "__main__":
     # 전체 평균
     print(f"\n{'='*55}")
     print("Average across all scenarios:")
-    methods = ["Round-Robin", "PedLoc"]
+    methods = ["Round-Robin", "PedLoc", "DA-VPL"]
     print(f"  {'Method':<15} {'Avg Rate':>8}")
     print(f"  {'-'*25}")
     for method in methods:

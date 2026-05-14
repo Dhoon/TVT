@@ -81,30 +81,37 @@ if __name__ == "__main__":
     # paths: {'Method': (json_path, missing_anchor)}
     # Round-Robin: missing_anchor=6 (로그 버그 보정)
     # PedLoc: missing_anchor=None (실 데이터 그대로)
+    # DA-VPL: missing_anchor=None (실 데이터 그대로)
     scenarios = {
         "Static 12.64m": {
             "Round-Robin": (os.path.join(script_dir, "log_20260422_221958_mode1_10.json"), 6),
             "PedLoc":      (os.path.join(script_dir, "log_20260422_224621_mode2_10.json"), None),
+            "DA-VPL":      (os.path.join(script_dir, "location_1_Static_12.64m.json"), None),
         },
         "Static 22.64m": {
             "Round-Robin": (os.path.join(script_dir, "log_20260422_221958_mode1_20.json"), 6),
             "PedLoc":      (os.path.join(script_dir, "log_20260422_224621_mode2_20.json"), None),
+            "DA-VPL":      (os.path.join(script_dir, "location_2_Static_22.64m.json"), None),
         },
         "Static 32.64m": {
             "Round-Robin": (os.path.join(script_dir, "log_20260422_221958_mode1_30.json"), 6),
             "PedLoc":      (os.path.join(script_dir, "log_20260422_224621_mode2_30.json"), None),
+            "DA-VPL":      (os.path.join(script_dir, "location_3_Static_32.64m.json"), None),
         },
         "Moving (22.64m->2.64m)": {
             "Round-Robin": (os.path.join(script_dir, "log_20260422_221958_mode1_20-0.json"), 6),
             "PedLoc":      (os.path.join(script_dir, "log_20260422_224621_mode2_20-0.json"), None),
+            "DA-VPL":      (os.path.join(script_dir, "location_4_Moving_(22.64m-to2.64m).json"), None),
         },
         "Moving (2.64m->22.64m)": {
             "Round-Robin": (os.path.join(script_dir, "log_20260422_221958_mode1_0-20.json"), 6),
             "PedLoc":      (os.path.join(script_dir, "log_20260422_224621_mode2_0-20.json"), None),
+            "DA-VPL":      (os.path.join(script_dir, "location_5_Moving_(2.64m-to22.64m).json"), None),
         },
         "NLoS": {
             "Round-Robin": (os.path.join(script_dir, "log_20260422_233919_mode1_nlos_1.json"), 6),
             "PedLoc":      (os.path.join(script_dir, "log_20260422_234741_mode2_nlos_1.json"), None),
+            "DA-VPL":      (os.path.join(script_dir, "location_6_NLoS.json"), None),
         },
     }
 

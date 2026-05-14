@@ -10,7 +10,7 @@ import torch.nn as nn
 import torch.optim as optim
 
 from env import CustomEnv
-from model import DQN, DQN_CNN, ReplayMemory, Transition
+from model import DQN, DQN_CNN, DQN_Attention, ReplayMemory, Transition
 from settings import (BATCH_SIZE, EPS_DECAY, EPS_END, EPS_START,
                       EPISODES, GAMMA, LR, MAX_STEP, TAU)
 
@@ -22,8 +22,10 @@ n_actions = env.action_space.n
 state, info = env.reset()
 n_observations = len(state)
 
-policy_net = DQN_CNN(n_observations,n_actions).to(device)
-target_net = DQN_CNN(n_observations, n_actions).to(device)
+# policy_net = DQN_CNN(n_observations,n_actions).to(device)
+# target_net = DQN_CNN(n_observations, n_actions).to(device)
+policy_net = DQN_Attention(n_observations,n_actions).to(device)
+target_net = DQN_Attention(n_observations, n_actions).to(device)
 target_net.load_state_dict(policy_net.state_dict())
 
 optimizer = optim.AdamW(policy_net.parameters(), lr=LR, amsgrad=True)
@@ -126,8 +128,12 @@ if __name__ == "__main__":
         ep_n_all = 0
 
         for t in range(MAX_STEP):
+            az = state[0][0].item()
+            prev_p = int(state[0][1].item())
             action = select_action(state)
+            action_arr = env.get_action_array(action.item())
             observation, reward, terminated, truncated, info = env.step(action.item())
+            log(f"[STEP] az={az:.2f} prev_primary={prev_p} action={action_arr} reward={reward:+.3f}")
             total_reward += reward
             reward = torch.tensor([reward], device=device)
             next_state = torch.tensor(observation, dtype=torch.float32, device=device).unsqueeze(0)

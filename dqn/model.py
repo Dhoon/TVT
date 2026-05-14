@@ -91,6 +91,80 @@ class DQN_CNN(nn.Module):
         q = value + advantage - advantage.mean(dim=1, keepdim=True)
         return q
 
+class DQN_Attention(nn.Module):
+    def __init__(self, n_observations, n_actions):
+        super(DQN_Attention, self).__init__()
+ 
+        self.n_scalar = 2
+        self.n_msg = 4
+        self.n_anchor = (n_observations - self.n_scalar) // self.n_msg  # 6
+ 
+        self.embed_dim = 64
+        self.anchor_embed = nn.Sequential(
+            nn.Linear(self.n_msg, self.embed_dim),
+            nn.ReLU(),
+            nn.Linear(self.embed_dim, self.embed_dim),
+        )
+ 
+        self.attention = nn.MultiheadAttention(
+            embed_dim=self.embed_dim,
+            num_heads=4,
+            batch_first=True,
+            dropout=0.1,
+        )
+        self.attn_norm = nn.LayerNorm(self.embed_dim)
+ 
+        self.scalar_fc = nn.Sequential(
+            nn.Linear(self.n_scalar, 32),
+            nn.ReLU(),
+            nn.Linear(32, 64),
+            nn.ReLU(),
+        )
+ 
+        feature_dim = self.n_anchor * self.embed_dim + 64
+ 
+        self.feature_fc = nn.Sequential(
+            nn.Linear(feature_dim, 512),
+            nn.ReLU(),
+            nn.Linear(512, 256),
+            nn.ReLU(),
+        )
+ 
+        self.value_stream = nn.Sequential(
+            nn.Linear(256, 128),
+            nn.ReLU(),
+            nn.Linear(128, 1)
+        )
+ 
+        self.advantage_stream = nn.Sequential(
+            nn.Linear(256, 128),
+            nn.ReLU(),
+            nn.Linear(128, n_actions)
+        )
+ 
+    def forward(self, x):
+        scalar = x[:, :self.n_scalar]
+ 
+        anchors = x[:, self.n_scalar:].reshape(-1, self.n_anchor, self.n_msg)
+ 
+        anchor_emb = self.anchor_embed(anchors)
+ 
+        attn_out, _ = self.attention(anchor_emb, anchor_emb, anchor_emb)
+        attn_out = self.attn_norm(attn_out + anchor_emb)
+ 
+        attn_flat = attn_out.flatten(1)
+ 
+        scalar_out = self.scalar_fc(scalar)
+ 
+        combined = torch.cat([attn_flat, scalar_out], dim=1)
+        feature = self.feature_fc(combined)
+ 
+        value = self.value_stream(feature)
+        advantage = self.advantage_stream(feature)
+ 
+        q = value + advantage - advantage.mean(dim=1, keepdim=True)
+        return q
+
 class ReplayMemory:
     def __init__(self, capacity):
         self.memory = deque([], maxlen=capacity)
