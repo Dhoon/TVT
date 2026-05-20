@@ -1,5 +1,4 @@
 import math
-from itertools import combinations
 
 import numpy as np
 
@@ -7,7 +6,7 @@ from settings import ANCHOR_POSITIONS
 from utils import calc_azimuth, estimate_position_for_action
 
 BETA = 5.0
-GAMMA_DOP = 0.6
+GAMMA_DOP = 1.0
 
 SUCCESS_RATES = {
     1: {1: 0.455, 2: 0.876, 3: 0.906, 4: 1.000, 5: 0.819, 6: 0.992},
@@ -45,7 +44,8 @@ def calc_gdop(tag_pos, anchor_ids):
 
     try:
         HtH_inv = np.linalg.inv(H.T @ H)
-        gdop = math.sqrt(np.trace(HtH_inv))
+        trace = np.trace(HtH_inv)
+        gdop = math.sqrt(trace) if trace > 0 else 999.0
     except np.linalg.LinAlgError:
         gdop = 999.0
 
@@ -60,22 +60,22 @@ def calc_azimuth_error(est_pos, true_pos):
 
 
 def get_reward(record, action, location):
-    primary, leaf1, leaf2 = action[0], action[1], action[2]
+    primary, leaf1 = action[0], action[1]
     true_pos = GROUND_TRUTH.get(location)
     Rprimary = SUCCESS_RATES.get(location, {}).get(primary, 0.0)
 
     if true_pos is None:
         return 0, {'case': 'no_true_pos', 'Rprimary': 0.0, 'Rangle': 0.0, 'Rbest': 0.0, 'rdop': 0.0}
 
-    est_pos, fail_type = estimate_position_for_action(record, primary, leaf1, leaf2)
+    est_pos, fail_type = estimate_position_for_action(record, primary, leaf1)
 
     if fail_type == 'primary':
-        return 0, {'case': 'primary_fail', 'Rprimary': 0.0, 'Rangle': 0.0, 'Rbest': 0.0, 'rdop': 0.0}
+        return -1.0, {'case': 'primary_fail', 'Rprimary': 0.0, 'Rangle': 0.0, 'Rbest': 0.0, 'rdop': 0.0}
 
     remaining = [i for i in range(1, 7) if i != primary]
     best_error = float('inf')
-    for l1, l2 in combinations(remaining, 2):
-        pos, _ = estimate_position_for_action(record, primary, l1, l2)
+    for l in remaining:
+        pos, _ = estimate_position_for_action(record, primary, l)
         if pos is None:
             continue
         err = calc_azimuth_error(pos, true_pos)
@@ -85,16 +85,20 @@ def get_reward(record, action, location):
     if est_pos is None:  # leaf fail
         if best_error == float('inf'):
             return -1.0, {'case': 'leaf_no_best', 'Rprimary': Rprimary, 'Rangle': 0.0, 'Rbest': 0.0, 'rdop': 0.0}
-        Rbest = -min(1.0, max(0.0, (best_error - BETA) / BETA))
+        Rbest = -(1.0 - best_error / BETA) if best_error <= BETA else 0.0
         return Rbest, {'case': 'leaf_fail', 'Rprimary': Rprimary, 'Rangle': 0.0, 'Rbest': Rbest, 'rdop': 0.0}
 
-    Rbest = -min(1.0, max(0.0, (best_error - BETA) / BETA))
-    Et = calc_azimuth_error(est_pos, true_pos)
-    Rangle = 1.0 / (1.0 + (Et / BETA) ** 2)
+    angle_err = calc_azimuth_error(est_pos, true_pos)
+    if angle_err <= BETA:
+        Rangle = 1.0 - (angle_err / BETA)
+        Rbest  = 0.0
+    else:
+        Rangle = max(-1.0, -(angle_err - BETA) / BETA)
+        Rbest  = -(1.0 - best_error / BETA) if best_error <= BETA else 0.0
 
-    gdop = calc_gdop(est_pos, [primary, leaf1, leaf2])
+    gdop = calc_gdop(est_pos, [primary, leaf1])
     log_gdop = math.log10(gdop) if gdop > 0 else 0
     rdop = 0.0 if log_gdop <= GAMMA_DOP else -min(1.0, (log_gdop - GAMMA_DOP) / GAMMA_DOP)
 
-    total = Rprimary + Rbest + Rangle + rdop
+    total = Rprimary + Rangle + Rbest + rdop
     return total, {'case': 'success', 'Rprimary': Rprimary, 'Rangle': Rangle, 'Rbest': Rbest, 'rdop': rdop}

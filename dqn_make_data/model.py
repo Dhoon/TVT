@@ -28,8 +28,8 @@ class DQN_CNN(nn.Module):
         super(DQN_CNN, self).__init__()
 
         self.n_scalar = 2
-        self.n_channel = 4  # t2, t5, t8, t11
-        self.n_leaf = (n_observations - self.n_scalar) // self.n_channel  # 5
+        self.n_channel = 3  # t2, t5, t8
+        self.n_leaf = (n_observations - self.n_scalar) // self.n_channel  # 6
 
         self.cnn = nn.Sequential(
             nn.Conv1d(self.n_channel, 32, kernel_size=3, padding=1),
@@ -96,7 +96,7 @@ class DQN_Attention(nn.Module):
         super(DQN_Attention, self).__init__()
  
         self.n_scalar = 2
-        self.n_msg = 4
+        self.n_msg = 3
         self.n_anchor = (n_observations - self.n_scalar) // self.n_msg  # 6
  
         self.embed_dim = 64

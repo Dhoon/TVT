@@ -22,13 +22,24 @@ n_observations = len(state)
 # policy_net = DQN_CNN(n_observations, n_actions).to(device)
 # policy_net.load_state_dict(torch.load('policy_net_CNN.pth', map_location=device))
 policy_net = DQN_Attention(n_observations, n_actions).to(device)
-policy_net.load_state_dict(torch.load('policy_net_Attention.pth', map_location=device))
+policy_net.load_state_dict(torch.load('policy_net_ft.pth', map_location=device))
 policy_net.eval()
 
 
+N_SCALAR = 2
+UNAVAIL_PENALTY = 10.0
+
 def select_action(state):
     with torch.no_grad():
-        return policy_net(state).max(1).indices.view(1, 1)
+        q_values = policy_net(state)
+        state_np = state.cpu().numpy()[0]
+        for anchor_idx in range(6):
+            offset = N_SCALAR + anchor_idx * 3
+            if all(state_np[offset + k] <= -0.9 for k in range(3)):
+                for i, act in enumerate(env.action_list):
+                    if act[0] == anchor_idx + 1:
+                        q_values[0][i] -= UNAVAIL_PENALTY
+        return q_values.max(1).indices.view(1, 1)
 
 
 SCENARIO_LABELS = {
@@ -97,7 +108,7 @@ if __name__ == "__main__":
                     primary_success_count[primary] += 1
 
             # JSON 레코드 구성
-            leaf = action_arr[-2:]
+            leaf = action_arr[1:]
             if info.get('fail'):
                 json_record = {
                     "seq": seq % 256,

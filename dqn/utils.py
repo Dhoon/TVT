@@ -11,7 +11,37 @@ def calc_azimuth(est_x, est_y):
     return (az + 360) % 360
 
 
-def estimate_position_for_action(record, primary, leaf1, leaf2):
+def extract_ranging(record, primary, leaf):
+    """(root_dist, tdoa) 반환. 메시지 없으면 None."""
+    messages = record.get('messages', {})
+
+    root_msg = messages.get(str(primary))
+    if not root_msg or len(root_msg) < 5:
+        return None
+    Ra, Da, Rb, Db, D2b = root_msg[:5]
+    if any(ts < 0 for ts in (Ra, Da, Rb, Db, D2b)):
+        return None
+    num = Ra * Rb - Da * Db
+    den = Ra + Rb + Da + Db
+    root_dist = (num / den if den != 0 else 0) * DWT_TIME_UNIT * C
+
+    msg = messages.get(str(leaf))
+    if not msg or len(msg) < 3:
+        return None
+    t2, t5, t8 = float(msg[0]), float(msg[1]), float(msg[2])
+    if t2 <= 0 or t5 <= 0 or t8 <= 0:
+        return None
+    UINT32 = 1 << 32
+    Rt1 = (t5 - t2) % UINT32
+    Rt2 = (t8 - t5) % UINT32
+    denom = 2 * Rt1 + 2 * Rt2
+    numer = Da * Rt1 - Rt2 * Ra + Rb * Rt1 - Rt2 * Db
+    tdoa = (numer / denom if denom != 0 else 0) * DWT_TIME_UNIT * C
+
+    return root_dist, tdoa
+
+
+def estimate_position_for_action(record, primary, leaf1, prev_est=None):
     messages = record.get('messages', {})
 
     root_msg = messages.get(str(primary))
@@ -31,7 +61,7 @@ def estimate_position_for_action(record, primary, leaf1, leaf2):
     leaf_positions = []
     tdoa_deltas = []
 
-    for lid in [leaf1, leaf2]:
+    for lid in [leaf1]:
         msg = messages.get(str(lid))
         if not msg or len(msg) < 3:
             continue
@@ -65,12 +95,12 @@ def estimate_position_for_action(record, primary, leaf1, leaf2):
             res.append(d_leaf - d_leaf_root - delta_d)
         return res
 
-    angles = np.linspace(0, 2 * np.pi, 6, endpoint=False)
-    candidates = [
-        least_squares(residuals, x0=(
-            root_pos[0] + root_dist * np.cos(a),
-            root_pos[1] + root_dist * np.sin(a)
-        )) for a in angles
-    ]
-    result = min((r for r in candidates if r.success), key=lambda r: r.cost, default=None)
-    return (result.x, None) if result else (None, 'leaf')
+    if prev_est is not None:
+        x0 = prev_est
+    else:
+        x0 = root_pos  # cold start: root anchor 위치
+
+    result = least_squares(residuals, x0=x0)
+    if result.success:
+        return result.x, None
+    return None, 'leaf'

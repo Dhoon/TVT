@@ -1,0 +1,33 @@
+============================================================
+Test Start | device=cpu
+============================================================
+
+[Location 2] Static 22.64m | steps=686
+--------------------------------------------------
+  [SAVED] result/location_2_Static_22.64m.json (686개 레코드)
+  reward=-736.59 | success=685/686
+  cases : leaf_fail=1  success=685
+  avg   : Rprimary=+0.833(all)  Rangle=-0.991  Rbest=-0.592  rdop=-0.324
+  total : Rprimary=+571.3  Rangle=-679.0  Rbest=-405.5  rdop=-222.0
+
+  [Primary Anchor Selection Distribution]
+    Anchor 1:    7 (  1.0%)
+    Anchor 2:  678 ( 98.8%)
+    Anchor 3:    0 (  0.0%)
+    Anchor 4:    1 (  0.1%)
+    Anchor 5:    0 (  0.0%)
+    Anchor 6:    0 (  0.0%)
+
+  [Primary Anchor Communication Success Rate]
+    Anchor 1:    7/   7 (100.0%)
+    Anchor 2:  678/ 678 (100.0%)
+    Anchor 3:    0/   0 (  0.0%)
+    Anchor 4:    1/   1 (100.0%)
+    Anchor 5:    0/   0 (  0.0%)
+    Anchor 6:    0/   0 (  0.0%)
+
+총 record_fail_count: 0
+
+============================================================
+Test Complete
+============================================================

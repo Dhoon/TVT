@@ -11,7 +11,7 @@ def calc_azimuth(est_x, est_y):
     return (az + 360) % 360
 
 
-def estimate_position_for_action(record, primary, leaf1, leaf2):
+def estimate_position_for_action(record, primary, leaf1, prev_est=None):
     messages = record.get('messages', {})
 
     root_msg = messages.get(str(primary))
@@ -31,7 +31,7 @@ def estimate_position_for_action(record, primary, leaf1, leaf2):
     leaf_positions = []
     tdoa_deltas = []
 
-    for lid in [leaf1, leaf2]:
+    for lid in [leaf1]:
         msg = messages.get(str(lid))
         if not msg or len(msg) < 3:
             continue
@@ -72,5 +72,9 @@ def estimate_position_for_action(record, primary, leaf1, leaf2):
             root_pos[1] + root_dist * np.sin(a)
         )) for a in angles
     ]
-    result = min((r for r in candidates if r.success), key=lambda r: r.cost, default=None)
+    if prev_est is not None:
+        candidates.append(least_squares(residuals, x0=prev_est))
+    valid = [r for r in candidates if r.success and r.x[1] > 0]
+    result = min(valid, key=lambda r: r.cost) if valid else \
+             min((r for r in candidates if r.success), key=lambda r: r.cost, default=None)
     return (result.x, None) if result else (None, 'leaf')

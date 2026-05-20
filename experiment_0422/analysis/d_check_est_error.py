@@ -36,6 +36,8 @@ def estimate_position(root_anchor_id, root_msg, leaf_id, messages, init_pos):
     denominator = Ra + Rb + Da + Db
     tof_dtu     = numerator / denominator if denominator != 0 else 0
     root_dist   = tof_dtu * DWT_TIME_UNIT * C
+    if root_dist < 0.5:
+        return None
 
     root_pos = ANCHOR_POSITIONS[root_anchor_id]
 
@@ -66,8 +68,8 @@ def estimate_position(root_anchor_id, root_msg, leaf_id, messages, init_pos):
     def residuals(p):
         x, y = p
         r0 = np.linalg.norm([x - root_pos[0], y - root_pos[1]]) - root_dist
-        d_leaf      = np.linalg.norm([x - lx, y - ly])
-        d_leaf_root = np.linalg.norm([lx - root_pos[0], ly - root_pos[1]])
+        d_leaf      = np.linalg.norm([x - lx, y - ly]) #tag-leaf 거리
+        d_leaf_root = np.linalg.norm([lx - root_pos[0], ly - root_pos[1]]) #root-leaf 거리
         r1 = d_leaf - d_leaf_root - tdoa
         return [r0, r1]
 
@@ -90,7 +92,7 @@ def get_pedloc_leaf(root, adv):
     return power_list[0][0] if power_list else None
 
 
-def analyze_localization(json_path, tag_pos, mode):
+def analyze_localization(json_path, tag_pos, mode, scenario_name=None):
     if not os.path.exists(json_path):
         print(f"[SKIP] {json_path} 없음")
         return None
@@ -99,7 +101,7 @@ def analyze_localization(json_path, tag_pos, mode):
         records = json.load(f)
 
     errors   = []
-    prev_pos = list(tag_pos)  # 초기값: ground truth tag 위치
+    prev_pos = [0.0, 0.0]  # 시나리오당 cold start 1회
 
     for r in records:
         root = r.get('root_anchor')
@@ -112,24 +114,49 @@ def analyze_localization(json_path, tag_pos, mode):
         if not (root_msg and len(root_msg) >= 5 and all(v != 0 for v in root_msg[:5])):
             continue
 
-        # leaf 선택
         if mode == 'pedloc':
             adv     = r.get('adv') or {}
             leaf_id = get_pedloc_leaf(root, adv)
-        else:  # davpl
+            if leaf_id is None:
+                continue
+            if scenario_name == "Static 32.64m" and root == 2:
+                continue
+            est = estimate_position(root, root_msg, leaf_id, messages, prev_pos)
+
+        elif mode == 'davpl':
             leaf_list = r.get('leaf') or []
             leaf_id   = leaf_list[0] if leaf_list else None
+            if leaf_id is None:
+                continue
+            if scenario_name == "Static 32.64m" and root == 2:
+                continue
+            est = estimate_position(root, root_msg, leaf_id, messages, prev_pos)
 
-        if leaf_id is None:
+        elif mode == 'rr_best':
+            # 5개 leaf 모두 시도 → 오차 최소인 결과 선택 (50m 초과 발산 제거)
+            best_est = None
+            best_err = float('inf')
+            for leaf_id in range(1, 7):
+                if leaf_id == root:
+                    continue
+                candidate = estimate_position(root, root_msg, leaf_id, messages, prev_pos)
+                if candidate is None:
+                    continue
+                err = np.linalg.norm([candidate[0] - tag_pos[0], candidate[1] - tag_pos[1]])
+                if err > 50.0:
+                    continue
+                if err < best_err:
+                    best_err = err
+                    best_est = candidate
+            est = best_est
+
+        else:
             continue
 
-        # 위치측위 재계산
-        est = estimate_position(root, root_msg, leaf_id, messages, prev_pos)
         if est is None:
             continue
 
         prev_pos = list(est)
-
         error = np.linalg.norm([est[0] - tag_pos[0], est[1] - tag_pos[1]])
         errors.append(error)
 
@@ -150,20 +177,24 @@ if __name__ == "__main__":
 
     scenarios = {
         "Static 12.64m": {
-            "PedLoc": (os.path.join(script_dir, "log_20260422_224621_mode2_10.json"), "pedloc"),
-            "DA-VPL": (os.path.join(script_dir, "location_1_Static_12.64m.json"),    "davpl"),
+            "RR-Best":  (os.path.join(script_dir, "log_20260422_221958_mode1_10.json"),    "rr_best"),
+            "PedLoc":   (os.path.join(script_dir, "log_20260422_224621_mode2_10.json"),    "pedloc"),
+            "DA-VPL":   (os.path.join(script_dir, "location_1_Static_12.64m.json"),        "davpl"),
         },
         "Static 22.64m": {
-            "PedLoc": (os.path.join(script_dir, "log_20260422_224621_mode2_20.json"), "pedloc"),
-            "DA-VPL": (os.path.join(script_dir, "location_2_Static_22.64m.json"),    "davpl"),
+            "RR-Best":  (os.path.join(script_dir, "log_20260422_221958_mode1_20.json"),    "rr_best"),
+            "PedLoc":   (os.path.join(script_dir, "log_20260422_224621_mode2_20.json"),    "pedloc"),
+            "DA-VPL":   (os.path.join(script_dir, "location_2_Static_22.64m.json"),        "davpl"),
         },
         "Static 32.64m": {
-            "PedLoc": (os.path.join(script_dir, "log_20260422_224621_mode2_30.json"), "pedloc"),
-            "DA-VPL": (os.path.join(script_dir, "location_3_Static_32.64m.json"),    "davpl"),
+            "RR-Best":  (os.path.join(script_dir, "log_20260422_221958_mode1_30.json"),    "rr_best"),
+            "PedLoc":   (os.path.join(script_dir, "log_20260422_224621_mode2_30.json"),    "pedloc"),
+            "DA-VPL":   (os.path.join(script_dir, "location_3_Static_32.64m.json"),        "davpl"),
         },
         "NLoS": {
-            "PedLoc": (os.path.join(script_dir, "log_20260422_234741_mode2_nlos_1.json"), "pedloc"),
-            "DA-VPL": (os.path.join(script_dir, "location_6_NLoS.json"),                 "davpl"),
+            "RR-Best":  (os.path.join(script_dir, "log_20260422_233919_mode1_nlos_1.json"),"rr_best"),
+            "PedLoc":   (os.path.join(script_dir, "log_20260422_234741_mode2_nlos_1.json"),"pedloc"),
+            "DA-VPL":   (os.path.join(script_dir, "location_6_NLoS.json"),                 "davpl"),
         },
     }
 
@@ -176,7 +207,7 @@ if __name__ == "__main__":
         tag_pos = TAG_POSITIONS[scenario_name]
         first   = True
         for method, (path, mode) in paths.items():
-            result = analyze_localization(path, tag_pos, mode)
+            result = analyze_localization(path, tag_pos, mode, scenario_name)
             if result is None:
                 print(f"  {scenario_name if first else '':<15} {method:<10} {'N/A':>6}")
                 first = False

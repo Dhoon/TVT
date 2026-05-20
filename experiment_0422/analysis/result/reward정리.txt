@@ -1,0 +1,8 @@
+완료. 최종 reward 구조 정리:
+
+상황	Rangle	Rbest
+angle_err ≤ BETA	+(1 - err/BETA) ∈ (0,1]	0
+angle_err > BETA, best ≤ BETA	-(err-BETA)/BETA ∈ [-1,0)	-(1 - best/BETA) ∈ [-1,0)
+angle_err > BETA, best > BETA	-(err-BETA)/BETA ∈ [-1,0)	0 (primary 탓)
+leaf fail, best ≤ BETA	0	-(1 - best/BETA) ∈ [-1,0)
+leaf fail, best > BETA	0	0

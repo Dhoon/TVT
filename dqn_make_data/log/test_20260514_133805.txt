@@ -1,0 +1,163 @@
+============================================================
+Test Start | device=cpu
+============================================================
+
+[Location 1] Static 12.64m | steps=704
+--------------------------------------------------
+  [SAVED] result/location_1_Static_12.64m.json (704개 레코드)
+  reward=-360.00 | success=700/704
+  cases : leaf_fail=4  success=700
+  avg   : Rprimary=+0.873(all)  Rangle=+0.063  Rbest=-0.761  rdop=-0.684
+  total : Rprimary=+614.7  Rangle=+44.0  Rbest=-532.4  rdop=-478.8
+
+  [Primary Anchor Selection Distribution]
+    Anchor 1:    5 (  0.7%)
+    Anchor 2:  698 ( 99.1%)
+    Anchor 3:    0 (  0.0%)
+    Anchor 4:    1 (  0.1%)
+    Anchor 5:    0 (  0.0%)
+    Anchor 6:    0 (  0.0%)
+
+  [Primary Anchor Communication Success Rate]
+    Anchor 1:    5/   5 (100.0%)
+    Anchor 2:  698/ 698 (100.0%)
+    Anchor 3:    0/   0 (  0.0%)
+    Anchor 4:    1/   1 (100.0%)
+    Anchor 5:    0/   0 (  0.0%)
+    Anchor 6:    0/   0 (  0.0%)
+
+총 record_fail_count: 0
+
+[Location 2] Static 22.64m | steps=686
+--------------------------------------------------
+  [SAVED] result/location_2_Static_22.64m.json (686개 레코드)
+  reward=-670.22 | success=686/686
+  cases : success=686
+  avg   : Rprimary=+0.831(all)  Rangle=+0.065  Rbest=-0.873  rdop=-1.000
+  total : Rprimary=+570.1  Rangle=+44.8  Rbest=-599.1  rdop=-686.0
+
+  [Primary Anchor Selection Distribution]
+    Anchor 1:    0 (  0.0%)
+    Anchor 2:  686 (100.0%)
+    Anchor 3:    0 (  0.0%)
+    Anchor 4:    0 (  0.0%)
+    Anchor 5:    0 (  0.0%)
+    Anchor 6:    0 (  0.0%)
+
+  [Primary Anchor Communication Success Rate]
+    Anchor 1:    0/   0 (  0.0%)
+    Anchor 2:  686/ 686 (100.0%)
+    Anchor 3:    0/   0 (  0.0%)
+    Anchor 4:    0/   0 (  0.0%)
+    Anchor 5:    0/   0 (  0.0%)
+    Anchor 6:    0/   0 (  0.0%)
+
+총 record_fail_count: 0
+
+[Location 3] Static 32.64m | steps=706
+--------------------------------------------------
+  [SAVED] result/location_3_Static_32.64m.json (706개 레코드)
+  reward=  -0.95 | success=1/2
+  cases : leaf_fail=1  success=1
+  avg   : Rprimary=+0.998(all)  Rangle=+0.368  Rbest=-0.312  rdop=-1.000
+  total : Rprimary=+2.0  Rangle=+0.4  Rbest=-0.3  rdop=-1.0
+
+  [Primary Anchor Selection Distribution]
+    Anchor 1:    2 (  0.3%)
+    Anchor 2:  704 ( 99.7%)
+    Anchor 3:    0 (  0.0%)
+    Anchor 4:    0 (  0.0%)
+    Anchor 5:    0 (  0.0%)
+    Anchor 6:    0 (  0.0%)
+
+  [Primary Anchor Communication Success Rate]
+    Anchor 1:    2/   2 (100.0%)
+    Anchor 2:    0/ 704 (  0.0%)
+    Anchor 3:    0/   0 (  0.0%)
+    Anchor 4:    0/   0 (  0.0%)
+    Anchor 5:    0/   0 (  0.0%)
+    Anchor 6:    0/   0 (  0.0%)
+
+총 record_fail_count: 704
+
+[Location 4] Moving (22.64m->2.64m) | steps=64
+--------------------------------------------------
+  [SAVED] result/location_4_Moving_(22.64m-to2.64m).json (64개 레코드)
+  reward= -15.38 | success=62/64
+  cases : leaf_fail=2  success=62
+  avg   : Rprimary=+0.989(all)  Rangle=+0.120  Rbest=-0.590  rdop=-0.734
+  total : Rprimary=+63.3  Rangle=+7.4  Rbest=-36.6  rdop=-45.5
+
+  [Primary Anchor Selection Distribution]
+    Anchor 1:   10 ( 15.6%)
+    Anchor 2:   52 ( 81.2%)
+    Anchor 3:    2 (  3.1%)
+    Anchor 4:    0 (  0.0%)
+    Anchor 5:    0 (  0.0%)
+    Anchor 6:    0 (  0.0%)
+
+  [Primary Anchor Communication Success Rate]
+    Anchor 1:   10/  10 (100.0%)
+    Anchor 2:   52/  52 (100.0%)
+    Anchor 3:    2/   2 (100.0%)
+    Anchor 4:    0/   0 (  0.0%)
+    Anchor 5:    0/   0 (  0.0%)
+    Anchor 6:    0/   0 (  0.0%)
+
+총 record_fail_count: 704
+
+[Location 5] Moving (2.64m->22.64m) | steps=50
+--------------------------------------------------
+  [SAVED] result/location_5_Moving_(2.64m-to22.64m).json (50개 레코드)
+  reward=  +3.03 | success=49/50
+  cases : leaf_fail=1  success=49
+  avg   : Rprimary=+0.996(all)  Rangle=+0.208  Rbest=-0.451  rdop=-0.692
+  total : Rprimary=+49.8  Rangle=+10.2  Rbest=-22.1  rdop=-33.9
+
+  [Primary Anchor Selection Distribution]
+    Anchor 1:   12 ( 24.0%)
+    Anchor 2:   38 ( 76.0%)
+    Anchor 3:    0 (  0.0%)
+    Anchor 4:    0 (  0.0%)
+    Anchor 5:    0 (  0.0%)
+    Anchor 6:    0 (  0.0%)
+
+  [Primary Anchor Communication Success Rate]
+    Anchor 1:   12/  12 (100.0%)
+    Anchor 2:   38/  38 (100.0%)
+    Anchor 3:    0/   0 (  0.0%)
+    Anchor 4:    0/   0 (  0.0%)
+    Anchor 5:    0/   0 (  0.0%)
+    Anchor 6:    0/   0 (  0.0%)
+
+총 record_fail_count: 704
+
+[Location 6] NLoS | steps=912
+--------------------------------------------------
+  [SAVED] result/location_6_NLoS.json (912개 레코드)
+  reward=-654.84 | success=39/911
+  cases : leaf_fail=842  leaf_no_best=13  primary_fail=17  success=39
+  avg   : Rprimary=+0.973(all)  Rangle=+0.100  Rbest=-0.306  rdop=-1.000
+  total : Rprimary=+886.4  Rangle=+3.9  Rbest=-11.9  rdop=-39.0
+
+  [Primary Anchor Selection Distribution]
+    Anchor 1:   20 (  2.2%)
+    Anchor 2:   25 (  2.7%)
+    Anchor 3:    0 (  0.0%)
+    Anchor 4:  866 ( 95.0%)
+    Anchor 5:    0 (  0.0%)
+    Anchor 6:    1 (  0.1%)
+
+  [Primary Anchor Communication Success Rate]
+    Anchor 1:   20/  20 (100.0%)
+    Anchor 2:   25/  25 (100.0%)
+    Anchor 3:    0/   0 (  0.0%)
+    Anchor 4:  849/ 866 ( 98.0%)
+    Anchor 5:    0/   0 (  0.0%)
+    Anchor 6:    0/   1 (  0.0%)
+
+총 record_fail_count: 705
+
+============================================================
+Test Complete
+============================================================

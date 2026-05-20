@@ -34,8 +34,10 @@ def compute_gdop(tag_pos, anchor_ids):
     H = np.array(H)
     try:
         HtH_inv = np.linalg.inv(H.T @ H)
-        gdop = np.sqrt(np.trace(HtH_inv))
-        return gdop
+        trace = np.trace(HtH_inv)
+        if trace <= 0:
+            return None
+        return np.sqrt(trace)
     except np.linalg.LinAlgError:
         return None
 

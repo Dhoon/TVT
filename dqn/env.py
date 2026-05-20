@@ -1,5 +1,4 @@
 import random
-from itertools import combinations
 
 import gymnasium as gym
 from gymnasium import spaces
@@ -7,6 +6,7 @@ import numpy as np
 
 from data_loader import load_json_data
 from reward import get_reward
+from settings import ANCHOR_DROP_PROB
 from utils import calc_azimuth, estimate_position_for_action
 
 
@@ -19,20 +19,28 @@ class CustomEnv(gym.Env):
         self.action_list = []
         for root in range(1, 7):
             remaining = [j for j in range(1, 7) if j != root]
-            for combo in combinations(remaining, 2):
-                self.action_list.append([root] + list(combo))
+            for leaf in remaining:
+                self.action_list.append([root, leaf])
         self.action_space = spaces.Discrete(len(self.action_list))
 
+        # state: [azimuth, prev_primary] + 6×3 timestamps = 20
         self.observation_space = spaces.Box(
-            low=-np.inf, high=np.inf, shape=(26,), dtype=np.float32
+            low=-np.inf, high=np.inf, shape=(20,), dtype=np.float32
         )
 
+        self.episode_count = 0
         self.location = 1
         self.current_record = None
+        self.prev_record = None
+        self.prev_est = None
         self.prev_azimuth = 0
         self.prev_primary = 1
+        self.unavailable_anchors = set()
+        self.anchor_drop_prob = ANCHOR_DROP_PROB
 
     def _get_record(self, location, primary=None):
+        if primary is not None and primary in self.unavailable_anchors:
+            return None
         records = self.data.get(location, [])
         valid = [r for r in records if r.get('messages')]
         if primary is not None:
@@ -44,41 +52,31 @@ class CustomEnv(gym.Env):
     def _build_state(self, record, prev_primary):
         messages = record.get('messages', {})
 
-        overhearing_anchor_ids = [i for i in range(1, 7) if i != prev_primary]
-
         UINT32 = 1 << 32
 
         otj = []
         for anchor_id in range(1, 7):
             if anchor_id == prev_primary:
-                # root: msg[1:5] (뒤 4개)
                 msg = messages.get(str(anchor_id), [])
-                if len(msg) < 5:
-                    otj.extend([-1.0, -1.0, -1.0, -1.0])
+                if len(msg) < 2:
+                    otj.extend([-1.0, -1.0, -1.0])
                     continue
-                msg4 = [float(v) for v in msg[1:5]]
-                if all(v == 0 for v in msg4):
-                    otj.extend([-1.0, -1.0, -1.0, -1.0])
+                Ra = float(msg[0])
+                Da = float(msg[1])
+                if Ra == 0 or Da == 0:
+                    otj.extend([-1.0, -1.0, -1.0])
                     continue
-                base_ts = next(v for v in msg4 if v != 0)
-                for v in msg4:
-                    if v == 0:
-                        otj.append(-1.0)
-                    else:
-                        rel = (v - base_ts) % UINT32
-                        normalized = (rel / 10000000.0) + 1.0
-                        otj.append(normalized)
+                otj.extend([1.0, Ra + 1, Ra + Da + 1])
             else:
-                # leaf: msg[0:4]
-                msg = messages.get(str(anchor_id), [0, 0, 0, 0])
-                if len(msg) < 4:
-                    msg = msg + [0] * (4 - len(msg))
-                msg4 = [float(v) for v in msg[:4]]
-                if all(v == 0 for v in msg4):
-                    otj.extend([-1.0, -1.0, -1.0, -1.0])
+                msg = messages.get(str(anchor_id), [0, 0, 0])
+                if len(msg) < 3:
+                    msg = msg + [0] * (3 - len(msg))
+                msg3 = [float(v) for v in msg[:3]]
+                if all(v == 0 for v in msg3):
+                    otj.extend([-1.0, -1.0, -1.0])
                     continue
-                base_ts = next(v for v in msg4 if v != 0)
-                for v in msg4:
+                base_ts = next(v for v in msg3 if v != 0)
+                for v in msg3:
                     if v == 0:
                         otj.append(-1.0)
                     else:
@@ -90,16 +88,26 @@ class CustomEnv(gym.Env):
         return np.array(state, dtype=np.float32)
 
     def reset(self, seed=None, options=None):
-        self.location = random.randint(1, 7)
-        self.prev_primary = random.randint(1, 6)
+        self.location = (self.episode_count % 7) + 1
+        self.episode_count += 1
+
+        self.unavailable_anchors = {a for a in range(1, 7) if random.random() < self.anchor_drop_prob}
+        available = [a for a in range(1, 7) if a not in self.unavailable_anchors]
+        if not available:
+            self.unavailable_anchors = set()
+            available = list(range(1, 7))
+
+        self.prev_primary = random.choice(available)
         self.current_record = self._get_record(self.location, self.prev_primary)
 
         if self.current_record is None:
             return self.reset()
 
-        leaves = random.sample([i for i in range(1, 7) if i != self.prev_primary], 2)
-        est, _ = estimate_position_for_action(self.current_record, self.prev_primary, leaves[0], leaves[1])
+        leaf = random.choice([i for i in range(1, 7) if i != self.prev_primary])
+        est, _ = estimate_position_for_action(self.current_record, self.prev_primary, leaf)
         self.prev_azimuth = calc_azimuth(est[0], est[1]) if est is not None else 0
+        self.prev_est = tuple(est) if est is not None else None
+        self.prev_record = self.current_record
 
         state = self._build_state(self.current_record, self.prev_primary)
         return state, {}
@@ -108,17 +116,24 @@ class CustomEnv(gym.Env):
         action = self.action_list[action_idx]
         primary = action[0]
 
-        move = random.choice([-1, 0, 1])
-        new_location = max(1, min(7, self.location + move))
-        self.location = new_location
-
         self.current_record = self._get_record(self.location, primary)
         if self.current_record is None:
-            return np.zeros(26, dtype=np.float32), 0.0, False, False, {}
+            if self.prev_record is not None:
+                fail_state = self._build_state(self.prev_record, primary)
+                fail_state[0] = -1.0
+                anchor_offset = 2 + (primary - 1) * 3
+                fail_state[anchor_offset:anchor_offset + 3] = -1.0
+            else:
+                fail_state = np.full(20, -1.0, dtype=np.float32)
+                fail_state[1] = float(primary)
+            return fail_state, -1.0, False, False, {}
 
-        est, _ = estimate_position_for_action(self.current_record, action[0], action[1], action[2])
-        self.prev_azimuth = calc_azimuth(est[0], est[1]) if est is not None else 0
+        est, _ = estimate_position_for_action(self.current_record, action[0], action[1], self.prev_est)
+
+        self.prev_azimuth = calc_azimuth(est[0], est[1]) if est is not None else self.prev_azimuth
+        self.prev_est = tuple(est) if est is not None else self.prev_est
         self.prev_primary = primary
+        self.prev_record = self.current_record
 
         state = self._build_state(self.current_record, primary)
         reward, info = get_reward(self.current_record, action, self.location)

@@ -1,0 +1,33 @@
+============================================================
+Test Start | device=cpu
+============================================================
+
+[Location 6] NLoS | steps=912
+--------------------------------------------------
+  [SAVED] result/location_6_NLoS.json (912개 레코드)
+  reward=-911.69 | success=1/2
+  cases : leaf_fail=1  success=1
+  avg   : Rprimary=+0.983(all)  Rangle=-1.000  Rbest=-1.000  rdop=-0.665
+  total : Rprimary=+2.0  Rangle=-1.0  Rbest=-1.0  rdop=-0.7
+
+  [Primary Anchor Selection Distribution]
+    Anchor 1:    1 (  0.1%)
+    Anchor 2:    1 (  0.1%)
+    Anchor 3:    0 (  0.0%)
+    Anchor 4:    0 (  0.0%)
+    Anchor 5:  907 ( 99.5%)
+    Anchor 6:    3 (  0.3%)
+
+  [Primary Anchor Communication Success Rate]
+    Anchor 1:    1/   1 (100.0%)
+    Anchor 2:    1/   1 (100.0%)
+    Anchor 3:    0/   0 (  0.0%)
+    Anchor 4:    0/   0 (  0.0%)
+    Anchor 5:    0/ 907 (  0.0%)
+    Anchor 6:    0/   3 (  0.0%)
+
+총 record_fail_count: 910
+
+============================================================
+Test Complete
+============================================================

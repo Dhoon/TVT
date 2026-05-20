@@ -27,9 +27,9 @@ class DQN_CNN(nn.Module):
     def __init__(self, n_observations, n_actions):
         super(DQN_CNN, self).__init__()
 
-        self.n_scalar = 2
-        self.n_channel = 4  # t2, t5, t8, t11
-        self.n_leaf = (n_observations - self.n_scalar) // self.n_channel  # 5
+        self.n_scalar = 2  # azimuth, prev_primary, est_var_norm
+        self.n_channel = 3  # t2, t5, t8
+        self.n_leaf = (n_observations - self.n_scalar) // self.n_channel  # 6
 
         self.cnn = nn.Sequential(
             nn.Conv1d(self.n_channel, 32, kernel_size=3, padding=1),
@@ -50,7 +50,7 @@ class DQN_CNN(nn.Module):
             nn.ReLU(),
         )
 
-        feature_dim = 128 * self.n_leaf + 64
+        feature_dim = 128 * self.n_leaf + 64  # CNN only
 
         self.feature_fc = nn.Sequential(
             nn.Linear(feature_dim, 512),
@@ -94,9 +94,9 @@ class DQN_CNN(nn.Module):
 class DQN_Attention(nn.Module):
     def __init__(self, n_observations, n_actions):
         super(DQN_Attention, self).__init__()
- 
-        self.n_scalar = 2
-        self.n_msg = 4
+
+        self.n_scalar = 2  # azimuth, prev_primary, est_var_norm
+        self.n_msg = 3
         self.n_anchor = (n_observations - self.n_scalar) // self.n_msg  # 6
  
         self.embed_dim = 64
@@ -120,7 +120,7 @@ class DQN_Attention(nn.Module):
             nn.Linear(32, 64),
             nn.ReLU(),
         )
- 
+
         feature_dim = self.n_anchor * self.embed_dim + 64
  
         self.feature_fc = nn.Sequential(
