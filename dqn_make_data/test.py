@@ -3,6 +3,7 @@ import json
 import os
 from datetime import datetime
 
+import time
 import torch
 
 from env import CustomEnv, record_fail_count
@@ -31,7 +32,9 @@ UNAVAIL_PENALTY = 10.0
 
 def select_action(state):
     with torch.no_grad():
+        start = time.perf_counter()
         q_values = policy_net(state)
+        latency_ms = (time.perf_counter() - start) * 1000
         state_np = state.cpu().numpy()[0]
         for anchor_idx in range(6):
             offset = N_SCALAR + anchor_idx * 3
@@ -39,7 +42,8 @@ def select_action(state):
                 for i, act in enumerate(env.action_list):
                     if act[0] == anchor_idx + 1:
                         q_values[0][i] -= UNAVAIL_PENALTY
-        return q_values.max(1).indices.view(1, 1)
+        action = q_values.max(1).indices.view(1, 1)
+        return action, latency_ms
 
 
 SCENARIO_LABELS = {
@@ -67,6 +71,8 @@ if __name__ == "__main__":
     log(f"{'='*60}")
 
     for location in range(1, 7):
+        latency_list = []
+        pos_latency_list = []
         label = SCENARIO_LABELS[location]
         max_step = env.pedloc_counts[location]
         true_pos = GROUND_TRUTH.get(location)
@@ -91,12 +97,15 @@ if __name__ == "__main__":
         log(f"{'-'*50}")
 
         for t in range(max_step):
-            action = select_action(state)
+            action, latency_ms = select_action(state)
+            latency_list.append(latency_ms)
             action_arr = env.get_action_array(action.item())
             primary = action_arr[0]
 
             observation, reward, terminated, truncated, info = env.step(action.item())
             total_reward += reward
+            if info.get('pos_latency_ms', 0.0) > 0.0:
+                pos_latency_list.append(info['pos_latency_ms'])
 
             state = torch.tensor(observation, dtype=torch.float32, device=device).unsqueeze(0)
 
@@ -184,6 +193,28 @@ if __name__ == "__main__":
         
         import env as env_module
         log(f"\n총 record_fail_count: {env_module.record_fail_count}")
+
+        if latency_list:
+            avg_latency = sum(latency_list) / len(latency_list)
+            min_latency = min(latency_list)
+            max_latency = max(latency_list)
+
+            log(f"\n  [NN Inference Latency - CPU]")
+            log(f"    avg: {avg_latency:.4f} ms")
+            log(f"    min: {min_latency:.4f} ms")
+            log(f"    max: {max_latency:.4f} ms")
+            log(f"    n  : {len(latency_list)}")
+
+        if pos_latency_list:
+            avg_pos = sum(pos_latency_list) / len(pos_latency_list)
+            min_pos = min(pos_latency_list)
+            max_pos = max(pos_latency_list)
+
+            log(f"\n  [Positioning Computation Latency]")
+            log(f"    avg: {avg_pos:.4f} ms")
+            log(f"    min: {min_pos:.4f} ms")
+            log(f"    max: {max_pos:.4f} ms")
+            log(f"    n  : {len(pos_latency_list)}")
 
     log(f"\n{'='*60}")
     log("Test Complete")

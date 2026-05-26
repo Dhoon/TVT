@@ -26,7 +26,7 @@
 \multirow{3}{*}{\makecell[l]{Moving\\(22.64\,m$\to$2.64\,m)}}
  & Round-Robin & 16.7 & 16.7 & 16.7 & 16.7 & 16.7 & 16.7 \\
  & PedLoc      & \textbf{48.4} & 43.8 &  4.7 &  3.1 &  0.0 &  0.0 \\
- & DA-VPL      & 0.0 & 7.8 &  0.0 & \textbf{84.4} &  0.0 &  7.8 \\
+ & DA-VPL      & 0.0 & 7.8 &  4.0 & \textbf{84.4} &  0.0 &  3.8 \\
 \midrule
 \multirow{3}{*}{\makecell[l]{Moving\\(2.64\,m$\to$22.64\,m)}}
  & Round-Robin & 16.7 & 16.7 & 16.7 & 16.7 & 16.7 & 16.7 \\

@@ -93,7 +93,7 @@ class CustomEnv(gym.Env):
             return np.zeros(20, dtype=np.float32), {}
 
         leaf = random.choice([i for i in range(1, 7) if i != self.prev_primary])
-        est, _ = estimate_position_for_action(self.current_record, self.prev_primary, leaf)
+        est, _, _ = estimate_position_for_action(self.current_record, self.prev_primary, leaf)
         self.prev_azimuth = calc_azimuth(est[0], est[1]) if est is not None else 0
         self.prev_est = tuple(est) if est is not None else None
         self.prev_record = self.current_record
@@ -120,7 +120,7 @@ class CustomEnv(gym.Env):
                 fail_state[1] = float(primary)
             return fail_state, -1.0, False, False, {'fail': True, 'record': None}
 
-        est, _ = estimate_position_for_action(self.current_record, action[0], action[1], self.prev_est)
+        est, _, pos_latency_ms = estimate_position_for_action(self.current_record, action[0], action[1], self.prev_est)
 
         self.prev_azimuth = calc_azimuth(est[0], est[1]) if est is not None else self.prev_azimuth
         self.prev_est = tuple(est) if est is not None else self.prev_est
@@ -133,6 +133,7 @@ class CustomEnv(gym.Env):
         info['estimated_position'] = [round(est[0], 4), round(est[1], 4)] if est is not None else None
         info['record'] = self.current_record
         info['fail'] = False
+        info['pos_latency_ms'] = pos_latency_ms
 
         return state, reward, False, False, info
 

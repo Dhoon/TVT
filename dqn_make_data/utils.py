@@ -1,6 +1,7 @@
 import math
 
 import numpy as np
+import time
 from scipy.optimize import least_squares
 
 from settings import ANCHOR_POSITIONS, C, DWT_TIME_UNIT
@@ -12,15 +13,16 @@ def calc_azimuth(est_x, est_y):
 
 
 def estimate_position_for_action(record, primary, leaf1, prev_est=None):
+    start_time = time.perf_counter()
     messages = record.get('messages', {})
 
     root_msg = messages.get(str(primary))
     if not root_msg or len(root_msg) < 5:
-        return None, 'primary'
+        return None, 'primary', 0.0
 
     Ra, Da, Rb, Db, D2b = root_msg[:5]
     if any(ts < 0 for ts in (Ra, Da, Rb, Db, D2b)):
-        return None, 'primary'
+        return None, 'primary', 0.0
 
     numerator = Ra * Rb - Da * Db
     denominator = Ra + Rb + Da + Db
@@ -54,7 +56,7 @@ def estimate_position_for_action(record, primary, leaf1, prev_est=None):
             tdoa_deltas.append(tdoa)
 
     if not leaf_positions:
-        return None, 'leaf'
+        return None, 'leaf', 0.0
 
     def residuals(p):
         x, y = p
@@ -65,16 +67,11 @@ def estimate_position_for_action(record, primary, leaf1, prev_est=None):
             res.append(d_leaf - d_leaf_root - delta_d)
         return res
 
-    angles = np.linspace(0, 2 * np.pi, 6, endpoint=False)
-    candidates = [
-        least_squares(residuals, x0=(
-            root_pos[0] + root_dist * np.cos(a),
-            root_pos[1] + root_dist * np.sin(a)
-        )) for a in angles
-    ]
     if prev_est is not None:
-        candidates.append(least_squares(residuals, x0=prev_est))
-    valid = [r for r in candidates if r.success and r.x[1] > 0]
-    result = min(valid, key=lambda r: r.cost) if valid else \
-             min((r for r in candidates if r.success), key=lambda r: r.cost, default=None)
-    return (result.x, None) if result else (None, 'leaf')
+        x0 = prev_est
+    else:
+        x0 = (root_pos[0], root_pos[1] + root_dist)
+
+    result = least_squares(residuals, x0=x0)
+    latency_ms = (time.perf_counter() - start_time) * 1000
+    return (result.x, None, latency_ms) if result.success else (None, 'leaf', latency_ms)

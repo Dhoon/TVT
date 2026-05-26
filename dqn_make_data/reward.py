@@ -67,7 +67,7 @@ def get_reward(record, action, location):
     if true_pos is None:
         return 0, {'case': 'no_true_pos', 'Rprimary': 0.0, 'Rangle': 0.0, 'Rbest': 0.0, 'rdop': 0.0}
 
-    est_pos, fail_type = estimate_position_for_action(record, primary, leaf1)
+    est_pos, fail_type, _ = estimate_position_for_action(record, primary, leaf1)
 
     if fail_type == 'primary':
         return -1.0, {'case': 'primary_fail', 'Rprimary': 0.0, 'Rangle': 0.0, 'Rbest': 0.0, 'rdop': 0.0}
@@ -75,7 +75,7 @@ def get_reward(record, action, location):
     remaining = [i for i in range(1, 7) if i != primary]
     best_error = float('inf')
     for l in remaining:
-        pos, _ = estimate_position_for_action(record, primary, l)
+        pos, _, _ = estimate_position_for_action(record, primary, l)
         if pos is None:
             continue
         err = calc_azimuth_error(pos, true_pos)

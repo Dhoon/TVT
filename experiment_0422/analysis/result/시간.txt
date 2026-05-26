@@ -1,0 +1,32 @@
+366~ adv
+470~	root selection 및 wait 100ms
+505 ~ 통신   30ms
+535 ~ 연산   25ms
+
+15ms
+
+70ms 
+170ms
+
+
+
+
+
+
+adv wait + cir 전송(serial)+root selection+역할전송 		31.131 ms
+TWR 			3.525 ms tag sleep			10ms
+positioning 	3.4461 ms
+
+latancy 38.102 ms
+22.39Hz
+
+adv wait 		0.509 ms
+TWR 			3.525 ms  tag sleep 10ms
+positioning 	3.233 ms 
+root selection 	0.606 ms
+역할전송 		2ms
+
+latancy 7.267 ms
+73.94Hz
+
+

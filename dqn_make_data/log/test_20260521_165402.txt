@@ -1,0 +1,235 @@
+============================================================
+Test Start | device=cpu
+============================================================
+
+[Location 1] Static 12.64m | steps=704
+--------------------------------------------------
+  [SAVED] result/location_1_Static_12.64m.json (704개 레코드)
+  reward=+225.59 | success=704/704
+  cases : success=704
+  avg   : Rprimary=+0.999(all)  Rangle=+0.322  Rbest=+0.000  rdop=-1.000
+  total : Rprimary=+703.1  Rangle=+226.5  Rbest=+0.0  rdop=-704.0
+
+  [Primary Anchor Selection Distribution]
+    Anchor 1:    0 (  0.0%)
+    Anchor 2:    0 (  0.0%)
+    Anchor 3:   10 (  1.4%)
+    Anchor 4:  694 ( 98.6%)
+    Anchor 5:    0 (  0.0%)
+    Anchor 6:    0 (  0.0%)
+
+  [Primary Anchor Communication Success Rate]
+    Anchor 1:    0/   0 (  0.0%)
+    Anchor 2:    0/   0 (  0.0%)
+    Anchor 3:   10/  10 (100.0%)
+    Anchor 4:  694/ 694 (100.0%)
+    Anchor 5:    0/   0 (  0.0%)
+    Anchor 6:    0/   0 (  0.0%)
+
+총 record_fail_count: 0
+
+  [NN Inference Latency - CPU]
+    avg: 0.7354 ms
+    min: 0.3859 ms
+    max: 48.3167 ms
+    n  : 704
+
+  [Positioning Computation Latency]
+    avg: 3.6570 ms
+    min: 0.9838 ms
+    max: 12.4737 ms
+    n  : 704
+
+[Location 2] Static 22.64m | steps=686
+--------------------------------------------------
+  [SAVED] result/location_2_Static_22.64m.json (686개 레코드)
+  reward=+423.28 | success=686/686
+  cases : success=686
+  avg   : Rprimary=+0.997(all)  Rangle=+0.620  Rbest=+0.000  rdop=-1.000
+  total : Rprimary=+684.2  Rangle=+425.0  Rbest=+0.0  rdop=-686.0
+
+  [Primary Anchor Selection Distribution]
+    Anchor 1:    0 (  0.0%)
+    Anchor 2:    0 (  0.0%)
+    Anchor 3:    2 (  0.3%)
+    Anchor 4:  684 ( 99.7%)
+    Anchor 5:    0 (  0.0%)
+    Anchor 6:    0 (  0.0%)
+
+  [Primary Anchor Communication Success Rate]
+    Anchor 1:    0/   0 (  0.0%)
+    Anchor 2:    0/   0 (  0.0%)
+    Anchor 3:    2/   2 (100.0%)
+    Anchor 4:  684/ 684 (100.0%)
+    Anchor 5:    0/   0 (  0.0%)
+    Anchor 6:    0/   0 (  0.0%)
+
+총 record_fail_count: 0
+
+  [NN Inference Latency - CPU]
+    avg: 0.6061 ms
+    min: 0.3792 ms
+    max: 1.8974 ms
+    n  : 686
+
+  [Positioning Computation Latency]
+    avg: 3.3928 ms
+    min: 0.2137 ms
+    max: 6.2646 ms
+    n  : 686
+
+[Location 3] Static 32.64m | steps=706
+--------------------------------------------------
+  [SAVED] result/location_3_Static_32.64m.json (706개 레코드)
+  reward=-491.47 | success=46/447
+  cases : leaf_fail=345  leaf_no_best=53  primary_fail=3  success=46
+  avg   : Rprimary=+0.989(all)  Rangle=-0.069  Rbest=-0.144  rdop=-0.823
+  total : Rprimary=+442.1  Rangle=-3.2  Rbest=-6.6  rdop=-37.9
+
+  [Primary Anchor Selection Distribution]
+    Anchor 1:   81 ( 11.5%)
+    Anchor 2:   21 (  3.0%)
+    Anchor 3:  219 ( 31.0%)
+    Anchor 4:  126 ( 17.8%)
+    Anchor 5:    0 (  0.0%)
+    Anchor 6:  259 ( 36.7%)
+
+  [Primary Anchor Communication Success Rate]
+    Anchor 1:   81/  81 (100.0%)
+    Anchor 2:   21/  21 (100.0%)
+    Anchor 3:  219/ 219 (100.0%)
+    Anchor 4:  123/ 126 ( 97.6%)
+    Anchor 5:    0/   0 (  0.0%)
+    Anchor 6:    0/ 259 (  0.0%)
+
+총 record_fail_count: 259
+
+  [NN Inference Latency - CPU]
+    avg: 0.5120 ms
+    min: 0.3269 ms
+    max: 0.9859 ms
+    n  : 706
+
+  [Positioning Computation Latency]
+    avg: 0.2759 ms
+    min: 0.0000 ms
+    max: 6.6206 ms
+    n  : 447
+
+[Location 4] Moving (22.64m->2.64m) | steps=64
+--------------------------------------------------
+  [SAVED] result/location_4_Moving_(22.64m-to2.64m).json (64개 레코드)
+  reward=  -3.70 | success=64/64
+  cases : success=64
+  avg   : Rprimary=+1.000(all)  Rangle=-0.198  Rbest=-0.031  rdop=-0.828
+  total : Rprimary=+64.0  Rangle=-12.7  Rbest=-2.0  rdop=-53.0
+
+  [Primary Anchor Selection Distribution]
+    Anchor 1:    0 (  0.0%)
+    Anchor 2:    0 (  0.0%)
+    Anchor 3:    0 (  0.0%)
+    Anchor 4:   64 (100.0%)
+    Anchor 5:    0 (  0.0%)
+    Anchor 6:    0 (  0.0%)
+
+  [Primary Anchor Communication Success Rate]
+    Anchor 1:    0/   0 (  0.0%)
+    Anchor 2:    0/   0 (  0.0%)
+    Anchor 3:    0/   0 (  0.0%)
+    Anchor 4:   64/  64 (100.0%)
+    Anchor 5:    0/   0 (  0.0%)
+    Anchor 6:    0/   0 (  0.0%)
+
+총 record_fail_count: 259
+
+  [NN Inference Latency - CPU]
+    avg: 0.6122 ms
+    min: 0.3953 ms
+    max: 0.8909 ms
+    n  : 64
+
+  [Positioning Computation Latency]
+    avg: 3.2332 ms
+    min: 0.4184 ms
+    max: 7.0314 ms
+    n  : 64
+
+[Location 5] Moving (2.64m->22.64m) | steps=50
+--------------------------------------------------
+  [SAVED] result/location_5_Moving_(2.64m-to22.64m).json (50개 레코드)
+  reward= +11.42 | success=50/50
+  cases : success=50
+  avg   : Rprimary=+1.000(all)  Rangle=+0.228  Rbest=+0.000  rdop=-1.000
+  total : Rprimary=+50.0  Rangle=+11.4  Rbest=+0.0  rdop=-50.0
+
+  [Primary Anchor Selection Distribution]
+    Anchor 1:    0 (  0.0%)
+    Anchor 2:    0 (  0.0%)
+    Anchor 3:    0 (  0.0%)
+    Anchor 4:   50 (100.0%)
+    Anchor 5:    0 (  0.0%)
+    Anchor 6:    0 (  0.0%)
+
+  [Primary Anchor Communication Success Rate]
+    Anchor 1:    0/   0 (  0.0%)
+    Anchor 2:    0/   0 (  0.0%)
+    Anchor 3:    0/   0 (  0.0%)
+    Anchor 4:   50/  50 (100.0%)
+    Anchor 5:    0/   0 (  0.0%)
+    Anchor 6:    0/   0 (  0.0%)
+
+총 record_fail_count: 259
+
+  [NN Inference Latency - CPU]
+    avg: 0.5887 ms
+    min: 0.3824 ms
+    max: 1.0429 ms
+    n  : 50
+
+  [Positioning Computation Latency]
+    avg: 3.4461 ms
+    min: 0.8411 ms
+    max: 6.0553 ms
+    n  : 50
+
+[Location 6] NLoS | steps=912
+--------------------------------------------------
+  [SAVED] result/location_6_NLoS.json (912개 레코드)
+  reward=  +9.02 | success=912/912
+  cases : success=912
+  avg   : Rprimary=+1.000(all)  Rangle=+0.010  Rbest=+0.000  rdop=-1.000
+  total : Rprimary=+912.0  Rangle=+9.0  Rbest=+0.0  rdop=-912.0
+
+  [Primary Anchor Selection Distribution]
+    Anchor 1:    0 (  0.0%)
+    Anchor 2:    0 (  0.0%)
+    Anchor 3:  912 (100.0%)
+    Anchor 4:    0 (  0.0%)
+    Anchor 5:    0 (  0.0%)
+    Anchor 6:    0 (  0.0%)
+
+  [Primary Anchor Communication Success Rate]
+    Anchor 1:    0/   0 (  0.0%)
+    Anchor 2:    0/   0 (  0.0%)
+    Anchor 3:  912/ 912 (100.0%)
+    Anchor 4:    0/   0 (  0.0%)
+    Anchor 5:    0/   0 (  0.0%)
+    Anchor 6:    0/   0 (  0.0%)
+
+총 record_fail_count: 259
+
+  [NN Inference Latency - CPU]
+    avg: 0.6065 ms
+    min: 0.3770 ms
+    max: 1.3672 ms
+    n  : 912
+
+  [Positioning Computation Latency]
+    avg: 3.5733 ms
+    min: 0.1976 ms
+    max: 7.6292 ms
+    n  : 912
+
+============================================================
+Test Complete
+============================================================

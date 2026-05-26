@@ -115,8 +115,7 @@ def collect_pairs(json_path, tag_pos, mode, scenario_name=None):
         if root is None:
             continue
 
-        # init_pos = list(ANCHOR_POSITIONS[root])  # root anchor 위치로 cold start
-        init_pos = tag_pos 
+        init_pos = list(ANCHOR_POSITIONS[root])  # root anchor 위치로 cold start
 
         messages = r.get('messages') or {}
         root_msg = messages.get(str(root))

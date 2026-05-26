@@ -8,12 +8,12 @@
 \midrule
 Static 12.64\,m                          & 70.1 & 99.9          & \textbf{100.0} \\
 Static 22.64\,m                          & 66.7 & \textbf{100.0} & \textbf{100.0} \\
-Static 32.64\,m                          & 48.2 & \textbf{99.9} & 94.5          \\
-Moving (22.64\,m $\rightarrow$ 2.64\,m)  & 85.7 & \textbf{98.4}    & 92.2 \\
+Static 32.64\,m                          & 48.2 & \textbf{99.9} & 99.5          \\
+Moving (22.64\,m $\rightarrow$ 2.64\,m)  & 85.7 & 98.4    & \textbf{99.2} \\
 Moving (2.64\,m $\rightarrow$ 22.64\,m)  & 84.1 & \textbf{100.0} & \textbf{100.0} \\
-NLoS                                     & 28.6 & \textbf{99.7} & 98.8          \\
+NLoS                                     & 28.6 & \textbf{99.7} & 99.6          \\
 \midrule
-\textbf{Average}                         & 59.1 & \textbf{99.6}          & 98.6 \\
+\textbf{Average}                         & 59.1 & 99.6          & \textbf{99.7} \\
 \bottomrule
 \end{tabular}
 \end{table}
